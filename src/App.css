@@ -1,5 +1,10 @@
 body {
   background-color: #506cff;
+  height: 100%;
+}
+
+#root {
+  height: 100%;
 }
 
 .loginAmpersand {
@@ -11,12 +16,8 @@ body {
 }
 
 .footer {
-  color: white;
-  text-align: center;
-  font-family: Baloo2;
   position: fixed;
-  bottom: 20;
-  left: calc(50% - 90px);
+  bottom: 20px;
 }
 
 /* ========================== */
