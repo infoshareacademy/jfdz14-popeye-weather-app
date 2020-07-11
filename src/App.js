@@ -3,9 +3,10 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  NavLink,
 } from "react-router-dom";
 
+import LoginPage from "./ComponentsDashboard/LoginPage";
 
 const App = () => {
   return (
@@ -13,21 +14,23 @@ const App = () => {
       <div>
         <nav>
           <ul>
-            <li>
-              <Link to="/">Dashboard</Link>
+            {/* <li>
+              <NavLink exact to="/">
+                Dashboard
+              </NavLink>
             </li>
             <li>
-              <Link to="/location">Location</Link>
+              <NavLink to="/location">Location</NavLink>
             </li>
             <li>
-              <Link to="/search">Search</Link>
+              <NavLink to="/search">Search</NavLink>
             </li>
             <li>
-              <Link to="/favourites">Favourites</Link>
+              <NavLink to="/favourites">Favourites</NavLink>
             </li>
             <li>
-              <Link to="/notifications">Notifications</Link>
-            </li>
+              <NavLink to="/notifications">Notifications</NavLink>
+            </li> */}
           </ul>
         </nav>
 
@@ -46,15 +49,14 @@ const App = () => {
           <Route path="/location">
             <Location />
           </Route>
-          <Route path="/">
-            <Dashboard />
+          <Route exact path="/">
+            <LoginPage />
           </Route>
         </Switch>
       </div>
     </Router>
-      );
-    }
-
+  );
+};
 
 function Dashboard() {
   return <h2>Dashboard</h2>;
