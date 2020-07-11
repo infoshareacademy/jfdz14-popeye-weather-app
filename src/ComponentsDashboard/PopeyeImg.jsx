@@ -4,5 +4,14 @@ import "../App.css";
 import PopeyeLogo from "../images/popeyeLogo.jpg";
 
 export const PopeyeImg = () => {
-  return <img alt="" src={PopeyeLogo} className={styles.loginImage} />;
+  return (
+    <>
+      <img
+        alt="logo of popeye weather app"
+        src={PopeyeLogo}
+        className={styles.loginImage}
+      />
+      <p className={styles.loginPageText}>Popeye Weather</p>
+    </>
+  );
 };
