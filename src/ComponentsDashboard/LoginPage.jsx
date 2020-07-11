@@ -13,26 +13,28 @@ const LoginPage = () => {
   return (
     <Grid
       container
-      alignItems="center"
-      direction="column"
+      // spacing={0}
+      align="center"
+      // alignContent="center"
+      // direction="column"
       justify="center"
       // style={{ minHeight: "100vh" }}
     >
-      <Grid item xs>
+      <Grid item xs={12}>
         <PopeyeImg />
       </Grid>
-      <Grid item xs>
+      <Grid item xs={12}>
         <input className={styles.loginInput} placeholder="Sign In"></input>
       </Grid>
-      <Grid item xs>
+      <Grid item xs={12}>
         <OrLine />
       </Grid>
-      <Grid item xs>
+      <Grid item xs={12}>
         <input className={styles.loginInput} placeholder="Sign Up"></input>
       </Grid>
-      <Divider bottom />
+      <Divider />
 
-      <Grid item xs>
+      <Grid item xs={12}>
         <LoginPageFooter />
       </Grid>
     </Grid>
