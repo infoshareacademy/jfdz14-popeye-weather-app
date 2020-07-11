@@ -18,3 +18,10 @@
   border: 2px solid black;
   border-radius: 8px;
 }
+
+.divider {
+  width: 60vw;
+  color: white;
+  margin-top: 2rem;
+  border: 1px solid white;
+}
