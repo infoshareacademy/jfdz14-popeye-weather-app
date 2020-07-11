@@ -1,0 +1,27 @@
+.loginInput {
+  width: 60vw;
+  margin: 1rem;
+  border: 2px solid black;
+  border-radius: 8px;
+  background-color: aliceblue;
+  text-align: center;
+  line-height: 50px;
+  padding: 0.4rem;
+  font-family: Baloo2;
+  font-size: 2rem;
+}
+
+.loginImage {
+  width: 20vw;
+  height: auto;
+  text-align: center;
+  border: 2px solid black;
+  border-radius: 8px;
+}
+
+.divider {
+  width: 60vw;
+  color: white;
+  margin-top: 2rem;
+  border: 1px solid white;
+}
