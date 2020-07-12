@@ -6,9 +6,10 @@ import {
   NavLink,
 } from "react-router-dom";
 
-import LoginPage from "./ComponentsDashboard/LoginPage";
-import SignUpPage from "./ComponentsDashboard/SignUpPage";
-import SignInPage from "./ComponentsDashboard/SignInPage";
+// import LoginPage from "./ComponentsDashboard/LoginPage";
+// import SignUpPage from "./ComponentsDashboard/SignUpPage";
+// import SignInPage from "./ComponentsDashboard/SignInPage";
+import { Dashboard } from "./ComponentsDashboard/Dashboard";
 
 const App = () => {
   return (
@@ -52,7 +53,7 @@ const App = () => {
             <Location />
           </Route>
           <Route exact path="/">
-            <SignInPage />
+            <Dashboard />
           </Route>
         </Switch>
       </div>
@@ -60,9 +61,9 @@ const App = () => {
   );
 };
 
-function Dashboard() {
-  return <h2>Dashboard</h2>;
-}
+// function Dashboard() {
+//   return <h2>Dashboard</h2>;
+// }
 
 function Location() {
   return <h2>Current Location</h2>;
