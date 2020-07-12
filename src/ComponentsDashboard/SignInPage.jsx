@@ -11,26 +11,19 @@ import { Divider } from "@material-ui/core";
 import "../CSSForComponents/SignUpPage.css";
 // import { OrLine } from "./Orline";
 
-const SignUpPage = () => {
+const SignInPage = () => {
   return (
     <div className="loginPage">
       <PopeyeImg />
-      <NameOfApp paragraph={"Register to use application"} />
-      <Input type={"email"} placeholder={"e-mail"} />
-      <Divider />
-      <Input type={"text"} placeholder={"Name and Surname"} />
-      <Divider />
+      <NameOfApp paragraph={"Sign in to use application"} />
       <Input type={"text"} placeholder={"login"} />
       <Divider />
       <Input type={"password"} placeholder={"password"} />
-      <Divider />
-      <Input type={"password"} placeholder={"repeat password"} />
-
-      <LoginButton className="loginButton signUpButton" children={"Sign Up"} />
+      <LoginButton className="loginButton signUpButton" children={"Sign In"} />
       {/* dlaczego nie bierze styli z drugiego pliku? */}
       <LoginPageFooter />
     </div>
   );
 };
 
-export default SignUpPage;
+export default SignInPage;

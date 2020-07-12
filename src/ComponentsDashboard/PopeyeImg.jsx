@@ -4,7 +4,7 @@ import "../CSSForComponents/LoginPage.css";
 import "../App.css";
 import PopeyeLogo from "../images/hiclipart.com.png";
 
-export const PopeyeImg = () => {
+export const PopeyeImg = ({ children }) => {
   return (
     <>
       <img
@@ -12,7 +12,7 @@ export const PopeyeImg = () => {
         src={PopeyeLogo}
         className="loginImage"
       />
-      <p className="loginPageText">Popeye Weather</p>
+      {/* <p className="loginPageText">{children}</p> */}
     </>
   );
 };
