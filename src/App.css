@@ -8,14 +8,6 @@ body {
   height: 100%;
 }
 
-.loginAmpersand {
-  color: white;
-  font-family: Baloo2;
-  font-size: 2rem;
-  font-style: italic;
-  text-align: center;
-}
-
 /* ========================== */
 .App {
   text-align: center;
