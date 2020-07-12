@@ -1,17 +1,16 @@
 import React from "react";
-import styles from "../CSSForComponents/LoginPage.module.css";
+// import styles from "../CSSForComponents/LoginPage.module.css";
+import "../CSSForComponents/LoginPage.css";
 import "../App.css";
 import { PopeyeImg } from "./PopeyeImg";
 import { LoginPageFooter } from "./LoginFooter";
 import LoginButton from "./LoginButton";
-
-const OrLine = () => {
-  return <h1 className="loginAmpersand"> -- OR --</h1>;
-};
+// import { Divider } from "@material-ui/core";
+import { OrLine } from "./Orline";
 
 const LoginPage = () => {
   return (
-    <div className={styles.loginPage}>
+    <div className="loginPage">
       <PopeyeImg />
       <LoginButton children={"Sign In"} />
       <OrLine />

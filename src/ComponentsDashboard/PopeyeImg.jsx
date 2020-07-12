@@ -1,7 +1,8 @@
 import React from "react";
-import styles from "../CSSForComponents/LoginPage.module.css";
+// import styles from "../CSSForComponents/LoginPage.module.css";
+import "../CSSForComponents/LoginPage.css";
 import "../App.css";
-import PopeyeLogo from "../images/popeyeLogo.jpg";
+import PopeyeLogo from "../images/hiclipart.com.png";
 
 export const PopeyeImg = () => {
   return (
@@ -9,9 +10,9 @@ export const PopeyeImg = () => {
       <img
         alt="logo of popeye weather app"
         src={PopeyeLogo}
-        className={styles.loginImage}
+        className="loginImage"
       />
-      <p className={styles.loginPageText}>Popeye Weather</p>
+      <p className="loginPageText">Popeye Weather</p>
     </>
   );
 };
