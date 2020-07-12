@@ -1,0 +1,13 @@
+.input {
+  width: 60vw;
+  margin: 0.5rem;
+  border: 1px solid navy;
+  border-radius: 8px;
+  background-color: aliceblue;
+  text-align: center;
+  font-family: Baloo2;
+  font-size: 1.2rem;
+}
+.signUpButton {
+  background-color: thistle;
+}

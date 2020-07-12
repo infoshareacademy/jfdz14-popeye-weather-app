@@ -4,7 +4,6 @@
   box-sizing: border-box;
 }
 
-.loginInput,
 .loginButton {
   width: 60vw;
   margin: 1rem;
@@ -13,7 +12,7 @@
   background-color: aliceblue;
   text-align: center;
   font-family: Baloo2;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
 }
 
 .loginButton {
@@ -25,8 +24,12 @@
   color: white;
 }
 
+.signUpButton {
+  background-color: thistle;
+}
+
 .loginImage {
-  width: 25vw;
+  width: 20vw;
   height: auto;
   text-align: center;
   /* border: 2px solid black; */

@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 
 import LoginPage from "./ComponentsDashboard/LoginPage";
+import SignUpPage from "./ComponentsDashboard/SignUpPage";
 
 const App = () => {
   return (
@@ -14,7 +15,7 @@ const App = () => {
       <div>
         <nav>
           <ul>
-            {/* <li>
+            <li>
               <NavLink exact to="/">
                 Dashboard
               </NavLink>
@@ -30,7 +31,7 @@ const App = () => {
             </li>
             <li>
               <NavLink to="/notifications">Notifications</NavLink>
-            </li> */}
+            </li>
           </ul>
         </nav>
 
@@ -50,7 +51,7 @@ const App = () => {
             <Location />
           </Route>
           <Route exact path="/">
-            <LoginPage />
+            <SignUpPage />
           </Route>
         </Switch>
       </div>
