@@ -8,6 +8,7 @@ import {
 
 import LoginPage from "./ComponentsDashboard/LoginPage";
 import SignUpPage from "./ComponentsDashboard/SignUpPage";
+import SignInPage from "./ComponentsDashboard/SignInPage";
 
 const App = () => {
   return (
@@ -51,7 +52,7 @@ const App = () => {
             <Location />
           </Route>
           <Route exact path="/">
-            <SignUpPage />
+            <SignInPage />
           </Route>
         </Switch>
       </div>
