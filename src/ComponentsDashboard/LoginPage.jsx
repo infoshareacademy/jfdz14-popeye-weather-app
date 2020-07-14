@@ -15,9 +15,9 @@ const LoginPage = () => {
     <div className="loginPage">
       <PopeyeImg />
       <NameOfApp />
-      <LoginButton text="Sign In" />
+      <LoginButton text="Sign In" urlName={"signin"} />
       <OrLine />
-      <LoginButton text="Sign Up" />
+      <LoginButton text="Sign Up" urlName={"signup"} />
       <LoginPageFooter />
     </div>
   );
