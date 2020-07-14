@@ -26,7 +26,11 @@ const SignUpPage = () => {
       <Divider />
       <Input type={"password"} placeholder={"repeat password"} />
 
-      <LoginButton className="loginButton signUpButton" text={"Sign Up"} />
+      <LoginButton
+        className="loginButton signUpButton"
+        text={"Sign Up"}
+        urlName={"main"}
+      />
       {/* dlaczego nie bierze styli z drugiego pliku? */}
       <LoginPageFooter />
     </div>
