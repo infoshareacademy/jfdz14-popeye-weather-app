@@ -1,10 +1,8 @@
 import React from "react";
-// import styles from "../CSSForComponents/LoginPage.module.css";
-import "../CSSForComponents/LoginPage.css";
-import "../App.css";
+import "../CSSForComponents/Dashboard.css";
 import PopeyeLogo from "../images/hiclipart.com.png";
 
-export const PopeyeImg = () => {
+export const SmallImg = () => {
   return (
     <>
       <img

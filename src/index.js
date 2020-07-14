@@ -4,13 +4,10 @@ import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import "./fonts/Baloo2-Regular.ttf";
-import LoginPage from "./ComponentsDashboard/LoginPage";
-import SignUpPage from "./ComponentsDashboard/SignUpPage";
-import SignInPage from "./ComponentsDashboard/SignInPage";
 
 ReactDOM.render(
   <React.StrictMode>
-    <SignInPage />
+    <App />
   </React.StrictMode>,
   document.getElementById("root")
 );

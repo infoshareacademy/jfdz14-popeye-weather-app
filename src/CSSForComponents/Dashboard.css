@@ -1,0 +1,29 @@
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+}
+
+.loginImage {
+  width: 10vw;
+}
+
+.textInHeader {
+  color: white;
+  font-size: 2rem;
+  font-family: Baloo2;
+}
+
+.header {
+  background-color: #506cff;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.dashboardMessage {
+  font-size: 1.5rem;
+  color: navy;
+  padding: 1rem;
+}

@@ -19,7 +19,7 @@ const SignInPage = () => {
       <Input type={"text"} placeholder={"login"} />
       <Divider />
       <Input type={"password"} placeholder={"password"} />
-      <LoginButton className="loginButton signUpButton" children={"Sign In"} />
+      <LoginButton className="loginButton signUpButton" text={"Sign In"} />
       {/* dlaczego nie bierze styli z drugiego pliku? */}
       <LoginPageFooter />
     </div>
