@@ -3,8 +3,8 @@ import React from "react";
 import "../CSSForComponents/LoginPage.css";
 import "../CSSForComponents/SignUpPage.css";
 
-const LoginButton = ({ children }) => {
-  return <button className="loginButton">{children}</button>;
+const LoginButton = ({ text }) => {
+  return <button className="loginButton">{text}</button>;
 };
 
 export default LoginButton;

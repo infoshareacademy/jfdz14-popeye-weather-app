@@ -6,16 +6,17 @@ import {
   NavLink,
 } from "react-router-dom";
 
-// import LoginPage from "./ComponentsDashboard/LoginPage";
-// import SignUpPage from "./ComponentsDashboard/SignUpPage";
-// import SignInPage from "./ComponentsDashboard/SignInPage";
+import LoginPage from "./ComponentsDashboard/LoginPage";
+import SignUpPage from "./ComponentsDashboard/SignUpPage";
+import SignInPage from "./ComponentsDashboard/SignInPage";
 import { Dashboard } from "./ComponentsDashboard/Dashboard";
+// import SignInPage from "./ComponentsDashboard/SignInPage";
 
 const App = () => {
   return (
     <Router>
       <div>
-        <nav>
+        {/* <nav>
           <ul>
             <li>
               <NavLink exact to="/">
@@ -35,7 +36,8 @@ const App = () => {
               <NavLink to="/notifications">Notifications</NavLink>
             </li>
           </ul>
-        </nav>
+        // </nav> */}
+        {/* to powinno się znaleźć w komponencie gdzie będzie nawigacja - chyba :)  */}
 
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
@@ -53,6 +55,15 @@ const App = () => {
             <Location />
           </Route>
           <Route exact path="/">
+            <LoginPage />
+          </Route>
+          <Route path="/signin">
+            <SignInPage />
+          </Route>
+          <Route path="/signup">
+            <SignUpPage />
+          </Route>
+          <Route path="/main">
             <Dashboard />
           </Route>
         </Switch>
