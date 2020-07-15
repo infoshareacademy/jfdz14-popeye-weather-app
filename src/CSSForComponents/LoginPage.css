@@ -10,14 +10,17 @@
   margin: 1rem;
   border: 1px solid navy;
   border-radius: 8px;
-  background-color: aliceblue;
+  background-color: #003468;
+  color: white;
   text-align: center;
   font-family: Baloo2;
   font-size: 1.8rem;
+  text-decoration: none;
 }
 
 .loginButton {
   cursor: pointer;
+
 }
 
 .loginButton:active {
@@ -69,4 +72,9 @@
   font-style: italic;
   text-align: center;
   padding: 1rem;
+}
+
+.nameOfApp--para {
+  color: white;
+  text-align: center;
 }
