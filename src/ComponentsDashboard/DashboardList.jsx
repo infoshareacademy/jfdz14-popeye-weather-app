@@ -7,7 +7,6 @@ import {
   NotificationsActiveOutlined,
 } from "@material-ui/icons";
 import "../CSSForComponents/Dashboard.css";
-import LocationOnOutlinedIcon from "@material-ui/icons/LocationOnOutlined";
 
 export const DashboardList = () => {
   return (
