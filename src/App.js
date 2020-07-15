@@ -10,6 +10,7 @@ import LoginPage from "./ComponentsDashboard/LoginPage";
 import SignUpPage from "./ComponentsDashboard/SignUpPage";
 import SignInPage from "./ComponentsDashboard/SignInPage";
 import { Dashboard } from "./ComponentsDashboard/Dashboard";
+
 import {NotificationsPage} from "./ComponentsDashboard/NotificationsPage";
 import {FavouritesPage} from "./ComponentsDashboard/FavouritesPage";
 import {SearchPage} from "./ComponentsDashboard/SearchPage";
@@ -32,6 +33,7 @@ const App = () => {
           </Route>
           <Route path="/location">
             <LocationPage />
+
           </Route>
           <Route exact path="/">
             <LoginPage />
@@ -43,6 +45,7 @@ const App = () => {
             <SignUpPage />
           </Route>
           <Route path="/home">
+
             <Dashboard />
           </Route>
         </Switch>

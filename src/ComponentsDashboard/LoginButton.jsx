@@ -8,6 +8,7 @@ const LoginButton = ({text, urlName}) => {
     return <Link className="loginButton" to={urlName}>
         {text}
     </Link>;
+
 };
 
 export default LoginButton;
