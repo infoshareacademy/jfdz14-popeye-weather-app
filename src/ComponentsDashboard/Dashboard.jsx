@@ -11,18 +11,17 @@ export const Dashboard = () => {
     <div className="dashboard">
       <AppHeader />
       <InvitationMessage
-        className="dashboardMessage"
         message={
           <>
-            <span>
+            <div className="dashboardInvitation">
               Dear Katarzyna,
               <br />
-            </span>{" "}
-            <span>in our application you can:</span>
+              in our application you can:
+            </div>
           </>
         }
       />
-      <DashboardList children={"home page"} />
+      <DashboardList />
     </div>
   );
 };
