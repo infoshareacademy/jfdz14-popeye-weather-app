@@ -29,7 +29,7 @@ const SignUpPage = () => {
       <LoginButton
         className="loginButton signUpButton"
         text={"Sign Up"}
-        urlName={"main"}
+        urlName={"home"}
       />
       {/* dlaczego nie bierze styli z drugiego pliku? */}
       <LoginPageFooter />
