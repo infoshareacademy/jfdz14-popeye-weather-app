@@ -1,18 +1,42 @@
 import React from "react";
-import { Home } from "@material-ui/icons";
+import {
+  HomeOutlined,
+  SearchOutlined,
+  LocationOnOutlined,
+  StarBorderOutlined,
+  NotificationsActiveOutlined,
+} from "@material-ui/icons";
 import "../CSSForComponents/Dashboard.css";
-
-const ListElement = () => {
-  return <Home />;
-};
 
 export const DashboardList = () => {
   return (
     <>
-      <Home>
-        {" "}
+      <div className="listElement">
+        <HomeOutlined />
         <span className="dashboardMessage">Home Page</span>{" "}
-      </Home>
+      </div>
+      <div className="listElement">
+        <LocationOnOutlined />
+        <span className="dashboardMessage">
+          Information about weather in your current location
+        </span>{" "}
+      </div>
+      <div className="listElement">
+        <SearchOutlined />
+        <span className="dashboardMessage">
+          Search for different locations and review weather
+        </span>{" "}
+      </div>
+      <div className="listElement">
+        <StarBorderOutlined />
+        <span className="dashboardMessage">
+          Review your favorites locations
+        </span>{" "}
+      </div>
+      <div className="listElement">
+        <NotificationsActiveOutlined />
+        <span className="dashboardMessage">Set notifications</span>{" "}
+      </div>
     </>
   );
 };

@@ -5,25 +5,32 @@ import "../CSSForComponents/Dashboard.css";
 import { AppHeader } from "./AppHeader";
 import { InvitationMessage } from "./InvitationMessage";
 import { DashboardList } from "./DashboardList";
+import { ChartOne } from "./ChartOne";
+import { ChartTwo } from "./ChartTwo";
 
 export const Dashboard = () => {
   return (
-    <div className="dashboard">
-      <AppHeader />
-      <InvitationMessage
-        className="dashboardMessage"
-        message={
-          <>
-            <span>
-              Dear Katarzyna,
-              <br />
-            </span>{" "}
-            <span>in our application you can:</span>
-          </>
-        }
-      />
-      <DashboardList children={"home page"} />
-    </div>
+    <>
+      <div className="dashboard">
+        <AppHeader />
+        <InvitationMessage
+          message={
+            <>
+              <div className="dashboardInvitation">
+                Dear Katarzyna,
+                <br />
+                in our application you can:
+              </div>
+            </>
+          }
+        />
+        <DashboardList />
+      </div>
+      <div className="chartsBackground">
+        <ChartOne />
+        <ChartTwo />
+      </div>
+    </>
   );
 };
 
