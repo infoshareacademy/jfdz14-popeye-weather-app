@@ -1,0 +1,63 @@
+
+.appContent {
+    padding-left: 45px;
+    position: relative;
+    flex-grow: 100;
+}
+
+.appContentMain {
+    height: 100%;
+    padding: 2rem;
+}
+
+.appSidebar {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 45px;
+    background-color: #b3c1ff;
+    transition-property: width;
+    transition-duration: 0.2s;
+}
+
+.appSidebar:hover {
+    width: 200px;
+}
+
+.appSidebar:hover .appSidebarLinkLabel {
+    transition-delay: 0.2s;
+    visibility: visible;
+}
+
+.appSidebarLink {
+    color: #465268;
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    text-align: center;
+    align-items: center;
+    transition-property: background-color;
+    transition-duration: 0.2s;
+}
+
+.appSidebarLink:hover {
+    background-color: #ffffff;
+}
+
+.appSidebarLinkLabel {
+    white-space: nowrap;
+    margin-left: 10px;
+    visibility: hidden;
+    transition-delay: 0s;
+    transition-property: visibility;
+}
+
+.appWrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 60vh;
+    background-color: aliceblue;
+}

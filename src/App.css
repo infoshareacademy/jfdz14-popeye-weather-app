@@ -1,3 +1,14 @@
+body {
+  background-color: #506cff;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+#root {
+  height: 100%;
+}
+
+/* ========================== */
 .App {
   text-align: center;
 }
@@ -32,6 +43,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
