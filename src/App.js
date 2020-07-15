@@ -10,10 +10,10 @@ import LoginPage from "./ComponentsDashboard/LoginPage";
 import SignUpPage from "./ComponentsDashboard/SignUpPage";
 import SignInPage from "./ComponentsDashboard/SignInPage";
 import { Dashboard } from "./ComponentsDashboard/Dashboard";
-import {NotificationsPage} from "./ComponentsDashboard/NotificationsPage";
-import {FavouritesPage} from "./ComponentsDashboard/FavouritesPage";
-import {SearchPage} from "./ComponentsDashboard/SearchPage";
-import {LocationPage} from "./ComponentsDashboard/LocationPage";
+import { NotificationsPage } from "./ComponentsDashboard/NotificationsPage";
+import { FavouritesPage } from "./ComponentsDashboard/FavouritesPage";
+import { SearchPage } from "./ComponentsDashboard/SearchPage";
+import { LocationPage } from "./ComponentsDashboard/LocationPage";
 // import SignInPage from "./ComponentsDashboard/SignInPage";
 
 const App = () => {
@@ -42,7 +42,7 @@ const App = () => {
           <Route path="/signup">
             <SignUpPage />
           </Route>
-          <Route path="/home">
+          <Route path="/main">
             <Dashboard />
           </Route>
         </Switch>
@@ -54,6 +54,5 @@ const App = () => {
 // function Dashboard() {
 //   return <h2>Dashboard</h2>;
 // }
-
 
 export default App;
