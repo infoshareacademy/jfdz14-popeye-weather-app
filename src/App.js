@@ -12,7 +12,7 @@ import SignInPage from "./ComponentsDashboard/SignInPage";
 import { Dashboard } from "./ComponentsDashboard/Dashboard";
 import { NotificationsPage } from "./ComponentsDashboard/NotificationsPage";
 import { FavouritesPage } from "./ComponentsDashboard/FavouritesPage";
-import { SearchPage } from "./ComponentsDashboard/SearchPage";
+import SearchPage from "./ComponentsDashboard/SearchPage";
 import { LocationPage } from "./ComponentsDashboard/LocationPage";
 // import SignInPage from "./ComponentsDashboard/SignInPage";
 
