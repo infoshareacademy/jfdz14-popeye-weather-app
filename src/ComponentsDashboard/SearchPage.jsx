@@ -30,11 +30,11 @@ class SearchPage extends React.Component {
   render() {
     return (
       <AppContent>
-        <h1>MIASTO</h1>
+        <h1>City</h1>
         <Form.Group>
           <Form.Control
             type="text"
-            placeholder="Miasto"
+            placeholder="City"
             value={this.state.filter}
             onChange={this.handleOnChange}
           />
