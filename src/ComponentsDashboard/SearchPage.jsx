@@ -40,7 +40,7 @@ class SearchPage extends React.Component {
           />
         </Form.Group>
 
-        <Card style={{ width: '18rem' }}>
+ 
           <ListGroup variant="flush">
 
             {this.state.cities
@@ -52,7 +52,7 @@ class SearchPage extends React.Component {
               })}
 
           </ListGroup>
-        </Card>
+
       </AppContent>
     );
   }
