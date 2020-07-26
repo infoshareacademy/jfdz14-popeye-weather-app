@@ -2,12 +2,9 @@ import React from "react";
 import { AppContent } from "./AppContent";
 import ListGroup from "react-bootstrap/ListGroup";
 import Form from "react-bootstrap/Form";
-<<<<<<< HEAD
 import Table from 'react-bootstrap/Table';
-=======
 import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
->>>>>>> 70db56cb5e57080344bd2f892f41d4293bffbed8
 
 class SearchPage extends React.Component {
   state = {
