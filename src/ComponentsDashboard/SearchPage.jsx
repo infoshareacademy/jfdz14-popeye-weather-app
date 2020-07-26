@@ -2,6 +2,8 @@ import React from "react";
 import { AppContent } from "./AppContent";
 import ListGroup from "react-bootstrap/ListGroup";
 import Form from "react-bootstrap/Form";
+import Card from 'react-bootstrap/Card';
+import { Link } from 'react-router-dom';
 
 class SearchPage extends React.Component {
   state = {
@@ -20,34 +22,37 @@ class SearchPage extends React.Component {
   };
 
   handleOnChange = (e) => {
-      this.setState({
-          filter: e.target.value.toLowerCase()
-      })
+    this.setState({
+      filter: e.target.value.toLowerCase()
+    })
   }
 
   render() {
     return (
       <AppContent>
-        <h1>MIASTO</h1>
+        <h1>City</h1>
         <Form.Group>
           <Form.Control
             type="text"
-            placeholder="Miasto"
+            placeholder="City"
             value={this.state.filter}
             onChange={this.handleOnChange}
           />
         </Form.Group>
-        <ListGroup variant="flush">
-          
+
+        <Card style={{ width: '18rem' }}>
+          <ListGroup variant="flush">
+
             {this.state.cities
               .filter((city) => {
-                  return city.stacja.toLowerCase().includes(this.state.filter)
+                return city.stacja.toLowerCase().includes(this.state.filter)
               })
               .map((city) => {
-                return <ListGroup.Item>{city.stacja}</ListGroup.Item>;
+                return <ListGroup.Item><Link to={`search/${city.id_stacji}`}>{city.stacja}</Link></ListGroup.Item>;
               })}
-          
-        </ListGroup>
+
+          </ListGroup>
+        </Card>
       </AppContent>
     );
   }
