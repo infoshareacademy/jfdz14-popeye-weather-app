@@ -22,7 +22,11 @@ const data = [
 export const ChartOne = () => {
   return (
     <PieChart width={150} height={150}>
-      <Pie data={data} dataKey={"usage"}>
+      <Pie
+        data={data}
+        dataKey={"usage"}
+        label={{ fill: "black", fontSize: 18 }}
+      >
         {data.map((entry, index) => (
           <Cell fill={COLORS[index % COLORS.length]} key={index} />
         ))}

@@ -28,15 +28,12 @@ export const ChartTwo = () => {
       height={150}
       data={data}
       label={{ fill: "red", fontSize: 20, color: "pink" }}
-      scaleToFit={true}
     >
       <XAxis dataKey="name" />
       <Tooltip className="chartOne" />
-      <Bar dataKey="usage" fill="navy">
+      <Bar dataKey="usage" label={{ fill: "black", fontSize: 18 }}>
         {/* background={{ fill: "transparent" }}> */}
         {data.map((entry, index) => (
-          // <Cell stroke={colors[index]} />
-
           <Cell fill={COLORS[index % COLORS.length]} key={index} />
         ))}
       </Bar>
