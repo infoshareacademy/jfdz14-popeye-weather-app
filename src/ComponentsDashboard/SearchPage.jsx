@@ -2,7 +2,6 @@ import React from "react";
 import { AppContent } from "./AppContent";
 import ListGroup from "react-bootstrap/ListGroup";
 import Form from "react-bootstrap/Form";
-import { Button } from "react-bootstrap";
 
 class SearchPage extends React.Component {
   state = {
