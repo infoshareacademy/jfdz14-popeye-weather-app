@@ -14,6 +14,7 @@ import { NotificationsPage } from "./ComponentsDashboard/NotificationsPage";
 import { FavouritesPage } from "./ComponentsDashboard/FavouritesPage";
 import SearchPage from "./ComponentsDashboard/SearchPage";
 import { LocationPage } from "./ComponentsDashboard/LocationPage";
+import SearchResultItem from "./ComponentsDashboard/SearchResulItem";
 // import SignInPage from "./ComponentsDashboard/SignInPage";
 
 const App = () => {
@@ -27,8 +28,11 @@ const App = () => {
           <Route path="/favorites">
             <FavouritesPage />
           </Route>
-          <Route path="/search">
+          <Route exact path="/search">
             <SearchPage />
+            </Route>
+          <Route path="/search/:id">
+            <SearchResultItem />
           </Route>
           <Route path="/location">
             <LocationPage />
@@ -50,9 +54,5 @@ const App = () => {
     </Router>
   );
 };
-
-// function Dashboard() {
-//   return <h2>Dashboard</h2>;
-// }
 
 export default App;
