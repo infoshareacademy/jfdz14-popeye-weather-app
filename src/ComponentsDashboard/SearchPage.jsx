@@ -2,6 +2,7 @@ import React from "react";
 import { AppContent } from "./AppContent";
 import ListGroup from "react-bootstrap/ListGroup";
 import Form from "react-bootstrap/Form";
+import { Button } from "react-bootstrap";
 
 class SearchPage extends React.Component {
   state = {
@@ -44,7 +45,8 @@ class SearchPage extends React.Component {
                   return city.stacja.toLowerCase().includes(this.state.filter)
               })
               .map((city) => {
-                return <ListGroup.Item>{city.stacja}</ListGroup.Item>;
+                return <ListGroup.Item>{city.stacja}</ListGroup.Item>
+                
               })}
           
         </ListGroup>
