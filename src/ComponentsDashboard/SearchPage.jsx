@@ -35,12 +35,12 @@ class SearchPage extends React.Component {
         <Form.Group>
           <Form.Control
             type="text"
-            placeholder="City"
+            placeholder="Type City"
             value={this.state.filter}
             onChange={this.handleOnChange}
           />
         </Form.Group>
-        <Table striped bordered hover>            
+        <Table striped bordered hover >            
             {this.state.cities
               .filter((city) => {
                 return city.stacja.toLowerCase().includes(this.state.filter)
