@@ -18,7 +18,7 @@ class SearchResultItem extends React.Component {
             .then((response) => response.json())
             .then((stacja) => 
                 this.setState({
-                  stacja
+                  stacja: stacja
                 })
             );
             // console.log(this.state.stacja)
@@ -26,11 +26,12 @@ class SearchResultItem extends React.Component {
 
 
     render() {
+        console.log(this.state.stacja.find(stacja => stacja.id_stacji === this.props.match.params.id))
         return (
             <AppContent>
                 <Table striped bordered hover>
                     <div><h2>kot</h2></div>
-                    <div></div>
+        <div>{this.stacja}</div>
                     {/* {this.state.stacja.find(stacja =>
                         stacja.id_stacji === this.props.match.params.id)} */}
                 </Table>

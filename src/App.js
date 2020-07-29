@@ -30,8 +30,7 @@ const App = () => {
           <Route exact path='/search'>
             <SearchPage />
           </Route>
-          <Route path='/search/:id'>
-            <SearchResultItem />
+          <Route path='/search/:id'component={SearchResultItem}>
           </Route>
           <Route path='/location'>
             <LocationPage />
