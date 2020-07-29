@@ -1,13 +1,15 @@
-
 .appContent {
     padding-left: 45px;
     position: relative;
     flex-grow: 100;
+    z-index: 99;
 }
 
 .appContentMain {
     height: 100%;
     padding: 2rem;
+    z-index: 99;
+
 }
 
 .appSidebar {
