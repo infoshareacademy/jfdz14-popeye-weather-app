@@ -5,18 +5,14 @@ import { AppContent } from "./AppContent";
 
 class SearchResultItem extends React.Component {
 
-    componentDidMount() {
-        fetch("https://danepubliczne.imgw.pl/api/data/synop")
-            .then((response) => response.json())
-            .then((cities) =>
-                this.setState({
-                    cities: cities
-                })
-            );
-    };
+    state= {
+        stacja: null
+    }
 
     render() {
-        return <AppContent><div>kot</div></AppContent>
+        return <AppContent>
+            <h2>{}</h2>
+        </AppContent>
     }
 }
 
