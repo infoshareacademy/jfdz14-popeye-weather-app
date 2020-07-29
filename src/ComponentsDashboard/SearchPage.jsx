@@ -48,7 +48,8 @@ class SearchPage extends React.Component {
               .map((city) => {
                 return (
                       <tr>
-                        <th>{city.stacja}</th>
+                        <th><Link to={`search/${city.id_stacji}`}>{city.stacja}</Link></th>
+                        {/* <th>{city.stacja}</th> */}
                       </tr>
                 )
               })}
