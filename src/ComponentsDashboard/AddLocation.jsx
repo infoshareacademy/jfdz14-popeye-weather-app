@@ -41,9 +41,8 @@ class AddLocation extends React.Component {
   render() {
     return (
       <AppContent>
-        {/* <legend>Add new location:</legend> */}
         <Form>
-          <Form.Group controlId='formGroupEmail'>
+          <Form.Group>
             <Form.Row>
               <Form.Label column lg={2}>
                 City:
@@ -61,7 +60,7 @@ class AddLocation extends React.Component {
             </Form.Row>
           </Form.Group>
 
-          <Form.Group controlId='formGroupEmail'>
+          <Form.Group>
             <Form.Row>
               <Form.Label column lg={2}>
                 Date:
@@ -79,7 +78,7 @@ class AddLocation extends React.Component {
             </Form.Row>
           </Form.Group>
 
-          <Form.Group controlId='formGroupEmail'>
+          <Form.Group>
             <Form.Row>
               <Form.Label column lg={2}>
                 Time:
@@ -97,7 +96,7 @@ class AddLocation extends React.Component {
             </Form.Row>
           </Form.Group>
 
-          <Form.Group controlId='formGroupEmail'>
+          <Form.Group>
             <Form.Row>
               <Form.Label column lg={2}>
                 Temperature:
@@ -115,7 +114,7 @@ class AddLocation extends React.Component {
             </Form.Row>
           </Form.Group>
 
-          <Form.Group controlId='formGroupEmail'>
+          <Form.Group>
             <Form.Row>
               <Form.Label column lg={2}>
                 Wind speed:
@@ -132,7 +131,7 @@ class AddLocation extends React.Component {
             </Form.Row>
           </Form.Group>
 
-          <Form.Group controlId='formGroupEmail'>
+          <Form.Group>
             <Form.Row>
               <Form.Label column lg={2}>
                 Wind direction:
@@ -149,7 +148,7 @@ class AddLocation extends React.Component {
             </Form.Row>
           </Form.Group>
 
-          <Form.Group controlId='formGroupEmail'>
+          <Form.Group>
             <Form.Row>
               <Form.Label column lg={2}>
                 Humidity:
@@ -166,7 +165,7 @@ class AddLocation extends React.Component {
             </Form.Row>
           </Form.Group>
 
-          <Form.Group controlId='formGroupEmail'>
+          <Form.Group>
             <Form.Row>
               <Form.Label column lg={2}>
                 Pressure:
