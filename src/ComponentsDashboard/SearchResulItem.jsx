@@ -3,6 +3,7 @@ import ListGroup from "react-bootstrap/ListGroup";
 import { AppContent } from "./AppContent";
 
 
+
 class SearchResultItem extends React.Component {
 
     state= {
@@ -11,7 +12,7 @@ class SearchResultItem extends React.Component {
 
     render() {
         return <AppContent>
-            <h2>{}</h2>
+            <div><h2>kot</h2></div>
         </AppContent>
     }
 }

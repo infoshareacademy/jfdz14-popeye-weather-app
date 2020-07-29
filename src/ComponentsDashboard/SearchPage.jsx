@@ -2,6 +2,7 @@ import React from "react";
 import { AppContent } from "./AppContent";
 import ListGroup from "react-bootstrap/ListGroup";
 import Form from "react-bootstrap/Form";
+import Table from 'react-bootstrap/Table';
 import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
 
@@ -34,28 +35,29 @@ class SearchPage extends React.Component {
         <Form.Group>
           <Form.Control
             type="text"
-            placeholder="City"
+            placeholder="Type City"
             value={this.state.filter}
             onChange={this.handleOnChange}
           />
         </Form.Group>
-
- 
-          <ListGroup variant="flush">
-
+        <Table striped bordered hover >            
             {this.state.cities
               .filter((city) => {
                 return city.stacja.toLowerCase().includes(this.state.filter)
               })
               .map((city) => {
-                return <ListGroup.Item><Link to={`search/${city.id_stacji}`}>{city.stacja}</Link></ListGroup.Item>;
+                return (
+                      <tr>
+                        <th>{city.stacja}</th>
+                      </tr>
+                )
               })}
-
-          </ListGroup>
-
+        </Table>
       </AppContent>
     );
   }
 }
 
 export default SearchPage;
+
+
