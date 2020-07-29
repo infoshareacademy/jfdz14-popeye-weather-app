@@ -15,11 +15,20 @@ class AddLocation extends React.Component {
     suma_opadu: '',
     cisnienie: '',
   };
+  // handleOnChange = e => {
+  //   this.setState({
+  //     e.target.name: e.target.value,
+  //   })
+  // };
+
+  handleSubmitNewLocation = e => {
+    e.preventDefault();
+    console.log('location');
+  };
 
   render() {
     return (
       <AppContent>
-        {/* <fieldset> */}
         {/* <legend>Add new location:</legend> */}
         <Form>
           <Form.Group controlId='formGroupEmail'>
@@ -28,7 +37,7 @@ class AddLocation extends React.Component {
                 City:
               </Form.Label>
               <Col>
-                <Form.Control type='text' placeholder='Enter city name' required />
+                <Form.Control name='stacja' type='text' placeholder='Enter city name' required />
               </Col>
             </Form.Row>
           </Form.Group>
@@ -61,7 +70,7 @@ class AddLocation extends React.Component {
                 Temperature:
               </Form.Label>
               <Col>
-                <Form.Control type='number' placeholder='Enter temperature in C' required />
+                <Form.Control type='number' placeholder='Enter temperature in °C' required />
               </Col>
             </Form.Row>
           </Form.Group>
@@ -115,11 +124,10 @@ class AddLocation extends React.Component {
             </Form.Row>
           </Form.Group>
 
-          <Button variant='primary' type='submit'>
+          <Button variant='primary' type='submit' onClick={this.handleSubmitNewLocation}>
             Submit
           </Button>
         </Form>
-        {/* </fieldset> */}
       </AppContent>
     );
   }
