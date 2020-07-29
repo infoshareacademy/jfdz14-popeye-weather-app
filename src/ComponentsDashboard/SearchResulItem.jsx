@@ -3,6 +3,7 @@ import ListGroup from "react-bootstrap/ListGroup";
 import { AppContent } from "./AppContent";
 import Table from 'react-bootstrap/Table';
 import { CodeSharp } from "@material-ui/icons";
+import Card from 'react-bootstrap/Card'
 
 
 
@@ -12,32 +13,36 @@ class SearchResultItem extends React.Component {
         stacja: []
     }
 
+    
 
     componentDidMount() {
         fetch("https://danepubliczne.imgw.pl/api/data/synop")
             .then((response) => response.json())
-            .then((stacja) => 
+            .then((stacja) =>
                 this.setState({
-                  stacja: stacja
+                    stacja: stacja
                 })
             );
-            // console.log(this.state.stacja)
+
     };
+
+    
 
 
     render() {
-        console.log(this.state.stacja.find(stacja => stacja.id_stacji === this.props.match.params.id))
+        
+        const cityDetails = this.state.stacja.find(stacja => stacja.id_stacji === this.props.match.params.id)
+
         return (
             <AppContent>
-                <Table striped bordered hover>
-                    <div><h2>kot</h2></div>
-        <div>{this.stacja}</div>
-                    {/* {this.state.stacja.find(stacja =>
-                        stacja.id_stacji === this.props.match.params.id)} */}
-                </Table>
+                {cityDetails && <Card style={{ width: '30rem' }}>
+                    <div><h2>{cityDetails.stacja}</h2></div>
+
+                </Card>}
+                
 
             </AppContent>)
-        // console.log(this.state.stacja.find(stacja => stacja.id_stacji === this.props.match.params.id))
+
     }
 
 }
