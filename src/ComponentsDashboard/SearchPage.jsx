@@ -1,9 +1,7 @@
 import React from 'react';
 import { AppContent } from './AppContent';
-import ListGroup from 'react-bootstrap/ListGroup';
 import Form from 'react-bootstrap/Form';
 import Table from 'react-bootstrap/Table';
-import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
 
 class SearchPage extends React.Component {
@@ -17,7 +15,7 @@ class SearchPage extends React.Component {
       .then(response => response.json())
       .then(cities =>
         this.setState({
-          cities: cities,
+          cities,
         }),
       );
   }
