@@ -1,7 +1,7 @@
 import React from 'react';
 import { Form, Button, Col } from 'react-bootstrap';
 import { AppContent } from './AppContent';
-
+import FormInput from './FormInput';
 class AddLocation extends React.Component {
   state = {
     stacja: '',
@@ -15,17 +15,16 @@ class AddLocation extends React.Component {
     cisnienie: '',
   };
 
-  handleOnChange = e => {
+  handleOnChange = (name, text) => {
     this.setState({
-      [e.target.name]: e.target.value,
+      [name]: text,
     });
   };
 
   handleSubmitNewLocation = e => {
     const { stacja } = this.state;
+
     e.preventDefault();
-    // const newLocation = this.state;
-    // console.log(newLocation);
     localStorage.setItem(stacja, JSON.stringify(this.state));
     this.setState({
       stacja: '',
@@ -43,26 +42,26 @@ class AddLocation extends React.Component {
   render() {
     return (
       <AppContent>
-        <Form>
-          <Form.Group>
-            <Form.Row>
-              <Form.Label column lg={2}>
-                City:
-              </Form.Label>
-              <Col>
-                <Form.Control
-                  required
-                  name="stacja"
-                  type="text"
-                  placeholder="Enter city name"
-                  onChange={this.handleOnChange}
-                  value={this.state.stacja}
-                />
-              </Col>
-            </Form.Row>
-          </Form.Group>
-
-          <Form.Group>
+        <Form onSubmit={this.handleSubmitNewLocation}>
+          <FormInput
+            description={'City'}
+            required
+            name="stacja"
+            type="text"
+            placeholder="Enter city name"
+            onInputChange={this.handleOnChange}
+            value={this.state.stacja}
+          />
+          <FormInput
+            description={'Date'}
+            required
+            name="data_pomiaru"
+            type="date"
+            placeholder="Enter today's date"
+            onInputChange={this.handleOnChange}
+            value={this.state.stacja}
+          />
+          {/* <Form.Group>
             <Form.Row>
               <Form.Label column lg={2}>
                 Date:
@@ -182,9 +181,13 @@ class AddLocation extends React.Component {
                 />
               </Col>
             </Form.Row>
-          </Form.Group>
+          </Form.Group> */}
 
-          <Button variant="primary" type="submit" onClick={this.handleSubmitNewLocation}>
+          <Button
+            variant="primary"
+            type="submit"
+            //  onClick={this.handleSubmitNewLocation}
+          >
             Submit
           </Button>
         </Form>
