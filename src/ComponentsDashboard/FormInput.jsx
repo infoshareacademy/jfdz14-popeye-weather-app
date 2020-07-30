@@ -1,9 +1,8 @@
 import React from 'react';
 import { Form, Col } from 'react-bootstrap';
 
-const FormInput = ({ name, type, placeholder, value, description, onInputChange, ...props }) => {
+const FormInput = ({ name, type, placeholder, value, description, onInputChange, required }) => {
   const handleChange = event => onInputChange(event.target.name, event.target.value);
-  // console.log(event.target.name, event.target.value)
 
   return (
     <Form.Group>
@@ -13,7 +12,7 @@ const FormInput = ({ name, type, placeholder, value, description, onInputChange,
         </Form.Label>
         <Col>
           <Form.Control
-            required
+            required={required}
             name={name}
             type={type}
             placeholder={placeholder}

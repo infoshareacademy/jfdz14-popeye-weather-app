@@ -57,131 +57,68 @@ class AddLocation extends React.Component {
             required
             name="data_pomiaru"
             type="date"
-            placeholder="Enter today's date"
+            placeholder="Enter date"
             onInputChange={this.handleOnChange}
-            value={this.state.stacja}
+            value={this.state.data_pomiaru}
           />
-          {/* <Form.Group>
-            <Form.Row>
-              <Form.Label column lg={2}>
-                Date:
-              </Form.Label>
-              <Col>
-                <Form.Control
-                  required
-                  onChange={this.handleOnChange}
-                  value={this.state.data_pomiaru}
-                  name="data_pomiaru"
-                  type="date"
-                  placeholder="Enter today's date"
-                />
-              </Col>
-            </Form.Row>
-          </Form.Group>
+          <FormInput
+            description={'Time'}
+            required
+            name="godzina_pomiaru"
+            type="time"
+            placeholder="Enter time"
+            onInputChange={this.handleOnChange}
+            value={this.state.godzina_pomiaru}
+          />
+          <FormInput
+            description={'Temperature'}
+            required
+            name="temperatura"
+            type="number"
+            placeholder="Enter temperature in °C"
+            onInputChange={this.handleOnChange}
+            value={this.state.temperatura}
+          />
 
-          <Form.Group>
-            <Form.Row>
-              <Form.Label column lg={2}>
-                Time:
-              </Form.Label>
-              <Col>
-                <Form.Control
-                  onChange={this.handleOnChange}
-                  value={this.state.godzina_pomiaru}
-                  name="godzina_pomiaru"
-                  type="time"
-                  placeholder="Enter time"
-                  required
-                />
-              </Col>
-            </Form.Row>
-          </Form.Group>
+          <FormInput
+            description={'Wind speed'}
+            required={false}
+            name="predkosc_wiatru"
+            type="number"
+            placeholder="Enter wind speed in km/h"
+            onInputChange={this.handleOnChange}
+            value={this.state.predkosc_wiatru}
+          />
 
-          <Form.Group>
-            <Form.Row>
-              <Form.Label column lg={2}>
-                Temperature:
-              </Form.Label>
-              <Col>
-                <Form.Control
-                  onChange={this.handleOnChange}
-                  value={this.state.temperatura}
-                  name="temperatura"
-                  type="number"
-                  placeholder="Enter temperature in °C"
-                  required
-                />
-              </Col>
-            </Form.Row>
-          </Form.Group>
+          <FormInput
+            description={'Wind direction'}
+            name="kierunek_wiatru"
+            required={false}
+            type="number"
+            placeholder="Enter wind direction in °"
+            onInputChange={this.handleOnChange}
+            value={this.state.kierunek_wiatru}
+          />
 
-          <Form.Group>
-            <Form.Row>
-              <Form.Label column lg={2}>
-                Wind speed:
-              </Form.Label>
-              <Col>
-                <Form.Control
-                  onChange={this.handleOnChange}
-                  value={this.state.predkosc_wiatru}
-                  name="predkosc_wiatru"
-                  type="number"
-                  placeholder="Enter wind speed in km/h"
-                />
-              </Col>
-            </Form.Row>
-          </Form.Group>
+          <FormInput
+            description={'Humidity'}
+            name="wilgotnosc_wzgledna"
+            required={false}
+            type="number"
+            placeholder="Enter humidity"
+            onInputChange={this.handleOnChange}
+            value={this.state.wilgotnosc_wzgledna}
+          />
 
-          <Form.Group>
-            <Form.Row>
-              <Form.Label column lg={2}>
-                Wind direction:
-              </Form.Label>
-              <Col>
-                <Form.Control
-                  onChange={this.handleOnChange}
-                  value={this.state.kierunek_wiatru}
-                  name="kierunek_wiatru"
-                  type="text"
-                  placeholder="Enter wind direction"
-                />
-              </Col>
-            </Form.Row>
-          </Form.Group>
-
-          <Form.Group>
-            <Form.Row>
-              <Form.Label column lg={2}>
-                Humidity:
-              </Form.Label>
-              <Col>
-                <Form.Control
-                  onChange={this.handleOnChange}
-                  value={this.state.wilgotnosc_wzgledna}
-                  name="wilgotnosc_wzgledna"
-                  type="number"
-                  placeholder="Enter humidity"
-                />
-              </Col>
-            </Form.Row>
-          </Form.Group>
-
-          <Form.Group>
-            <Form.Row>
-              <Form.Label column lg={2}>
-                Pressure:
-              </Form.Label>
-              <Col>
-                <Form.Control
-                  onChange={this.handleOnChange}
-                  value={this.state.cisnienie}
-                  name="cisnienie"
-                  type="number"
-                  placeholder="Enter atmospheric pressure in hPa"
-                />
-              </Col>
-            </Form.Row>
-          </Form.Group> */}
+          <FormInput
+            description={'Pressure'}
+            name="cisnienie"
+            required={false}
+            type="number"
+            placeholder="Enter atmospheric pressure"
+            onInputChange={this.handleOnChange}
+            value={this.state.cisnienie}
+          />
 
           <Button
             variant="primary"
