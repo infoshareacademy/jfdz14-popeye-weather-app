@@ -17,7 +17,7 @@ class SearchPage extends React.Component {
       .then(response => response.json())
       .then(cities =>
         this.setState({
-          cities: cities,
+          cities,
         }),
       );
   }
