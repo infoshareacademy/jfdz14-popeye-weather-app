@@ -1,19 +1,17 @@
-import React from "react";
-import "../CSSForComponents/Dashboard.css";
-// import { NameOfApp } from "./NameOfApp";
-
-import { AppHeader } from "./AppHeader";
-import { InvitationMessage } from "./InvitationMessage";
-import { ChartOne } from "./ChartOne";
-import { ChartTwo } from "./ChartTwo";
-import { AppContent } from "./AppContent";
+import React from 'react';
+import '../CSSForComponents/Dashboard.css';
 import {
   HomeOutlined,
   LocationOnOutlined,
   NotificationsActiveOutlined,
   SearchOutlined,
   StarBorderOutlined,
-} from "@material-ui/icons";
+} from '@material-ui/icons';
+
+import { InvitationMessage } from './InvitationMessage';
+import { ChartOne } from './ChartOne';
+import { ChartTwo } from './ChartTwo';
+import { AppContent } from './AppContent';
 
 export const Dashboard = () => {
   return (
@@ -49,9 +47,7 @@ export const Dashboard = () => {
         </div>
         <div className="listElement">
           <StarBorderOutlined />
-          <span className="dashboardMessage">
-            Review your favorites locations
-          </span>
+          <span className="dashboardMessage">Review your favorites locations</span>
         </div>
         <div className="listElement">
           <NotificationsActiveOutlined />

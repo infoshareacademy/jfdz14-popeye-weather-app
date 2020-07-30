@@ -14,6 +14,7 @@ class AddLocation extends React.Component {
     suma_opadu: '',
     cisnienie: '',
   };
+
   handleOnChange = e => {
     this.setState({
       [e.target.name]: e.target.value,
@@ -21,10 +22,11 @@ class AddLocation extends React.Component {
   };
 
   handleSubmitNewLocation = e => {
+    const { stacja } = this.state;
     e.preventDefault();
-    const newLocation = this.state;
-    console.log(newLocation);
-    localStorage.setItem(this.state.stacja, JSON.stringify(this.state));
+    // const newLocation = this.state;
+    // console.log(newLocation);
+    localStorage.setItem(stacja, JSON.stringify(this.state));
     this.setState({
       stacja: '',
       data_pomiaru: '',
@@ -50,9 +52,9 @@ class AddLocation extends React.Component {
               <Col>
                 <Form.Control
                   required
-                  name='stacja'
-                  type='text'
-                  placeholder='Enter city name'
+                  name="stacja"
+                  type="text"
+                  placeholder="Enter city name"
                   onChange={this.handleOnChange}
                   value={this.state.stacja}
                 />
@@ -70,8 +72,8 @@ class AddLocation extends React.Component {
                   required
                   onChange={this.handleOnChange}
                   value={this.state.data_pomiaru}
-                  name='data_pomiaru'
-                  type='date'
+                  name="data_pomiaru"
+                  type="date"
                   placeholder="Enter today's date"
                 />
               </Col>
@@ -87,9 +89,9 @@ class AddLocation extends React.Component {
                 <Form.Control
                   onChange={this.handleOnChange}
                   value={this.state.godzina_pomiaru}
-                  name='godzina_pomiaru'
-                  type='time'
-                  placeholder='Enter time'
+                  name="godzina_pomiaru"
+                  type="time"
+                  placeholder="Enter time"
                   required
                 />
               </Col>
@@ -105,9 +107,9 @@ class AddLocation extends React.Component {
                 <Form.Control
                   onChange={this.handleOnChange}
                   value={this.state.temperatura}
-                  name='temperatura'
-                  type='number'
-                  placeholder='Enter temperature in °C'
+                  name="temperatura"
+                  type="number"
+                  placeholder="Enter temperature in °C"
                   required
                 />
               </Col>
@@ -123,9 +125,9 @@ class AddLocation extends React.Component {
                 <Form.Control
                   onChange={this.handleOnChange}
                   value={this.state.predkosc_wiatru}
-                  name='predkosc_wiatru'
-                  type='number'
-                  placeholder='Enter wind speed in km/h'
+                  name="predkosc_wiatru"
+                  type="number"
+                  placeholder="Enter wind speed in km/h"
                 />
               </Col>
             </Form.Row>
@@ -140,9 +142,9 @@ class AddLocation extends React.Component {
                 <Form.Control
                   onChange={this.handleOnChange}
                   value={this.state.kierunek_wiatru}
-                  name='kierunek_wiatru'
-                  type='text'
-                  placeholder='Enter wind direction'
+                  name="kierunek_wiatru"
+                  type="text"
+                  placeholder="Enter wind direction"
                 />
               </Col>
             </Form.Row>
@@ -157,9 +159,9 @@ class AddLocation extends React.Component {
                 <Form.Control
                   onChange={this.handleOnChange}
                   value={this.state.wilgotnosc_wzgledna}
-                  name='wilgotnosc_wzgledna'
-                  type='number'
-                  placeholder='Enter humidity'
+                  name="wilgotnosc_wzgledna"
+                  type="number"
+                  placeholder="Enter humidity"
                 />
               </Col>
             </Form.Row>
@@ -174,15 +176,15 @@ class AddLocation extends React.Component {
                 <Form.Control
                   onChange={this.handleOnChange}
                   value={this.state.cisnienie}
-                  name='cisnienie'
-                  type='number'
-                  placeholder='Enter atmospheric pressure in hPa'
+                  name="cisnienie"
+                  type="number"
+                  placeholder="Enter atmospheric pressure in hPa"
                 />
               </Col>
             </Form.Row>
           </Form.Group>
 
-          <Button variant='primary' type='submit' onClick={this.handleSubmitNewLocation}>
+          <Button variant="primary" type="submit" onClick={this.handleSubmitNewLocation}>
             Submit
           </Button>
         </Form>

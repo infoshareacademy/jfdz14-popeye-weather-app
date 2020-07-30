@@ -1,3 +1,4 @@
+/* eslint-disable import/no-named-as-default-member */
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
@@ -18,33 +19,32 @@ const App = () => {
     <Router>
       <div>
         <Switch>
-          <Route path='/newlocation'>
+          <Route path="/newlocation">
             <AddLocation />
           </Route>
-          <Route path='/notifications'>
+          <Route path="/notifications">
             <NotificationsPage />
           </Route>
-          <Route path='/favorites'>
+          <Route path="/favorites">
             <FavouritesPage />
           </Route>
-          <Route exact path='/search'>
+          <Route exact path="/search">
             <SearchPage />
           </Route>
-          <Route path='/search/:id'component={SearchResultItem}>
-          </Route>
-          <Route path='/location'>
+          <Route path="/search/:id" component={SearchResultItem} />
+          <Route path="/location">
             <LocationPage />
           </Route>
-          <Route exact path='/'>
+          <Route exact path="/">
             <LoginPage />
           </Route>
-          <Route path='/signin'>
+          <Route path="/signin">
             <SignInPage />
           </Route>
-          <Route path='/signup'>
+          <Route path="/signup">
             <SignUpPage />
           </Route>
-          <Route path='/home'>
+          <Route path="/home">
             <Dashboard />
           </Route>
         </Switch>
