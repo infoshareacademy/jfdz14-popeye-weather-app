@@ -1,10 +1,7 @@
 import React from 'react';
 import { AppContent } from './AppContent';
-import Table from 'react-bootstrap/Table';
-import { CodeSharp } from '@material-ui/icons';
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
-import Image from 'react-bootstrap/Image';
 import ListGroupItem from 'react-bootstrap/ListGroupItem';
 
 class SearchResultItem extends React.Component {
