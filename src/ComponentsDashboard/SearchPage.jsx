@@ -46,16 +46,11 @@ class SearchPage extends React.Component {
                 return city.stacja.toLowerCase().includes(this.state.filter)
               })
               .map((city) => {
-<<<<<<< HEAD
-                return <ListGroup.Item>{city.stacja}</ListGroup.Item>
-                
-=======
                 return (
                       <tr>
                         <th>{city.stacja}</th>
                       </tr>
                 )
->>>>>>> d313a87c8d7dd9fd2003fe4dcb61811ca4bd3749
               })}
         </Table>
       </AppContent>
@@ -64,5 +59,3 @@ class SearchPage extends React.Component {
 }
 
 export default SearchPage;
-
-
