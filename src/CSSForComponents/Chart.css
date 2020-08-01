@@ -3,3 +3,7 @@
   border: none;
   color: navy;
 }
+
+.recharts-cartesian-axis tspan {
+  fill: white !important;
+}
