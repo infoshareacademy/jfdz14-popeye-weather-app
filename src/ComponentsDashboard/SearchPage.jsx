@@ -59,8 +59,4 @@ class SearchPage extends React.Component {
   }
 }
 
-<<<<<<< HEAD
 export default SearchPage;
-=======
-export default SearchPage;
->>>>>>> 8f0d915fa0b35567ac902f580dea9860cd6cb7f6

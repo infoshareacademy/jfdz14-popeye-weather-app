@@ -1,8 +1,10 @@
 import React from 'react';
 import { AppContent } from './AppContent';
+import { AddFavorites } from './AddFavorites';
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import ListGroupItem from 'react-bootstrap/ListGroupItem';
+import Button from 'react-bootstrap/Button';
 
 class SearchResultItem extends React.Component {
   state = {
@@ -33,6 +35,7 @@ class SearchResultItem extends React.Component {
               <Card.Title>
                 <div>
                   <h3>{cityDetails.stacja}</h3>
+                  <Button variant="info" size="sm" onClick={AddFavorites}>Add to favorites</Button>
                 </div>
               </Card.Title>
             </Card.Body>
