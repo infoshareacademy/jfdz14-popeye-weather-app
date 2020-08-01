@@ -1,4 +1,3 @@
-
 .appContent {
     padding-left: 45px;
     position: relative;
@@ -8,6 +7,8 @@
 .appContentMain {
     height: 100%;
     padding: 2rem;
+    z-index: 99;
+
 }
 
 .appSidebar {
@@ -23,6 +24,7 @@
 
 .appSidebar:hover {
     width: 200px;
+    z-index: 2;
 }
 
 .appSidebar:hover .appSidebarLinkLabel {

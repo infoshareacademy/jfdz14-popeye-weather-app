@@ -1,19 +1,17 @@
-import React from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  NavLink,
-} from "react-router-dom";
+/* eslint-disable import/no-named-as-default-member */
+import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-import LoginPage from "./ComponentsDashboard/LoginPage";
-import SignUpPage from "./ComponentsDashboard/SignUpPage";
-import SignInPage from "./ComponentsDashboard/SignInPage";
-import { Dashboard } from "./ComponentsDashboard/Dashboard";
-import { NotificationsPage } from "./ComponentsDashboard/NotificationsPage";
-import { FavouritesPage } from "./ComponentsDashboard/FavouritesPage";
-import SearchPage from "./ComponentsDashboard/SearchPage";
-import { LocationPage } from "./ComponentsDashboard/LocationPage";
+import LoginPage from './ComponentsDashboard/LoginPage';
+import SignUpPage from './ComponentsDashboard/SignUpPage';
+import SignInPage from './ComponentsDashboard/SignInPage';
+import { Dashboard } from './ComponentsDashboard/Dashboard';
+import { NotificationsPage } from './ComponentsDashboard/NotificationsPage';
+import { FavouritesPage } from './ComponentsDashboard/FavouritesPage';
+import SearchPage from './ComponentsDashboard/SearchPage';
+import { LocationPage } from './ComponentsDashboard/LocationPage';
+import SearchResultItem from './ComponentsDashboard/SearchResulItem';
+import AddLocation from './ComponentsDashboard/AddLocation';
 // import SignInPage from "./ComponentsDashboard/SignInPage";
 
 const App = () => {
@@ -21,15 +19,19 @@ const App = () => {
     <Router>
       <div>
         <Switch>
+          <Route path="/newlocation">
+            <AddLocation />
+          </Route>
           <Route path="/notifications">
             <NotificationsPage />
           </Route>
           <Route path="/favorites">
             <FavouritesPage />
           </Route>
-          <Route path="/search">
+          <Route exact path="/search">
             <SearchPage />
           </Route>
+          <Route path="/search/:id" component={SearchResultItem} />
           <Route path="/location">
             <LocationPage />
           </Route>
@@ -50,9 +52,5 @@ const App = () => {
     </Router>
   );
 };
-
-// function Dashboard() {
-//   return <h2>Dashboard</h2>;
-// }
 
 export default App;
