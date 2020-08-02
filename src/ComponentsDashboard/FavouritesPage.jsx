@@ -25,7 +25,7 @@ class FavouritesPage extends React.Component {
       return (
         <AppContent>
             <h1>Favourites</h1>
-            {this.state.cities.map(city => <p>{city}</p>)}
+            {this.state.cities.map(city => <p key={city}>{city}</p>)}
         </AppContent>
  )
       }
