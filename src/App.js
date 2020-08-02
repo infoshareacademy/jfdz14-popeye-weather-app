@@ -7,11 +7,12 @@ import SignUpPage from './ComponentsDashboard/SignUpPage';
 import SignInPage from './ComponentsDashboard/SignInPage';
 import { Dashboard } from './ComponentsDashboard/Dashboard';
 import { NotificationsPage } from './ComponentsDashboard/NotificationsPage';
-import { FavouritesPage } from './ComponentsDashboard/FavouritesPage';
+import FavouritesPage from './ComponentsDashboard/FavouritesPage';
 import SearchPage from './ComponentsDashboard/SearchPage';
 import { LocationPage } from './ComponentsDashboard/LocationPage';
 import SearchResultItem from './ComponentsDashboard/SearchResulItem';
 import AddLocation from './ComponentsDashboard/AddLocation';
+
 // import SignInPage from "./ComponentsDashboard/SignInPage";
 
 const App = () => {
@@ -25,7 +26,7 @@ const App = () => {
           <Route path="/notifications">
             <NotificationsPage />
           </Route>
-          <Route path="/favorites">
+          <Route path="/favorites/">
             <FavouritesPage />
           </Route>
           <Route exact path="/search">
