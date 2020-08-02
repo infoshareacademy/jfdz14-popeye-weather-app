@@ -16,7 +16,7 @@ class FavouritesPage extends React.Component {
 // }
 
   componentDidMount() {
-    const favouriteCities = JSON.parse(localStorage.getItem('favourites'));
+    const favouriteCities = JSON.parse(localStorage.getItem('favourites')) || [];;
     this.setState({cities: favouriteCities}) 
   }
 
