@@ -2,8 +2,8 @@ import React from 'react';
 import { Divider } from '@material-ui/core';
 
 // import { Typography, Divider } from "@material-ui/core";
-import '../../CSSForComponents/LoginPage.css';
-import '../../CSSForComponents/App.css';
+import './LoginPage.css';
+import '../../App.css';
 
 export const LoginPageFooter = () => {
   return (

@@ -1,6 +1,6 @@
 import React from 'react';
-import '../../CSSForComponents/LoginPage.css';
-import '../../CSSForComponents/App.css';
+import './LoginPage.css';
+import '../../App.css';
 import { Divider } from '@material-ui/core';
 
 export const OrLine = () => {

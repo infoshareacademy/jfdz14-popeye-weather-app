@@ -1,7 +1,7 @@
 import React from 'react';
 import { BarChart, XAxis, Bar, Tooltip, Cell } from 'recharts';
-import '../../CSSForComponents/Dashboard.css';
-import '../../CSSForComponents/Chart.css';
+import '../Dashboards/Dashboard.css';
+import './Chart.css';
 
 const COLORS = ['#A45A52', '#00C49F', '#FFBB28', '#FF8042'];
 

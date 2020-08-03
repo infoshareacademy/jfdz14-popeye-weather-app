@@ -1,6 +1,6 @@
 import React from 'react';
-import '../../CSSForComponents/LoginPage.css';
-import '../../CSSForComponents/App.css';
+import './LoginPage.css';
+import '../../App.css';
 import { PopeyeImg } from '../Dashboards/PopeyeImg';
 import { LoginPageFooter } from './LoginFooter';
 import LoginButton from './LoginButton';

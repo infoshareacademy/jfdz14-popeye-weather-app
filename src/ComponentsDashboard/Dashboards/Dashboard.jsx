@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../CSSForComponents/Dashboard.css';
+import './Dashboard.css';
 import {
   HomeOutlined,
   LocationOnOutlined,

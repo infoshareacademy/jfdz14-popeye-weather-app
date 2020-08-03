@@ -1,6 +1,6 @@
 import React from 'react';
 import { PieChart, Pie, Cell } from 'recharts';
-import '../../CSSForComponents/Chart.css';
+import './Chart.css';
 
 const COLORS = ['#A45A52', '#00C49F', '#FFBB28', '#FF8042'];
 

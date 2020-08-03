@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../CSSForComponents/AppContent.css';
+import './AppContent.css';
 import {
   HomeOutlined,
   LocationOnOutlined,

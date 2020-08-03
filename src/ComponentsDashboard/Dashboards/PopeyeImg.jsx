@@ -1,6 +1,6 @@
 import React from 'react';
-import '../../CSSForComponents/LoginPage.css';
-import '../../CSSForComponents/App.css';
+import '../LoginPages/LoginPage.css';
+import '../../App.css';
 import PopeyeLogo from '../../images/hiclipart.com.png';
 
 export const PopeyeImg = () => {
