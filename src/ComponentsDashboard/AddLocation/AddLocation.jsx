@@ -1,7 +1,8 @@
 import React from 'react';
 import { Form, Button, Col } from 'react-bootstrap';
-import { AppContent } from './AppContent';
+import { AppContent } from '../Dashboards/AppContent';
 import FormInput from './FormInput';
+
 class AddLocation extends React.Component {
   state = {
     stacja: '',

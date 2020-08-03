@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../CSSForComponents/LoginPage.css';
-import '../CSSForComponents/SignUpPage.css';
+import '../../CSSForComponents/LoginPage.css';
+import '../../CSSForComponents/SignUpPage.css';
 
 const LoginButton = ({ text, urlName }) => {
   return (

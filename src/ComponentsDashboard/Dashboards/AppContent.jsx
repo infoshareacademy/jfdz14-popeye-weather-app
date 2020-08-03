@@ -1,5 +1,5 @@
-import React from "react";
-import "../CSSForComponents/AppContent.css";
+import React from 'react';
+import '../../CSSForComponents/AppContent.css';
 import {
   HomeOutlined,
   LocationOnOutlined,
@@ -7,9 +7,9 @@ import {
   SearchOutlined,
   StarBorderOutlined,
   AddLocationOutlined,
-} from "@material-ui/icons";
-import { Link } from "react-router-dom";
-import { SmallImg } from "./SmallImg";
+} from '@material-ui/icons';
+import { Link } from 'react-router-dom';
+import { SmallImg } from './SmallImg';
 
 export function AppContent({ children }) {
   return (

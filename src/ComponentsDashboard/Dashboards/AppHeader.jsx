@@ -1,6 +1,6 @@
-import React from "react";
-import "../CSSForComponents/Dashboard.css";
-import { SmallImg } from "./SmallImg";
+import React from 'react';
+import '../CSSForComponents/Dashboard.css';
+import { SmallImg } from './SmallImg';
 
 const TextInHeader = ({ text }) => {
   return (
@@ -14,7 +14,7 @@ export const AppHeader = () => {
   return (
     <div className="header">
       <SmallImg />
-      <TextInHeader text={"Hello, Katarzyna"} />
+      <TextInHeader text={'Hello, Katarzyna'} />
     </div>
   );
 };
