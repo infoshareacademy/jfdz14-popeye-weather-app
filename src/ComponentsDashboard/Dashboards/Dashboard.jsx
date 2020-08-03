@@ -1,5 +1,5 @@
 import React from 'react';
-import '../CSSForComponents/Dashboard.css';
+import './Dashboard.css';
 import {
   HomeOutlined,
   LocationOnOutlined,
@@ -9,8 +9,8 @@ import {
 } from '@material-ui/icons';
 
 import { InvitationMessage } from './InvitationMessage';
-import { ChartOne } from './ChartOne';
-import { ChartTwo } from './ChartTwo';
+import { ChartOne } from '../Charts/ChartOne';
+import { ChartTwo } from '../Charts/ChartTwo';
 import { AppContent } from './AppContent';
 
 export const Dashboard = () => {

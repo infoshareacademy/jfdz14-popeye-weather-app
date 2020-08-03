@@ -1,21 +1,21 @@
-import React from "react";
-import { BarChart, XAxis, Bar, Tooltip, Cell } from "recharts";
-import "../CSSForComponents/Dashboard.css";
-import "../CSSForComponents/Chart.css";
+import React from 'react';
+import { BarChart, XAxis, Bar, Tooltip, Cell } from 'recharts';
+import '../Dashboards/Dashboard.css';
+import './Chart.css';
 
-const COLORS = ["#A45A52", "#00C49F", "#FFBB28", "#FF8042"];
+const COLORS = ['#A45A52', '#00C49F', '#FFBB28', '#FF8042'];
 
 const data = [
   {
-    name: "mobile",
+    name: 'mobile',
     usage: 70,
   },
   {
-    name: "desktop",
+    name: 'desktop',
     usage: 20,
   },
   {
-    name: "tablets",
+    name: 'tablets',
     usage: 10,
   },
 ];
@@ -27,11 +27,11 @@ export const ChartTwo = () => {
       width={200}
       height={150}
       data={data}
-      label={{ fill: "red", fontSize: 20, color: "pink" }}
+      label={{ fill: 'red', fontSize: 20, color: 'pink' }}
     >
       <XAxis dataKey="name" />
       <Tooltip className="chartOne" />
-      <Bar dataKey="usage" label={{ fill: "black", fontSize: 18 }}>
+      <Bar dataKey="usage" label={{ fill: 'black', fontSize: 18 }}>
         {/* background={{ fill: "transparent" }}> */}
         {data.map((entry, index) => (
           <Cell fill={COLORS[index % COLORS.length]} key={index} />

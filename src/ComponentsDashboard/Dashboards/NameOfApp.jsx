@@ -1,5 +1,5 @@
-import React from "react";
-import "../CSSForComponents/LoginPage.css";
+import React from 'react';
+import '../LoginPages/LoginPage.css';
 
 export const NameOfApp = ({ paragraph }) => {
   return (

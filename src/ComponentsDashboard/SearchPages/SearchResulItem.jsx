@@ -1,5 +1,5 @@
 import React from 'react';
-import { AppContent } from './AppContent';
+import { AppContent } from '../Dashboards/AppContent';
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import ListGroupItem from 'react-bootstrap/ListGroupItem';
@@ -9,7 +9,6 @@ class SearchResultItem extends React.Component {
   state = {
     stacja: [],
     actualFavourites: [],
-
   };
 
   componentDidMount() {
@@ -27,12 +26,11 @@ class SearchResultItem extends React.Component {
       stacja => stacja.id_stacji === this.props.match.params.id,
     );
     const actualFavourites = JSON.parse(localStorage.getItem('favourites')) || [];
-      console.log(cityDetails);
-      console.log(actualFavourites);
-  const newFavourites = [...actualFavourites, cityDetails.stacja]
-    localStorage.setItem('favourites', JSON.stringify(newFavourites))
+    console.log(cityDetails);
+    console.log(actualFavourites);
+    const newFavourites = [...actualFavourites, cityDetails.stacja];
+    localStorage.setItem('favourites', JSON.stringify(newFavourites));
   };
-
 
   render() {
     const cityDetails = this.state.stacja.find(
@@ -48,9 +46,10 @@ class SearchResultItem extends React.Component {
               <Card.Title>
                 <div>
                   <h3>{cityDetails.stacja}</h3>
-                  
-                  <Button variant="info" size="sm" onClick={this.addStorage}>Add to favorites</Button>
-                
+
+                  <Button variant="info" size="sm" onClick={this.addStorage}>
+                    Add to favorites
+                  </Button>
                 </div>
               </Card.Title>
             </Card.Body>
