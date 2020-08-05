@@ -1,6 +1,5 @@
 import React from 'react';
-import './LoginPage.css';
-import '../../App.css';
+import style from './LoginPage.module.css';
 import { PopeyeImg } from '../Dashboards/PopeyeImg';
 import { LoginPageFooter } from './LoginFooter';
 import LoginButton from './LoginButton';
@@ -9,7 +8,7 @@ import { NameOfApp } from '../Dashboards/NameOfApp';
 
 const LoginPage = () => {
   return (
-    <div className="loginPage">
+    <div className={style.loginPage}>
       <PopeyeImg />
       <NameOfApp />
       <LoginButton text="Sign In" urlName={'signin'} />

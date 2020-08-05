@@ -1,14 +1,12 @@
 import React from 'react';
 import { Divider } from '@material-ui/core';
-
+import style from './LoginPage.module.css';
 // import { Typography, Divider } from "@material-ui/core";
-import './LoginPage.css';
-import '../../App.css';
 
 export const LoginPageFooter = () => {
   return (
     <>
-      <span className="loginPageText footer">
+      <span className={`${style.loginPageText} ${style.footer}`}>
         <Divider style={{ backgroundColor: 'white', width: '60vw' }} />
         <em>
           From

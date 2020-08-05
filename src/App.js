@@ -20,34 +20,16 @@ const App = () => {
     <Router>
       <div>
         <Switch>
-          <Route path="/newlocation">
-            <AddLocation />
-          </Route>
-          <Route path="/notifications">
-            <NotificationsPage />
-          </Route>
-          <Route path="/favorites/">
-            <FavouritesPage />
-          </Route>
-          <Route exact path="/search">
-            <SearchPage />
-          </Route>
+          <Route path="/newlocation" component={AddLocation}></Route>
+          <Route path="/notifications" component={NotificationsPage}></Route>
+          <Route path="/favorites/" component={FavouritesPage}></Route>
+          <Route exact path="/search" component={SearchPage}></Route>
           <Route path="/search/:id" component={SearchResultItem} />
-          <Route path="/location">
-            <LocationPage />
-          </Route>
-          <Route exact path="/">
-            <LoginPage />
-          </Route>
-          <Route path="/signin">
-            <SignInPage />
-          </Route>
-          <Route path="/signup">
-            <SignUpPage />
-          </Route>
-          <Route path="/home">
-            <Dashboard />
-          </Route>
+          <Route path="/location" component={LocationPage}></Route>
+          <Route exact path="/" component={LoginPage}></Route>
+          <Route path="/signin" component={SignInPage}></Route>
+          <Route path="/signup" component={SignUpPage}></Route>
+          <Route path="/home" component={Dashboard}></Route>
         </Switch>
       </div>
     </Router>

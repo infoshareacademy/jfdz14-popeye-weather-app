@@ -1,4 +1,5 @@
 import React from 'react';
+import style from './search.module.css';
 import { AppContent } from '../Dashboards/AppContent';
 import Form from 'react-bootstrap/Form';
 import Table from 'react-bootstrap/Table';
