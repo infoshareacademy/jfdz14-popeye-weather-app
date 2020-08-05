@@ -25,3 +25,7 @@ code {
 .recharts-cartesian-axis tspan {
   fill: white !important;
 }
+
+.recharts-surface {
+  height: 30vh;
+}

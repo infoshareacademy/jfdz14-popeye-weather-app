@@ -142,6 +142,7 @@
     width: 100%;
     align-items: center;
     justify-content: center;
+    padding-top: 1rem;
     color: white;
     font-family: Baloo2, sans-serif;
 }

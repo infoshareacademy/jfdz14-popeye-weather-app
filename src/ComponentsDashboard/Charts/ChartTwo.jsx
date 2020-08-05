@@ -23,11 +23,11 @@ const ChartTwo = () => {
   return (
     <>
       <div className={style.wrapper}>
-        <h4 className={style.chartDescription}>devices usage of our App</h4>
+        <h5 className={style.chartDescription}>devices usage of our App</h5>
         <BarChart
           className={style.chartOne}
           width={250}
-          height={150}
+          height={200}
           data={data}
           label={{ fill: 'red', fontSize: 20, color: 'pink' }}
         >
