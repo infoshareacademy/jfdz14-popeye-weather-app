@@ -68,6 +68,7 @@
 .nameOfAppPara {
     color: white;
     text-align: center;
+    font-family: Baloo2, sans-serif;
 }
 
 .loginPageText {
@@ -109,7 +110,8 @@
 }
 
 .dashboardMessage {
-    font-size: 1.1rem;
+    font-family: baloo2;
+    font-size: 1.2rem;
     color: navy;
     padding: 1rem;
 }

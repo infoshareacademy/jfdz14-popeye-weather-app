@@ -2,7 +2,7 @@ import React from 'react';
 import style from './AppContent.module.css';
 import { SmallImg } from './SmallImg';
 
-const TextInHeader = ({ text }) => {
+export const TextInHeader = ({ text }) => {
   return (
     <div className={style.textInHeader}>
       <span>{text}</span>
@@ -10,11 +10,11 @@ const TextInHeader = ({ text }) => {
   );
 };
 
-export const AppHeader = () => {
+export const AppHeader = ({ text }) => {
   return (
     <div className={style.header}>
       <SmallImg />
-      <TextInHeader text={'Hello, Katarzyna'} />
+      <TextInHeader text={text} />
     </div>
   );
 };
