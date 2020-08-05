@@ -1,11 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './LoginPage.css';
-import './SignUpPage.css';
+import style from './LoginPage.module.css';
 
 const LoginButton = ({ text, urlName }) => {
   return (
-    <Link className="loginButton" to={urlName}>
+    <Link className={style.loginButton} to={urlName}>
       {text}
     </Link>
   );

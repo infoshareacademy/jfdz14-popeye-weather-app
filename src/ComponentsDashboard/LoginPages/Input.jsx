@@ -1,7 +1,6 @@
 import React from 'react';
-import './LoginPage.css';
-import './SignUpPage.css';
+import style from './LoginPage.module.css';
 
 export const Input = ({ type, placeholder }) => {
-  return <input className="input" type={type} placeholder={placeholder}></input>;
+  return <input className={style.input} type={type} placeholder={placeholder}></input>;
 };

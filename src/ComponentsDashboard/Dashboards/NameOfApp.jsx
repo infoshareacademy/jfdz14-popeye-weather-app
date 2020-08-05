@@ -1,11 +1,11 @@
 import React from 'react';
-import '../LoginPages/LoginPage.css';
+import style from './dashboard.module.css';
 
 export const NameOfApp = ({ paragraph }) => {
   return (
-    <div className="nameOfApp ">
-      <h1 className="loginPageText">Popeye Weather</h1>
-      <p className="nameOfApp--para">{paragraph}</p>
+    <div className={style.nameOfApp}>
+      <h1 className={style.loginPageText}>Popeye Weather</h1>
+      <p className={style.nameOfAppPara}>{paragraph}</p>
     </div>
   );
 };
