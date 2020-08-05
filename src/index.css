@@ -20,3 +20,8 @@ code {
   font-family: "Baloo2";
   src: local("Baloo2"), url("./fonts/Baloo2-Regular.ttf") format("truetype");
 }
+
+/* dodane any podpis w wykresie był biały */
+.recharts-cartesian-axis tspan {
+  fill: white !important;
+}

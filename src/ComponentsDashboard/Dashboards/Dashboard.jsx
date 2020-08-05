@@ -8,9 +8,10 @@ import {
 } from '@material-ui/icons';
 
 import { InvitationMessage } from './InvitationMessage';
-import { ChartOne } from '../Charts/ChartOne';
-import { ChartTwo } from '../Charts/ChartTwo';
+import ChartOne from '../Charts/ChartOne';
+import ChartTwo from '../Charts/ChartTwo';
 import { AppContent } from './AppContent';
+import Charts from '../Charts/Charts';
 
 export const Dashboard = () => {
   return (
@@ -47,10 +48,10 @@ export const Dashboard = () => {
           <span className={style.dashboardMessage}>set your own notifications</span>
         </div>
       </AppContent>
+      <div>
+        <h2 className={style.chartsDescription}>Stats</h2>
 
-      <div className={style.chartsBackground}>
-        <ChartOne />
-        <ChartTwo />
+        <Charts />
       </div>
     </>
   );
