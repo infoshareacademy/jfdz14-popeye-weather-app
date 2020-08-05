@@ -1,6 +1,5 @@
 import React from 'react';
 import style from './LoginPage.module.css';
-
 import { PopeyeImg } from '../Dashboards/PopeyeImg';
 import { LoginPageFooter } from './LoginFooter';
 import { Input } from './Input';
@@ -22,7 +21,7 @@ const SignUpPage = () => {
       <Input type={'password'} placeholder={'password'} />
       <Divider />
       <Input type={'password'} placeholder={'repeat password'} />
-      <LoginButton text={'Sign Up'} urlName={'home'} />
+      <LoginButton toLogIn text={'Sign Up'} urlName={'home'} />
       <LoginPageFooter />
     </div>
   );

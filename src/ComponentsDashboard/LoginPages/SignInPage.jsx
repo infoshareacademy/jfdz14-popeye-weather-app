@@ -15,7 +15,7 @@ const SignInPage = () => {
       <Input type={'text'} placeholder={'login'} />
       <Divider />
       <Input type={'password'} placeholder={'password'} />
-      <LoginButton text={'Sign In'} urlName={'home'} />
+      <LoginButton toLogIn text={'Sign In'} urlName={'home'} />
       <LoginPageFooter />
     </div>
   );

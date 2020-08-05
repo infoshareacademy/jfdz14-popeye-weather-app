@@ -9,7 +9,7 @@
   margin: 0.5rem;
   border: 1px solid navy;
   border-radius: 8px;
-  background-color: aliceblue;
+  background-color: white;
   text-align: center;
   font-family: Baloo2;
   font-size: 1.2rem;
@@ -21,27 +21,29 @@
   margin: 1rem;
   border: 1px solid navy;
   border-radius: 8px;
-  background-color: #003468;
-  color: white;
+  background-color: #fff;
+  color: navy;
   text-align: center;
   font-family: Baloo2;
   font-size: 1.8rem;
   text-decoration: none;
-}
-
-.loginButton {
   cursor: pointer;
 }
 
 .loginButton:active {
   background-color: navy;
   color: white;
+  text-decoration: none;
 }
 
-.signUpButton {
-  background-color: thistle;
+.loginButton:hover {
+  text-decoration: none;
 }
 
+.loginButtonSignUpIn {
+  background-color: navy;
+  color: white;
+}
 
 
 .loginPage {
@@ -77,10 +79,4 @@
   font-style: italic;
   text-align: center;
   padding: 1rem;
-}
-
-
-
-.signUpButton {
-  background-color: thistle;
 }

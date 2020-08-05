@@ -20,8 +20,3 @@ code {
   font-family: "Baloo2";
   src: local("Baloo2"), url("./fonts/Baloo2-Regular.ttf") format("truetype");
 }
-
-/* #root {
-  max-width: 1000px;
-  margin: 0 auto;
-} */

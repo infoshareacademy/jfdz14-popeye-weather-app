@@ -1,4 +1,5 @@
 import React from 'react';
+import style from './search.module.css';
 import { AppContent } from '../Dashboards/AppContent';
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
