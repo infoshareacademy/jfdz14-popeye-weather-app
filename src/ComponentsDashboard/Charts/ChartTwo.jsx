@@ -1,7 +1,6 @@
 import React from 'react';
 import { BarChart, XAxis, Bar, Tooltip, Cell } from 'recharts';
-import '../Dashboards/Dashboard.css';
-import './Chart.css';
+import style from './Chart.module.css';
 
 const COLORS = ['#A45A52', '#00C49F', '#FFBB28', '#FF8042'];
 
@@ -23,14 +22,14 @@ const data = [
 export const ChartTwo = () => {
   return (
     <BarChart
-      className="chartOne"
+      className={style.chartOne}
       width={200}
       height={150}
       data={data}
       label={{ fill: 'red', fontSize: 20, color: 'pink' }}
     >
       <XAxis dataKey="name" />
-      <Tooltip className="chartOne" />
+      <Tooltip className={style.chartOne} />
       <Bar dataKey="usage" label={{ fill: 'black', fontSize: 18 }}>
         {/* background={{ fill: "transparent" }}> */}
         {data.map((entry, index) => (

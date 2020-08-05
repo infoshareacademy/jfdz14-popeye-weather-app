@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-  HomeOutlined,
   SearchOutlined,
   LocationOnOutlined,
   StarBorderOutlined,
