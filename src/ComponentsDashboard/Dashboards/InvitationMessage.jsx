@@ -1,10 +1,10 @@
 import React from 'react';
-import './Dashboard.css';
+import style from './AppContent.module.css';
 
 export const InvitationMessage = ({ message }) => {
   return (
     <>
-      <span className="textInHeader dashboardMessage">{message}</span>
+      <span className={`${style.textInHeader} ${style.dashboardMessage}`}>{message}</span>
     </>
   );
 };
