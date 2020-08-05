@@ -1,5 +1,5 @@
 import React from 'react';
-import './AppContent.css';
+import style from './AppContent.module.css';
 import {
   HomeOutlined,
   LocationOnOutlined,
@@ -13,16 +13,16 @@ import { SmallImg } from './SmallImg';
 
 export function AppContent({ children }) {
   return (
-    <div className="appWrapper">
-      <div className="header">
+    <div className={style.wrapper}>
+      <div className={style.header}>
         <SmallImg />
-        <div className="textInHeader">
+        <div className={style.textInHeader}>
           <span>Hello, Katarzyna</span>
         </div>
       </div>
-      <div className="appContent">
+      <div className={style.content}>
         <Sidebar />
-        <div className="appContentMain">{children}</div>
+        <div className={style.contentMain}>{children}</div>
       </div>
     </div>
   );
@@ -30,7 +30,7 @@ export function AppContent({ children }) {
 
 function Sidebar() {
   return (
-    <aside className="appSidebar">
+    <aside className={style.sidebar}>
       <nav>
         <SidebarLink to="/home" icon={<HomeOutlined />}>
           Home
@@ -58,9 +58,9 @@ function Sidebar() {
 
 function SidebarLink({ to, icon, children }) {
   return (
-    <Link to={to} className="appSidebarLink">
+    <Link to={to} className={style.sidebarLink}>
       {icon}
-      <span className="appSidebarLinkLabel">{children}</span>
+      <span className={style.sidebarLinkLabel}>{children}</span>
     </Link>
   );
 }

@@ -1,10 +1,10 @@
 import React from 'react';
-import '../CSSForComponents/Dashboard.css';
+import style from './AppContent.module.css';
 import { SmallImg } from './SmallImg';
 
 const TextInHeader = ({ text }) => {
   return (
-    <div className="textInHeader">
+    <div className={style.textInHeader}>
       <span>{text}</span>
     </div>
   );
@@ -12,7 +12,7 @@ const TextInHeader = ({ text }) => {
 
 export const AppHeader = () => {
   return (
-    <div className="header">
+    <div className={style.header}>
       <SmallImg />
       <TextInHeader text={'Hello, Katarzyna'} />
     </div>

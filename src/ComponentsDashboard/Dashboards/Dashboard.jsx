@@ -1,5 +1,5 @@
 import React from 'react';
-import './Dashboard.css';
+import style from './AppContent.module.css';
 import {
   HomeOutlined,
   LocationOnOutlined,
@@ -20,7 +20,7 @@ export const Dashboard = () => {
         <InvitationMessage
           message={
             <>
-              <div className="dashboardInvitation">
+              <div className={style.dashboardInvitation}>
                 Dear Katarzyna,
                 <br />
                 in our application you can:
@@ -29,33 +29,33 @@ export const Dashboard = () => {
           }
         />
 
-        <div className="listElement">
+        <div className={style.listElement}>
           <HomeOutlined />
-          <span className="dashboardMessage">Home Page</span>
+          <span className={style.dashboardMessage}>Home Page</span>
         </div>
-        <div className="listElement">
+        <div className={style.listElement}>
           <LocationOnOutlined />
-          <span className="dashboardMessage">
+          <span className={style.dashboardMessage}>
             Information about weather in your current location
           </span>
         </div>
-        <div className="listElement">
+        <div className={style.listElement}>
           <SearchOutlined />
-          <span className="dashboardMessage">
+          <span className={style.dashboardMessage}>
             Search for different locations and review weather
           </span>
         </div>
-        <div className="listElement">
+        <div className={style.listElement}>
           <StarBorderOutlined />
-          <span className="dashboardMessage">Review your favorites locations</span>
+          <span className={style.dashboardMessage}>Review your favorites locations</span>
         </div>
-        <div className="listElement">
+        <div className={style.listElement}>
           <NotificationsActiveOutlined />
-          <span className="dashboardMessage">Set notifications</span>
+          <span className={style.dashboardMessage}>Set notifications</span>
         </div>
       </AppContent>
 
-      <div className="chartsBackground">
+      <div className={style.chartsBackground}>
         <ChartOne />
         <ChartTwo />
       </div>

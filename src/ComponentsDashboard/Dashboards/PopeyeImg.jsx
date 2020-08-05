@@ -1,5 +1,5 @@
 import React from 'react';
-import style from './dashboard.module.css';
+import style from './AppContent.module.css';
 import PopeyeLogo from '../../images/hiclipart.com.png';
 
 export const PopeyeImg = () => {
