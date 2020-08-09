@@ -19,25 +19,29 @@ const data = [
   },
 ];
 
-export const ChartTwo = () => {
+const ChartTwo = () => {
   return (
-    <BarChart
-      className={style.chartOne}
-      width={200}
-      height={150}
-      data={data}
-      label={{ fill: 'red', fontSize: 20, color: 'pink' }}
-    >
-      <XAxis dataKey="name" />
-      <Tooltip className={style.chartOne} />
-      <Bar dataKey="usage" label={{ fill: 'black', fontSize: 18 }}>
-        {/* background={{ fill: "transparent" }}> */}
-        {data.map((entry, index) => (
-          <Cell fill={COLORS[index % COLORS.length]} key={index} />
-        ))}
-      </Bar>
-    </BarChart>
+    <>
+      <div className={style.wrapper}>
+        <h5 className={style.chartDescription}>devices usage of our App</h5>
+        <BarChart
+          className={style.chartOne}
+          width={250}
+          height={200}
+          data={data}
+          label={{ fill: 'red', fontSize: 20, color: 'pink' }}
+        >
+          <XAxis dataKey="name" style={{ fontFamily: 'Baloo2' }} />
+          <Tooltip className={style.chartOne} />
+          <Bar dataKey="usage" label={{ fill: 'black', fontSize: 18 }}>
+            {data.map((entry, index) => (
+              <Cell fill={COLORS[index % COLORS.length]} key={index} />
+            ))}
+          </Bar>
+        </BarChart>
+      </div>
+    </>
   );
 };
 
-// stroke = { colors[index]}
+export default ChartTwo;

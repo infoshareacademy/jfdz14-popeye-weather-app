@@ -1,7 +1,6 @@
 import React from 'react';
 import style from './AppContent.module.css';
 import {
-  HomeOutlined,
   LocationOnOutlined,
   NotificationsActiveOutlined,
   SearchOutlined,
@@ -9,9 +8,10 @@ import {
 } from '@material-ui/icons';
 
 import { InvitationMessage } from './InvitationMessage';
-import { ChartOne } from '../Charts/ChartOne';
-import { ChartTwo } from '../Charts/ChartTwo';
+import ChartOne from '../Charts/ChartOne';
+import ChartTwo from '../Charts/ChartTwo';
 import { AppContent } from './AppContent';
+import Charts from '../Charts/Charts';
 
 export const Dashboard = () => {
   return (
@@ -19,45 +19,39 @@ export const Dashboard = () => {
       <AppContent>
         <InvitationMessage
           message={
-            <>
-              <div className={style.dashboardInvitation}>
-                Dear Katarzyna,
-                <br />
-                in our application you can:
-              </div>
-            </>
+            <div className={style.dashboardInvitation}>
+              Dear USER,
+              <br />
+              in our application you can:
+            </div>
           }
         />
 
         <div className={style.listElement}>
-          <HomeOutlined />
-          <span className={style.dashboardMessage}>Home Page</span>
-        </div>
-        <div className={style.listElement}>
-          <LocationOnOutlined />
+          <LocationOnOutlined color="primary" />
           <span className={style.dashboardMessage}>
-            Information about weather in your current location
+            learn information about weather conditions in your current location
           </span>
         </div>
         <div className={style.listElement}>
-          <SearchOutlined />
+          <SearchOutlined color="primary" />
           <span className={style.dashboardMessage}>
-            Search for different locations and review weather
+            search for different locations and review weather
           </span>
         </div>
         <div className={style.listElement}>
-          <StarBorderOutlined />
-          <span className={style.dashboardMessage}>Review your favorites locations</span>
+          <StarBorderOutlined color="primary" />
+          <span className={style.dashboardMessage}>review your favorites locations</span>
         </div>
         <div className={style.listElement}>
-          <NotificationsActiveOutlined />
-          <span className={style.dashboardMessage}>Set notifications</span>
+          <NotificationsActiveOutlined color="primary" />
+          <span className={style.dashboardMessage}>set your own notifications</span>
         </div>
       </AppContent>
+      <div>
+        <h2 className={style.chartsDescription}>Stats</h2>
 
-      <div className={style.chartsBackground}>
-        <ChartOne />
-        <ChartTwo />
+        <Charts />
       </div>
     </>
   );

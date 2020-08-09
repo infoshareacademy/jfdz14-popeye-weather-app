@@ -9,17 +9,12 @@ import {
   AddLocationOutlined,
 } from '@material-ui/icons';
 import { Link } from 'react-router-dom';
-import { SmallImg } from './SmallImg';
+import { AppHeader } from './AppHeader';
 
 export function AppContent({ children }) {
   return (
     <div className={style.wrapper}>
-      <div className={style.header}>
-        <SmallImg />
-        <div className={style.textInHeader}>
-          <span>Hello, Katarzyna</span>
-        </div>
-      </div>
+      <AppHeader text={'Hello, USER'} />
       <div className={style.content}>
         <Sidebar />
         <div className={style.contentMain}>{children}</div>
@@ -32,23 +27,23 @@ function Sidebar() {
   return (
     <aside className={style.sidebar}>
       <nav>
-        <SidebarLink to="/home" icon={<HomeOutlined />}>
+        <SidebarLink to="/home" icon={<HomeOutlined color="primary" />}>
           Home
         </SidebarLink>
-        <SidebarLink to="/location" icon={<LocationOnOutlined />}>
+        <SidebarLink to="/location" icon={<LocationOnOutlined color="primary" />}>
           Current location
         </SidebarLink>
-        <SidebarLink to="/search" icon={<SearchOutlined />}>
+        <SidebarLink to="/search" icon={<SearchOutlined color="primary" />}>
           Search
         </SidebarLink>
-        <SidebarLink to="/favorites" icon={<StarBorderOutlined />}>
+        <SidebarLink to="/favorites" icon={<StarBorderOutlined color="primary" />}>
           Favorites
         </SidebarLink>
 
-        <SidebarLink to="/newlocation" icon={<AddLocationOutlined />}>
+        <SidebarLink to="/newlocation" icon={<AddLocationOutlined color="primary" />}>
           Add location
         </SidebarLink>
-        <SidebarLink to="/notifications" icon={<NotificationsActiveOutlined />}>
+        <SidebarLink to="/notifications" icon={<NotificationsActiveOutlined color="primary" />}>
           Notifications
         </SidebarLink>
       </nav>
