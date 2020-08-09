@@ -1,6 +1,8 @@
 import React from 'react';
 import style from './favourites.module.css';
 import { AppContent } from '../Dashboards/AppContent';
+import firebase from 'firebase';
+import { DATABASE_URL } from '../../index'
 // import Table from 'react-bootstrap/Table';
 // import { FavoriteSharp } from '@material-ui/icons';
 

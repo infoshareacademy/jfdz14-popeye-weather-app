@@ -13,8 +13,8 @@ const firebaseConfig = {
   projectId: "popyeweather-352f0",
   storageBucket: "popyeweather-352f0.appspot.com",
   messagingSenderId: "824948431301",
-  appId: "1:824948431301:web:26af4f6d57e622993793ac",
-  measurementId: "G-6EGQQV8B92"
+  appId: "1:824948431301:web:8fa0e89a8bb5a1c03793ac",
+  measurementId: "G-CHWD30XWMZ"
 };
 
 
