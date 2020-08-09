@@ -50,7 +50,6 @@ export const Dashboard = () => {
       </AppContent>
       <div>
         <h2 className={style.chartsDescription}>Stats</h2>
-
         <Charts />
       </div>
     </>
