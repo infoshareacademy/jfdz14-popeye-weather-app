@@ -8,8 +8,7 @@ import {
 } from '@material-ui/icons';
 
 import { InvitationMessage } from './InvitationMessage';
-import ChartOne from '../Charts/ChartOne';
-import ChartTwo from '../Charts/ChartTwo';
+
 import { AppContent } from './AppContent';
 import Charts from '../Charts/Charts';
 
