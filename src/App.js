@@ -31,12 +31,12 @@ class App extends React.Component {
         lat: 49.809,
         lon: 16.787,
         model: 'gfs',
-        parameters: ['wind', 'dewpoint', 'rh', 'pressure'],
-        levels: ['surface', '800h', '300h'],
+        parameters: ['wind', 'temp', 'rh', 'pressure', 'ptype'],
+        levels: ['surface'],
         key: 'Gv1p6Lr8XUC97mGw62Rj4HaX3VoW99c0',
       }),
     })
-      .then(r => r.body.json())
+      .then(r => r.json())
       .then(data => console.log(data));
     // .then(response => {
     //   response.body
