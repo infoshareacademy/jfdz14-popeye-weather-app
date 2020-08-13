@@ -19,7 +19,7 @@ export const Dashboard = () => {
         <InvitationMessage
           message={
             <div className={style.dashboardInvitation}>
-              Dear USER,
+              Dear User,
               <br />
               in our application you can:
             </div>
