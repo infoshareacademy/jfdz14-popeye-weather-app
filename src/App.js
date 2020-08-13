@@ -1,19 +1,18 @@
-import React from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  NavLink,
-} from "react-router-dom";
+/* eslint-disable import/no-named-as-default-member */
+import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-import LoginPage from "./ComponentsDashboard/LoginPage";
-import SignUpPage from "./ComponentsDashboard/SignUpPage";
-import SignInPage from "./ComponentsDashboard/SignInPage";
-import { Dashboard } from "./ComponentsDashboard/Dashboard";
-import { NotificationsPage } from "./ComponentsDashboard/NotificationsPage";
-import { FavouritesPage } from "./ComponentsDashboard/FavouritesPage";
-import SearchPage from "./ComponentsDashboard/SearchPage";
-import { LocationPage } from "./ComponentsDashboard/LocationPage";
+import LoginPage from './ComponentsDashboard/LoginPages/LoginPage';
+import SignUpPage from './ComponentsDashboard/LoginPages/SignUpPage';
+import SignInPage from './ComponentsDashboard/LoginPages/SignInPage';
+import { Dashboard } from './ComponentsDashboard/Dashboards/Dashboard';
+import { NotificationsPage } from './ComponentsDashboard/NotificationsPage/NotificationsPage';
+import FavouritesPage from './ComponentsDashboard/Favourites/FavouritesPage';
+import SearchPage from './ComponentsDashboard/SearchPages/SearchPage';
+import { LocationPage } from './ComponentsDashboard/Currentlocation/LocationPage';
+import SearchResultItem from './ComponentsDashboard/SearchPages/SearchResulItem';
+import AddLocation from './ComponentsDashboard/AddLocation/AddLocation';
+
 // import SignInPage from "./ComponentsDashboard/SignInPage";
 
 class App extends React.Component {
@@ -61,9 +60,5 @@ class App extends React.Component {
     );
   }
 }
-
-// function Dashboard() {
-//   return <h2>Dashboard</h2>;
-// }
 
 export default App;
