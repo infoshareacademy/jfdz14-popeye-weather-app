@@ -5,5 +5,17 @@ export function getCities() {
         {name: 'Gdańsk', long: 0, lat: 0, image: ''},
         {name: 'Gdańsk', long: 0, lat: 0, image: ''},
         {name: 'Gdańsk', long: 0, lat: 0, image: ''},
+        {name: 'Gdańsk', long: 0, lat: 0, image: ''},
+        {name: 'Gdańsk', long: 0, lat: 0, image: ''},
+        {name: 'Gdańsk', long: 0, lat: 0, image: ''},
+        {name: 'Gdańsk', long: 0, lat: 0, image: ''},
+        {name: 'Gdańsk', long: 0, lat: 0, image: ''},
+        {name: 'Gdańsk', long: 0, lat: 0, image: ''},
+        {name: 'Gdańsk', long: 0, lat: 0, image: ''},
+        {name: 'Gdańsk', long: 0, lat: 0, image: ''},
+        {name: 'Gdańsk', long: 0, lat: 0, image: ''},
+        {name: 'Gdańsk', long: 0, lat: 0, image: ''},
+        {name: 'Gdańsk', long: 0, lat: 0, image: ''},
+        {name: 'Gdańsk', long: 0, lat: 0, image: ''},
     ];
 }

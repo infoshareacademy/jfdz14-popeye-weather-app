@@ -14,7 +14,7 @@ import { AppHeader } from './AppHeader';
 export function AppContent({ children }) {
   return (
     <div className={style.wrapper}>
-      <AppHeader text={'Hello, USER'} />
+      <AppHeader text={'Hello, (Your Name)'} />
       <div className={style.content}>
         <Sidebar />
         <div className={style.contentMain}>{children}</div>
@@ -37,7 +37,7 @@ function Sidebar() {
           Search
         </SidebarLink>
         <SidebarLink to="/favorites" icon={<StarBorderOutlined color="primary" />}>
-          Favorites
+          Favourites
         </SidebarLink>
 
         <SidebarLink to="/newlocation" icon={<AddLocationOutlined color="primary" />}>

@@ -25,7 +25,7 @@
     top: 0;
     left: 0;
     width: 45px;
-    background-color: #b3c1ff;
+    background-color: rgb(235, 232, 232);
     transition-property: width;
     transition-duration: 0.2s;
 }
@@ -76,20 +76,27 @@
 }
 
 .loginPageText {
-    color: white;
+    color: navy;
     text-align: center;
     font-family: Baloo2;
     font-size: 2rem;
 }
 
 .loginImage {
+    width: 25%;
+    max-width: 100px;
+    padding: 5px;
+    border-radius: 8px;
+}
+
+.topbarImage {
     width: 10vw;
     max-width: 50px;
     border-radius: 8px;
 }
 
 .header {
-    background-color: #506cff;
+    background-color: rgb(235, 232, 232);
     padding: 1rem;
     display: flex;
     justify-content: space-between;
@@ -99,8 +106,8 @@
 }
 
 .textInHeader {
-    color: white;
-    font-size: 1.2rem;
+    color: navy;
+    font-size: 1.1rem;
     font-family: Baloo2;
 }
 
