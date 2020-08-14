@@ -19,6 +19,7 @@
 }
 
 .sidebar {
+  top: 0;
   height: 100%;
   position: absolute;
   top: 0;
@@ -28,6 +29,7 @@
   transition-property: width;
   transition-duration: 0.2s;
 }
+
 .sidebarNav {
   position: sticky;
   top: 0;
@@ -37,7 +39,6 @@
   width: 200px;
   z-index: 99;
 }
-
 .sidebar:hover .sidebarLinkLabel {
   transition-delay: 0.2s;
   visibility: visible;
@@ -68,38 +69,45 @@
 }
 
 .nameOfAppPara {
-  color: white;
+  color: navy;
   text-align: center;
   font-family: Baloo2, sans-serif;
 }
 
 .loginPageText {
-  color: white;
-  text-align: center;
-  font-family: Baloo2;
-  font-size: 2rem;
+    color: navy;
+    text-align: center;
+    font-family: Baloo2;
+    font-size: 2rem;
 }
 
 .loginImage {
-  width: 10vw;
-  max-width: 50px;
-  border-radius: 8px;
+    width: 25%;
+    max-width: 100px;
+    padding: 5px;
+    border-radius: 8px;
+}
+
+.topbarImage {
+    width: 10vw;
+    max-width: 50px;
+    border-radius: 8px;
 }
 
 .header {
-  background-color: #506cff;
-  padding: 1rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-grow: 0;
-  flex-shrink: 0;
+    background-color: rgb(235, 232, 232);
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-grow: 0;
+    flex-shrink: 0;
 }
 
 .textInHeader {
-  color: white;
-  font-size: 1.2rem;
-  font-family: Baloo2;
+    color: navy;
+    font-size: 1.1rem;
+    font-family: Baloo2;
 }
 
 .dashboardInvitation {

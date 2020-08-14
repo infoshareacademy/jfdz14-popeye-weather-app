@@ -8,10 +8,10 @@ export const LoginPageFooter = () => {
     <>
       <span className={`${style.loginPageText} ${style.footer}`}>
         <Divider style={{ backgroundColor: 'white', width: '60vw' }} />
-        <em>
+        <p>
           From
           <br /> Wirus Team
-        </em>
+        </p>
       </span>
     </>
   );

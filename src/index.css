@@ -5,10 +5,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  height: 100%;
-  max-width: 1000px;
-  background-color: #506cff;
+  background-image: url(./images/FAVPNG_underwater_19mmkDgZ.png);
   box-sizing: border-box;
+  width:100%;
+
 }
 
 code {
