@@ -4,7 +4,7 @@ import { AppContent } from '../Dashboards/AppContent';
 import Form from 'react-bootstrap/Form';
 import Table from 'react-bootstrap/Table';
 import { Link } from 'react-router-dom';
-import {getCities} from "../../datasources/cities";
+import { getCities } from '../../datasources/cities';
 
 class SearchPage extends React.Component {
   state = {

@@ -1,7 +1,7 @@
 import React from 'react';
 import style from './favourites.module.css';
 import { AppContent } from '../Dashboards/AppContent';
-import {getFavourites} from "../../datasources/favourites";
+import { getFavourites } from '../../datasources/favourites';
 // import Table from 'react-bootstrap/Table';
 // import { FavoriteSharp } from '@material-ui/icons';
 
@@ -18,8 +18,8 @@ class FavouritesPage extends React.Component {
 
   componentDidMount() {
     getFavourites().then(x => {
-      this.setState({cities: x});
-    })
+      this.setState({ cities: x });
+    });
   }
 
   render() {
