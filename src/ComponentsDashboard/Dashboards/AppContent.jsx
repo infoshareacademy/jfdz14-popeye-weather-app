@@ -26,7 +26,7 @@ export function AppContent({ children }) {
 function Sidebar() {
   return (
     <aside className={style.sidebar}>
-      <nav>
+      <nav className={style.sidebarNav}>
         <SidebarLink to="/home" icon={<HomeOutlined color="primary" />}>
           Home
         </SidebarLink>

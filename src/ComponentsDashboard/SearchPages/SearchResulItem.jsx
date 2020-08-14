@@ -5,6 +5,9 @@ import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import ListGroupItem from 'react-bootstrap/ListGroupItem';
 import Button from 'react-bootstrap/Button';
+import { getCities } from '../../datasources/cities';
+import { getWeatherForLocation } from '../../datasources/weatherForLocation';
+import { isFavourite, toggleFavourites } from '../../datasources/favourites';
 
 class SearchResultItem extends React.Component {
   state = {
@@ -13,63 +16,106 @@ class SearchResultItem extends React.Component {
   };
 
   componentDidMount() {
-    fetch('https://danepubliczne.imgw.pl/api/data/synop')
-      .then(response => response.json())
-      .then(stacja =>
-        this.setState({
-          stacja,
-        }),
-      );
+    Promise.all([
+      getWeatherForLocation(this.long, this.lat),
+      isFavourite(this.long, this.lat),
+    ]).then(([weatherData, isFavourite]) => {
+      this.setState({
+        weatherData,
+        isFavourite,
+      });
+    });
   }
 
   addStorage = () => {
-    const cityDetails = this.state.stacja.find(
-      stacja => stacja.id_stacji === this.props.match.params.id,
-    );
-    const actualFavourites = JSON.parse(localStorage.getItem('favourites')) || [];
-    console.log(cityDetails);
-    console.log(actualFavourites);
-    const newFavourites = [...actualFavourites, cityDetails.stacja];
-    localStorage.setItem('favourites', JSON.stringify(newFavourites));
+    const toState = !this.state.isFavourite;
+    toggleFavourites(toState, this.long, this.lat, this.cityDetails.name).then(x => {
+      this.setState({ isFavourite: toState });
+    });
   };
 
-  render() {
-    const cityDetails = this.state.stacja.find(
-      stacja => stacja.id_stacji === this.props.match.params.id,
-    );
+  get long() {
+    return parseFloat(this.props.match.params.long);
+  }
 
+  get lat() {
+    return parseFloat(this.props.match.params.lat);
+  }
+
+  get cityDetails() {
+    return getCities().find(city => city.long === this.long && city.lat === this.lat);
+  }
+  render() {
+    const cityDetails = this.cityDetails;
+
+    const weatherData = this.state.weatherData;
+    const isFavourite = this.state.isFavourite;
+
+    console.log(this.state);
     return (
       <AppContent>
-        {cityDetails && (
-          <Card style={{ width: '30rem' }}>
-            <Card.Img variant="top" src="https://source.unsplash.com/random/180x100" />
-            <Card.Body>
-              <Card.Title>
-                <div>
-                  <h3>{cityDetails.stacja}</h3>
-
-                  <Button variant="info" size="sm" onClick={this.addStorage}>
-                    Add to favorites
-                  </Button>
-                </div>
-              </Card.Title>
-            </Card.Body>
-            <ListGroup className="list-group-flush">
-              <ListGroupItem>Date of measurement: {cityDetails.data_pomiaru}</ListGroupItem>
-              <ListGroupItem>Time of measurement: {cityDetails.godzina_pomiaru}</ListGroupItem>
-              <ListGroupItem>Temperature in °C: {cityDetails.temperatura}</ListGroupItem>
-              <ListGroupItem>Wind speed in Beaufort: {cityDetails.predkosc_wiatru}</ListGroupItem>
-              <ListGroupItem>Wind direction: {cityDetails.kierunek_wiatru}</ListGroupItem>
-              <ListGroupItem>Total precipitation: {cityDetails.suma_opadu}</ListGroupItem>
-              <ListGroupItem>Pressure: {cityDetails.cisnienie}</ListGroupItem>
-            </ListGroup>
-
-            {/* <div><h2>{cityDetails.stacja}</h2></div> */}
-          </Card>
-        )}
+        {cityDetails && weatherData
+          ? this.renderCityDetails(cityDetails, weatherData, isFavourite)
+          : null}
       </AppContent>
     );
   }
+
+  renderCityDetails(cityDetails, weather, isFavourite) {
+    return (
+      <>
+        <Card>
+          <Card.Img variant="top" src={cityDetails.image} />
+          <Card.Body>
+            <Card.Title>
+              <div>
+                <h3>{cityDetails.name}</h3>
+
+                <Button variant="info" size="sm" onClick={this.addStorage}>
+                  {isFavourite ? 'Remove from favourites' : 'Add to favourites'}
+                </Button>
+              </div>
+            </Card.Title>
+          </Card.Body>
+        </Card>
+        <div className={style.metadata}>
+          <MetadataEntry name="Temperature">
+            {(weather.temperature - 273.15).toFixed(0)} ℃
+          </MetadataEntry>
+          <MetadataEntry name="Pressure">{(weather.pressure / 100).toFixed(0)} hPa</MetadataEntry>
+          <MetadataEntry name="Humidity">{weather.humidity.toFixed(1)}%</MetadataEntry>
+          <MetadataEntry name="Wind speed">{weather.windSpeed} m/s</MetadataEntry>
+          <MetadataEntry name="Precipitation">
+            {precipitationDescription(weather.precipitation)}
+          </MetadataEntry>
+        </div>
+      </>
+    );
+  }
+}
+
+function precipitationDescription(type) {
+  switch (parseInt(type, 10)) {
+    case 1:
+      return 'Rain';
+    case 5:
+      return 'Snow';
+    case 6:
+      return 'Wet snow';
+    case 7:
+      return 'Rain with snow';
+  }
+  return 'No rain';
+}
+
+function MetadataEntry(props) {
+  const { children, name, ...otherProps } = props;
+  return (
+    <div className={style.metadataEntry} {...otherProps}>
+      <dt className={style.metadataEntryTitle}>{name}</dt>
+      <dd className={style.metadataEntryContent}>{children}</dd>
+    </div>
+  );
 }
 
 export default SearchResultItem;
