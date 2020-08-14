@@ -3,7 +3,7 @@
   flex-direction: column;
   width: 100%;
   min-height: 60vh;
-  background-color: aliceblue;
+
 }
 
 .content {
@@ -25,7 +25,7 @@
   top: 0;
   left: 0;
   width: 45px;
-  background-color: #b3c1ff;
+  background-color:  rgb(115, 197, 235);
   transition-property: width;
   transition-duration: 0.2s;
 }
@@ -75,40 +75,35 @@
 }
 
 .loginPageText {
-    color: navy;
-    text-align: center;
-    font-family: Baloo2;
-    font-size: 2rem;
+  color: navy;
+  text-align: center;
+  font-family: Baloo2;
+  font-size: 2rem;
 }
 
 .loginImage {
-    width: 25%;
-    max-width: 100px;
-    padding: 5px;
-    border-radius: 8px;
+  width: 25%;
+  max-width: 100px;
+  padding: 5px;
+  border-radius: 8px;
 }
 
 .topbarImage {
-    width: 10vw;
-    max-width: 50px;
-    border-radius: 8px;
+  width: 10vw;
+  max-width: 50px;
+  border-radius: 8px;
 }
 
 .header {
-    background-color: rgb(235, 232, 232);
-    padding: 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-grow: 0;
-    flex-shrink: 0;
+  background-color: rgb(115, 197, 235);
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 0;
+  flex-shrink: 0;
 }
 
-.textInHeader {
-    color: navy;
-    font-size: 1.1rem;
-    font-family: Baloo2;
-}
 
 .dashboardInvitation {
   font-size: 1.5rem;
@@ -153,3 +148,14 @@
   color: white;
   font-family: Baloo2, sans-serif;
 }
+
+.textInHeader {
+  color: navy;
+  text-align: center;
+  font-family: Baloo2;
+  font-size: 1.3rem;
+}
+
+
+
+

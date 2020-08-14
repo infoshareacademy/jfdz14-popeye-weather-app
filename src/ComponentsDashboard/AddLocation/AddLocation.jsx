@@ -43,6 +43,7 @@ class AddLocation extends React.Component {
   render() {
     return (
       <AppContent>
+        <h3>Add Location</h3>
         <Form onSubmit={this.handleSubmitNewLocation}>
           <FormInput
             description={'City'}
