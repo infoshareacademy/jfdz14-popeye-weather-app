@@ -14,7 +14,7 @@ import { AppHeader } from './AppHeader';
 export function AppContent({ children }) {
   return (
     <div className={style.wrapper}>
-      <AppHeader text={'Hello, (Your Name)'} />
+      <AppHeader text={''} />
       <div className={style.content}>
         <Sidebar />
         <div className={style.contentMain}>{children}</div>
@@ -27,6 +27,9 @@ function Sidebar() {
   return (
     <aside className={style.sidebar}>
       <nav className={style.sidebarNav}>
+      <SidebarLink >
+          Welcome, (Your Name)
+        </SidebarLink>
         <SidebarLink to="/home" icon={<HomeOutlined color="primary" />}>
           Home
         </SidebarLink>

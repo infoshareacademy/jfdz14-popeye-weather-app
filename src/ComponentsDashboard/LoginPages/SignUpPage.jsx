@@ -17,7 +17,7 @@ const SignUpPage = () => {
       <Divider />
       <Input type={'text'} placeholder={'Enter your name and surname'} />
       <Divider />
-      <Input type={'text'} placeholder={'Enter your Login'} />
+      <Input type={'text'} placeholder={'Enter your login'} />
       <Divider />
       <Input type={'password'} placeholder={'Enter your password'} />
       <Divider />

@@ -21,7 +21,7 @@ class SearchPage extends React.Component {
   render() {
     return (
       <AppContent>
-        <h1>City</h1>
+        <h3>Search for City</h3>
         <Form.Group>
           <Form.Control
             type="text"

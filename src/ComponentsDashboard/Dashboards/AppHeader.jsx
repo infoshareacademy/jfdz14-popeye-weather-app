@@ -14,7 +14,7 @@ export const AppHeader = ({ text }) => {
   return (
     <div className={style.header}>
       <SmallImg />
-      <TextInHeader text={text} />
+      <TextInHeader text={'Popeye Weather'} className={style.textInHeader}/>
     </div>
   );
 };
