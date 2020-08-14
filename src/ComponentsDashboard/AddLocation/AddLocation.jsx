@@ -87,7 +87,7 @@ class AddLocation extends React.Component {
             required={false}
             name="predkosc_wiatru"
             type="number"
-            placeholder="Enter wind speed in km/h"
+            placeholder="Enter wind speed in m/s"
             onInputChange={this.handleOnChange}
             value={this.state.predkosc_wiatru}
           />
