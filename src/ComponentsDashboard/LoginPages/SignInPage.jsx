@@ -6,6 +6,7 @@ import { Input } from './Input';
 import LoginButton from './LoginButton';
 import { NameOfApp } from '../Dashboards/NameOfApp';
 import { Divider } from '@material-ui/core';
+import BackButton from './BackButton';
 
 const SignInPage = () => {
   return (
@@ -16,6 +17,7 @@ const SignInPage = () => {
       <Divider />
       <Input type={'password'} placeholder={'password'} />
       <LoginButton toLogIn text={'Sign In'} urlName={'home'} />
+      <BackButton />
       <LoginPageFooter />
     </div>
   );

@@ -19,6 +19,18 @@
 }
 
 .sidebar {
+  top: 0;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 45px;
+  background-color: #b3c1ff;
+  transition-property: width;
+  transition-duration: 0.2s;
+}
+
+.sidebarNav {
   position: sticky;
   top: 0;
 }
@@ -57,7 +69,7 @@
 }
 
 .nameOfAppPara {
-  color: white;
+  color: navy;
   text-align: center;
   font-family: Baloo2, sans-serif;
 }

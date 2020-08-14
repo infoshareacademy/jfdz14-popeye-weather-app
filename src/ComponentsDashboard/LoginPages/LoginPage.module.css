@@ -6,13 +6,15 @@
 
 .input {
   width: 60vw;
-  margin: 0.5rem;
+  max-width: 300px;
+  margin: 0.7rem;
   border: 1px solid navy;
   border-radius: 8px;
   background-color: white;
   text-align: center;
   font-family: Baloo2;
-  font-size: 1.2rem;
+  font-size: 1.0rem;
+  padding: 5px 5px; 
 }
 
 .loginInput,
