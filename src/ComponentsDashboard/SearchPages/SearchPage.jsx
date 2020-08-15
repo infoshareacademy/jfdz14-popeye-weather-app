@@ -4,22 +4,13 @@ import { AppContent } from '../Dashboards/AppContent';
 import Form from 'react-bootstrap/Form';
 import Table from 'react-bootstrap/Table';
 import { Link } from 'react-router-dom';
+import { getCities } from '../../datasources/cities';
 
 class SearchPage extends React.Component {
   state = {
     cities: [],
     filter: '',
   };
-
-  componentDidMount() {
-    fetch('https://danepubliczne.imgw.pl/api/data/synop')
-      .then(response => response.json())
-      .then(cities =>
-        this.setState({
-          cities,
-        }),
-      );
-  }
 
   handleOnChange = e => {
     this.setState({
@@ -30,7 +21,7 @@ class SearchPage extends React.Component {
   render() {
     return (
       <AppContent>
-        <h1>City</h1>
+        <h3>Search for City</h3>
         <Form.Group>
           <Form.Control
             type="text"
@@ -40,17 +31,16 @@ class SearchPage extends React.Component {
           />
         </Form.Group>
         <Table striped bordered hover>
-          {this.state.cities
+          {getCities()
             .filter(city => {
-              return city.stacja.toLowerCase().includes(this.state.filter);
+              return city.name.toLowerCase().includes(this.state.filter);
             })
             .map(city => {
               return (
                 <tr>
                   <th>
-                    <Link to={`search/${city.id_stacji}`}>{city.stacja}</Link>
+                    <Link to={`search/${city.long}/${city.lat}`}>{city.name}</Link>
                   </th>
-                  {/* <th>{city.stacja}</th> */}
                 </tr>
               );
             })}

@@ -1,148 +1,161 @@
 .wrapper {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    min-height: 60vh;
-    background-color: aliceblue;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 60vh;
+
 }
 
 .content {
-    padding-left: 45px;
-    position: relative;
-    flex-grow: 100;
+  padding-left: 45px;
+  position: relative;
+  flex-grow: 100;
 }
 
 .contentMain {
-    height: 100%;
-    padding: 2rem;
-    z-index: 99;
-
+  height: 100%;
+  padding: 2rem;
+  z-index: 99;
 }
 
 .sidebar {
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 45px;
-    background-color: #b3c1ff;
-    transition-property: width;
-    transition-duration: 0.2s;
+  top: 0;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 45px;
+  background-color:  rgb(115, 197, 235);
+  transition-property: width;
+  transition-duration: 0.2s;
+}
+
+.sidebarNav {
+  position: sticky;
+  top: 0;
 }
 
 .sidebar:hover {
-    width: 200px;
-    z-index: 2;
+  width: 200px;
+  z-index: 99;
 }
-
 .sidebar:hover .sidebarLinkLabel {
-    transition-delay: 0.2s;
-    visibility: visible;
+  transition-delay: 0.2s;
+  visibility: visible;
 }
 
 .sidebarLink {
-    color: #465268;
-    text-decoration: none;
-    display: flex;
-    flex-direction: row;
-    padding: 10px;
-    text-align: center;
-    align-items: center;
-    transition-property: background-color;
-    transition-duration: 0.2s;
+  color: #465268;
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  text-align: center;
+  align-items: center;
+  transition-property: background-color;
+  transition-duration: 0.2s;
 }
 
 .sidebarLink:hover {
-    background-color: #ffffff;
+  background-color: #ffffff;
 }
 
 .sidebarLinkLabel {
-    white-space: nowrap;
-    margin-left: 10px;
-    visibility: hidden;
-    transition-delay: 0s;
-    transition-property: visibility;
+  white-space: nowrap;
+  margin-left: 10px;
+  visibility: hidden;
+  transition-delay: 0s;
+  transition-property: visibility;
 }
 
-
 .nameOfAppPara {
-    color: white;
-    text-align: center;
-    font-family: Baloo2, sans-serif;
+  color: navy;
+  text-align: center;
+  font-family: Baloo2, sans-serif;
 }
 
 .loginPageText {
-    color: white;
-    text-align: center;
-    font-family: Baloo2;
-    font-size: 2rem;
+  color: navy;
+  text-align: center;
+  font-family: Baloo2;
+  font-size: 2rem;
 }
 
 .loginImage {
-    width: 10vw;
-    max-width: 50px;
-    border-radius: 8px;
+  width: 25%;
+  max-width: 100px;
+  padding: 5px;
+  border-radius: 8px;
+}
+
+.topbarImage {
+  width: 10vw;
+  max-width: 50px;
+  border-radius: 8px;
 }
 
 .header {
-    background-color: #506cff;
-    padding: 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-grow: 0;
-    flex-shrink: 0;
+  background-color: rgb(115, 197, 235);
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 0;
+  flex-shrink: 0;
 }
-
-.textInHeader {
-    color: white;
-    font-size: 1.2rem;
-    font-family: Baloo2;
-}
-
 
 
 .dashboardInvitation {
-    font-size: 1.5rem;
-    color: navy;
-    font-weight: 700;
-    text-align: center;
+  font-size: 1.5rem;
+  color: navy;
+  font-weight: 700;
+  text-align: center;
 }
 
 .dashboardMessage {
-    font-family: baloo2;
-    font-size: 1.2rem;
-    color: navy;
-    padding: 1rem;
+  font-family: baloo2;
+  font-size: 1.2rem;
+  color: navy;
+  padding: 1rem;
 }
 
 .listElement {
-    display: flex;
-    align-items: center;
-    justify-self: center;
+  display: flex;
+  align-items: center;
+  justify-self: center;
 }
 
 .chartsBackground {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    width: 100%;
-    min-height: 25vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  min-height: 25vh;
 }
 
 .barChart {
-    width: 300px;
-    height: 200px;
-    color: red;
+  width: 300px;
+  height: 200px;
+  color: red;
 }
-
 
 .chartsDescription {
-    display: flex;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-    padding-top: 1rem;
-    color: white;
-    font-family: Baloo2, sans-serif;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  padding-top: 1rem;
+  color: white;
+  font-family: Baloo2, sans-serif;
 }
+
+.textInHeader {
+  color: navy;
+  text-align: center;
+  font-family: Baloo2;
+  font-size: 1.3rem;
+}
+
+
+
+

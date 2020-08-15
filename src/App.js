@@ -20,44 +20,23 @@ class App extends React.Component {
     fetchedData: [],
   };
   componentDidMount() {
-    const decoder = new TextDecoder('utf-8');
-    fetch('https://api.windy.com/api/point-forecast/v2', {
-      method: 'POST',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        lat: 49.809,
-        lon: 16.787,
-        model: 'gfs',
-        parameters: ['wind', 'temp', 'rh', 'pressure', 'ptype'],
-        levels: ['surface'],
-        key: 'Gv1p6Lr8XUC97mGw62Rj4HaX3VoW99c0',
-      }),
-    })
-      .then(r => r.json())
-      .then(data => console.log(data));
-    // .then(response => {
-    //   response.body
-    //     .getReader()
-    //     .read()
-    //     .then(({ value, done }) => {
-    //       console.log(value);
-    //       console.log(decoder.decode(value));
-    //     });
-    // });
-    // .then(
-    //   data => JSON.stringify(data),
-    //   data => console.log(data.body),
-    // );
-
-    // this.setState(
-    //   {
-    //     fetchedData: data,
+    // fetch('https://api.windy.com/api/point-forecast/v2', {
+    //   method: 'POST',
+    //   headers: {
+    //     Accept: 'application/json',
+    //     'Content-Type': 'application/json',
     //   },
-    //   () => console.log(this.state.fetchedData),
-    // );
+    //   body: JSON.stringify({
+    //     lat: 49.809,
+    //     lon: 16.787,
+    //     model: 'gfs',
+    //     parameters: ['wind', 'dewpoint', 'rh', 'pressure'],
+    //     levels: ['surface', '800h', '300h'],
+    //     key: 'Gv1p6Lr8XUC97mGw62Rj4HaX3VoW99c0',
+    //   }),
+    // })
+    //   .then(r => r.json())
+    //   .then(data => console.log(data));
   }
 
   render() {
@@ -69,7 +48,7 @@ class App extends React.Component {
             <Route path="/notifications" component={NotificationsPage}></Route>
             <Route path="/favorites/" component={FavouritesPage}></Route>
             <Route exact path="/search" component={SearchPage}></Route>
-            <Route path="/search/:id" component={SearchResultItem} />
+            <Route path="/search/:long/:lat" component={SearchResultItem} />
             <Route path="/location" component={LocationPage}></Route>
             <Route exact path="/" component={LoginPage}></Route>
             <Route path="/signin" component={SignInPage}></Route>

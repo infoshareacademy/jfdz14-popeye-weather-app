@@ -8,7 +8,10 @@ import {
 } from '@material-ui/icons';
 
 import { InvitationMessage } from './InvitationMessage';
+<<<<<<< HEAD
 
+=======
+>>>>>>> develop
 import { AppContent } from './AppContent';
 import Charts from '../Charts/Charts';
 
@@ -19,7 +22,7 @@ export const Dashboard = () => {
         <InvitationMessage
           message={
             <div className={style.dashboardInvitation}>
-              Dear USER,
+              Dear User,
               <br />
               in our application you can:
             </div>
