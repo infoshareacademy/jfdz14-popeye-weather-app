@@ -7,6 +7,8 @@ import ListGroupItem from 'react-bootstrap/ListGroupItem';
 import Button from 'react-bootstrap/Button';
 import { getCities } from '../../datasources/cities';
 import { getWeatherForLocation } from '../../datasources/weatherForLocation';
+import { getWavesForLocation } from '../../datasources/weatherForLocation';
+
 import { isFavourite, toggleFavourites } from '../../datasources/favourites';
 
 class SearchResultItem extends React.Component {
@@ -19,10 +21,12 @@ class SearchResultItem extends React.Component {
     Promise.all([
       getWeatherForLocation(this.long, this.lat),
       isFavourite(this.long, this.lat),
+      // getWavesForLocation(this.long, this.lat),
     ]).then(([weatherData, isFavourite]) => {
       this.setState({
         weatherData,
         isFavourite,
+        // waves,
       });
     });
   }
@@ -50,6 +54,7 @@ class SearchResultItem extends React.Component {
 
     const weatherData = this.state.weatherData;
     const isFavourite = this.state.isFavourite;
+    // const waves = this.state.waves;
 
     console.log(this.state);
     return (
@@ -88,6 +93,8 @@ class SearchResultItem extends React.Component {
           <MetadataEntry name="Precipitation">
             {precipitationDescription(weather.precipitation)}
           </MetadataEntry>
+          <MetadataEntry name="Waves">{weather.waves} m/s</MetadataEntry>
+          {/* jak to ☝  dodac ? */}
         </div>
       </>
     );
