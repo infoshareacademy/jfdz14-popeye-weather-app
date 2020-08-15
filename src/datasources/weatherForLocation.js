@@ -35,7 +35,7 @@ export function getWeatherForLocation(long, lat) {
         wavesSwell: data['swell1'],
         wavesSwell2: data['swell2'],
         waves: data['waves'],
-        windWawes: data['windWaves'],
+        windWaves: data['windWaves'],
       };
     });
 }

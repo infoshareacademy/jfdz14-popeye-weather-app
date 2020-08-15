@@ -2,6 +2,8 @@ import React from 'react';
 import { Form, Button, Col } from 'react-bootstrap';
 import { AppContent } from '../Dashboards/AppContent';
 import FormInput from './FormInput';
+import firebase from 'firebase';
+import { DATABASE_URL } from '../../index';
 
 class AddLocation extends React.Component {
   state = {
@@ -16,7 +18,7 @@ class AddLocation extends React.Component {
     wavesSwell: '',
     wavesSwell2: '',
     waves: '',
-    windWawes: '',
+    windWaves: '',
   };
 
   handleOnChange = (name, text) => {
@@ -42,7 +44,31 @@ class AddLocation extends React.Component {
       wavesSwell: '',
       wavesSwell2: '',
       waves: '',
-      windWawes: '',
+      windWaves: '',
+    });
+  };
+
+  handleOnSave = e => {
+    e.preventDefault();
+    const { location } = this.state;
+    fetch(`${DATABASE_URL}/addedlocation/${location}.json`, {
+      method: 'PUT',
+      body: JSON.stringify(this.state),
+    }).then(() => {
+      this.setState({
+        location: '',
+        time: '',
+        date: '',
+        humidity: '',
+        temperature: '',
+        pressure: '',
+        windSpeed: '',
+        precipitation: '',
+        wavesSwell: '',
+        wavesSwell2: '',
+        waves: '',
+        windWaves: '',
+      });
     });
   };
 
@@ -50,7 +76,7 @@ class AddLocation extends React.Component {
     return (
       <AppContent>
         <h3>Add Location</h3>
-        <Form onSubmit={this.handleSubmitNewLocation}>
+        <Form onSubmit={this.handleOnSave}>
           <FormInput
             description={'City'}
             required
