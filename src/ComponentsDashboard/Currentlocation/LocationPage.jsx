@@ -15,6 +15,7 @@ class LocationPage extends React.Component {
     humidity: null,
     precipitation: null,
     isLoading: true,
+    responseData: false,
   };
   componentDidMount() {
     navigator.geolocation.getCurrentPosition(position => {
@@ -24,31 +25,40 @@ class LocationPage extends React.Component {
           lat: position.coords.latitude,
         },
         () =>
-          getWeatherForLocation(this.state.long, this.state.lat).then(data =>
-            //  console.log(data.precipitation),
-            this.setState({
-              // temperature: `${(data.temperature - 273.15).toFixed(0)} ℃`,
-              // pressure: `${(data.pressure / 100).toFixed(0)} hPa`,
-              // humidity: `${data.humidity.toFixed(1)} %`,
-              // windSpeed: `${data.windSpeed.toFixed(2)} m/s`,
-              // precipitation: `${data.precipitation} mm`,
-              // isLoading: false,
+          getWeatherForLocation(this.state.long, this.state.lat)
+            // .then(response => {
+            //   if (!response.ok) {
+            //     this.setState({
+            //       responseData: true,
+            //     });
+            //   }
+            //   response.json();
+            // })
 
-              temperature: data.temperature,
-              pressure: data.pressure,
-              humidity: data.humidity,
-              windSpeed: data.windSpeed,
-              precipitation: data.precipitation,
-              isLoading: false,
-            }),
-          ),
+            .then(data =>
+              this.setState({
+                // temperature: `${(data.temperature - 273.15).toFixed(0)} ℃`,
+                // pressure: `${(data.pressure / 100).toFixed(0)} hPa`,
+                // humidity: `${data.humidity.toFixed(1)} %`,
+                // windSpeed: `${data.windSpeed.toFixed(2)} m/s`,
+                // precipitation: `${data.precipitation} mm`,
+                // isLoading: false,
+
+                temperature: data.temperature,
+                pressure: data.pressure,
+                humidity: data.humidity,
+                windSpeed: data.windSpeed,
+                precipitation: data.precipitation,
+                isLoading: false,
+              }),
+            ),
       );
     });
   }
   render() {
-    // if (this.state.isLoading) {
-    //   return variant="determinate" />;
-    // }
+    if (this.state.responseData) {
+      return <h1> not possible to download data</h1>;
+    }
     return (
       <AppContent>
         <div>
@@ -61,12 +71,6 @@ class LocationPage extends React.Component {
               </div>
               <div>{renderCityDetails(this.state)}</div>
             </>
-            // ((<h3>Weather in your current position: </h3>), renderCityDetails('dom', this.state))
-
-            // <h4>
-            //   {this.state.temperature}, {this.state.humidity}, {this.state.windSpeed},
-            //   {this.state.precipitation}, {this.state.pressure}
-            // </h4>
           )}
         </div>
       </AppContent>
