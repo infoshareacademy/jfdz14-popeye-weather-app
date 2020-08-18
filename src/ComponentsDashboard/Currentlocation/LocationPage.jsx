@@ -1,14 +1,9 @@
 import React from 'react';
 import { AppContent } from '../Dashboards/AppContent';
 import style from './currentLocation.module.css';
-import SearchResultItem from '../SearchPages/SearchResulItem';
+import { renderCityDetails } from '../SearchPages/renderCityDetails';
 import { getWeatherForLocation } from '../../datasources/weatherForLocation';
-
-// export function LocationPage() {
-//   return <AppContent>
-//     <h3>Current Location</h3>
-//   </AppContent>;
-// }
+import LinearProgress from '@material-ui/core/LinearProgress';
 
 class LocationPage extends React.Component {
   state = {
@@ -45,18 +40,14 @@ class LocationPage extends React.Component {
     return (
       <AppContent>
         <div>
-          <h4>
-            {/* {this.state.long}, {this.state.lat},  */}
-            {this.state.temperature}, {this.state.humidity}, {this.state.windSpeed},
-            {this.state.precipitation}, {this.state.pressure}
-            {/* <SearchResultItem long={this.state.long} lat={this.state.lat} /> */}
-            {/* {this.state.long ? (
-              // `${this.state.long} , ${this.state.lat}`
-              <SearchResultItem long={this.state.long} lat={this.state.lat} />
-            ) : ( */}
-            {/* <h2>You did not allow to see your position</h2> */}
-            {/* )} */}
-          </h4>
+          {!this.state.long ? (
+            <h4>
+              {this.state.temperature}, {this.state.humidity}, {this.state.windSpeed},
+              {this.state.precipitation}, {this.state.pressure}
+            </h4>
+          ) : (
+            <LinearProgress />
+          )}
         </div>
       </AppContent>
     );

@@ -94,7 +94,7 @@ class SearchResultItem extends React.Component {
   }
 }
 
-function precipitationDescription(type) {
+export function precipitationDescription(type) {
   switch (parseInt(type, 10)) {
     case 1:
       return 'Rain';
@@ -108,7 +108,7 @@ function precipitationDescription(type) {
   return 'No rain';
 }
 
-function MetadataEntry(props) {
+export function MetadataEntry(props) {
   const { children, name, ...otherProps } = props;
   return (
     <div className={style.metadataEntry} {...otherProps}>
