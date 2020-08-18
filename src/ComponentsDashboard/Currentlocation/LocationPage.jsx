@@ -14,6 +14,7 @@ class LocationPage extends React.Component {
     windSpeed: null,
     humidity: null,
     precipitation: null,
+    isLoading: true,
   };
   componentDidMount() {
     navigator.geolocation.getCurrentPosition(position => {
@@ -24,29 +25,48 @@ class LocationPage extends React.Component {
         },
         () =>
           getWeatherForLocation(this.state.long, this.state.lat).then(data =>
-            // data => console.log(data.precipitation),
+            //  console.log(data.precipitation),
             this.setState({
-              temperature: `${(data.temperature - 273.15).toFixed(0)} ℃`,
-              pressure: `${(data.pressure / 100).toFixed(0)} hPa`,
-              humidity: `${data.humidity.toFixed(1)} %`,
-              windSpeed: `${data.windSpeed.toFixed(2)} m/s`,
-              precipitation: `${data.precipitation} mm`,
+              // temperature: `${(data.temperature - 273.15).toFixed(0)} ℃`,
+              // pressure: `${(data.pressure / 100).toFixed(0)} hPa`,
+              // humidity: `${data.humidity.toFixed(1)} %`,
+              // windSpeed: `${data.windSpeed.toFixed(2)} m/s`,
+              // precipitation: `${data.precipitation} mm`,
+              // isLoading: false,
+
+              temperature: data.temperature,
+              pressure: data.pressure,
+              humidity: data.humidity,
+              windSpeed: data.windSpeed,
+              precipitation: data.precipitation,
+              isLoading: false,
             }),
           ),
       );
     });
   }
   render() {
+    // if (this.state.isLoading) {
+    //   return variant="determinate" />;
+    // }
     return (
       <AppContent>
         <div>
-          {!this.state.long ? (
-            <h4>
-              {this.state.temperature}, {this.state.humidity}, {this.state.windSpeed},
-              {this.state.precipitation}, {this.state.pressure}
-            </h4>
-          ) : (
+          {this.state.isLoading ? (
             <LinearProgress />
+          ) : (
+            <>
+              <div className={style.currentPositionHeader}>
+                <h2>Weather in your current position: </h2>
+              </div>
+              <div>{renderCityDetails(this.state)}</div>
+            </>
+            // ((<h3>Weather in your current position: </h3>), renderCityDetails('dom', this.state))
+
+            // <h4>
+            //   {this.state.temperature}, {this.state.humidity}, {this.state.windSpeed},
+            //   {this.state.precipitation}, {this.state.pressure}
+            // </h4>
           )}
         </div>
       </AppContent>
@@ -55,3 +75,12 @@ class LocationPage extends React.Component {
 }
 
 export default LocationPage;
+
+// const renderCurrentPosition = () => (
+//   <>
+//     <div>
+//       <h2>Weather in your current position: </h2>
+//     </div>
+//     <div>{renderCityDetails('dom', this.state)}</div>
+//   </>
+// );
