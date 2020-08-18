@@ -57,7 +57,7 @@ class AddLocation extends React.Component {
             description={'Longitude'}
             required
             name="longitude"
-            type="number"
+            type="text"
             placeholder="Enter GPS longitude"
             onInputChange={this.handleOnChange}
             value={this.state.longitude}
@@ -66,7 +66,7 @@ class AddLocation extends React.Component {
             description={'Latitude'}
             required
             name="latitude"
-            type="number"
+            type="text"
             placeholder="Enter GPS latitude"
             onInputChange={this.handleOnChange}
             value={this.state.latitude}
