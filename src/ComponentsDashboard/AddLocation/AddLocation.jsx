@@ -2,6 +2,7 @@ import React from 'react';
 import { Form, Button, Col } from 'react-bootstrap';
 import { AppContent } from '../Dashboards/AppContent';
 import FormInput from './FormInput';
+import DATABASE_URL from '../../index';
 
 class AddLocation extends React.Component {
   state = {

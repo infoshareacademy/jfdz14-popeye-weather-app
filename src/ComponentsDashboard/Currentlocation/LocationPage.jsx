@@ -19,40 +19,44 @@ class LocationPage extends React.Component {
   };
   componentDidMount() {
     navigator.geolocation.getCurrentPosition(position => {
-      this.setState(
-        {
-          long: position.coords.longitude,
-          lat: position.coords.latitude,
-        },
-        () =>
-          getWeatherForLocation(this.state.long, this.state.lat)
-            // .then(response => {
-            //   if (!response.ok) {
-            //     this.setState({
-            //       responseData: true,
-            //     });
-            //   }
-            //   response.json();
-            // })
+      if (position) {
+        this.setState(
+          {
+            long: position.coords.longitude,
+            lat: position.coords.latitude,
+          },
+          () =>
+            getWeatherForLocation(this.state.long, this.state.lat)
+              // .then(response => {
+              //   if (!response.ok) {
+              //     this.setState({
+              //       responseData: true,
+              //     });
+              //   }
+              //   response.json();
+              // })
 
-            .then(data =>
-              this.setState({
-                // temperature: `${(data.temperature - 273.15).toFixed(0)} ℃`,
-                // pressure: `${(data.pressure / 100).toFixed(0)} hPa`,
-                // humidity: `${data.humidity.toFixed(1)} %`,
-                // windSpeed: `${data.windSpeed.toFixed(2)} m/s`,
-                // precipitation: `${data.precipitation} mm`,
-                // isLoading: false,
+              .then(data =>
+                this.setState({
+                  // temperature: `${(data.temperature - 273.15).toFixed(0)} ℃`,
+                  // pressure: `${(data.pressure / 100).toFixed(0)} hPa`,
+                  // humidity: `${data.humidity.toFixed(1)} %`,
+                  // windSpeed: `${data.windSpeed.toFixed(2)} m/s`,
+                  // precipitation: `${data.precipitation} mm`,
+                  // isLoading: false,
 
-                temperature: data.temperature,
-                pressure: data.pressure,
-                humidity: data.humidity,
-                windSpeed: data.windSpeed,
-                precipitation: data.precipitation,
-                isLoading: false,
-              }),
-            ),
-      );
+                  temperature: data.temperature,
+                  pressure: data.pressure,
+                  humidity: data.humidity,
+                  windSpeed: data.windSpeed,
+                  precipitation: data.precipitation,
+                  isLoading: false,
+                }),
+              ),
+        );
+      } else {
+        return <h2>We cannot find your position 😢 </h2>;
+      }
     });
   }
   render() {
