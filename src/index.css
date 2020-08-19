@@ -8,6 +8,9 @@ body {
   background-image: url(./images/FAVPNG_underwater_19mmkDgZ.png);
   box-sizing: border-box;
   width:100%;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 
 }
 
