@@ -2,6 +2,8 @@ import React from 'react';
 import style from './AppContent.module.css';
 import { SmallImg } from './SmallImg';
 
+
+
 export const TextInHeader = ({ text }) => {
   return (
     <div className={style.textInHeader}>

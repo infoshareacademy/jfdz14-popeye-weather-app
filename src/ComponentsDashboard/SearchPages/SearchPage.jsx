@@ -25,7 +25,7 @@ class SearchPage extends React.Component {
         <Form.Group>
           <Form.Control
             type="text"
-            placeholder="Type City"
+            placeholder="Please type the city"
             value={this.state.filter}
             onChange={this.handleOnChange}
           />
