@@ -84,7 +84,7 @@ class SearchResultItem extends React.Component {
           </MetadataEntry>
           <MetadataEntry name="Pressure">{(weather.pressure / 100).toFixed(0)} hPa</MetadataEntry>
           <MetadataEntry name="Humidity">{weather.humidity.toFixed(1)}%</MetadataEntry>
-          <MetadataEntry name="Wind speed">{weather.windSpeed} m/s</MetadataEntry>
+          <MetadataEntry name="Wind speed">{weather.windSpeed.toFixed(2)} m/s</MetadataEntry>
           <MetadataEntry name="Precipitation">
             {precipitationDescription(weather.precipitation)}
           </MetadataEntry>
@@ -94,7 +94,7 @@ class SearchResultItem extends React.Component {
   }
 }
 
-function precipitationDescription(type) {
+export function precipitationDescription(type) {
   switch (parseInt(type, 10)) {
     case 1:
       return 'Rain';
@@ -108,7 +108,7 @@ function precipitationDescription(type) {
   return 'No rain';
 }
 
-function MetadataEntry(props) {
+export function MetadataEntry(props) {
   const { children, name, ...otherProps } = props;
   return (
     <div className={style.metadataEntry} {...otherProps}>

@@ -2,18 +2,14 @@ import React from 'react';
 import { Form, Button, Col } from 'react-bootstrap';
 import { AppContent } from '../Dashboards/AppContent';
 import FormInput from './FormInput';
+import { DATABASE_URL } from '../../index';
 
 class AddLocation extends React.Component {
   state = {
-    stacja: '',
-    data_pomiaru: '',
-    godzina_pomiaru: '',
-    temperatura: '',
-    predkosc_wiatru: '',
-    kierunek_wiatru: '',
-    wilgotnosc_wzgledna: '',
-    suma_opadu: '',
-    cisnienie: '',
+    location: '',
+    date: '',
+    latitude: '',
+    longitude: '',
   };
 
   handleOnChange = (name, text) => {
@@ -23,103 +19,73 @@ class AddLocation extends React.Component {
   };
 
   handleSubmitNewLocation = e => {
-    const { stacja } = this.state;
+    const { location } = this.state;
 
     e.preventDefault();
-    localStorage.setItem(stacja, JSON.stringify(this.state));
+    localStorage.setItem(location, JSON.stringify(this.state));
     this.setState({
-      stacja: '',
-      data_pomiaru: '',
-      godzina_pomiaru: '',
-      temperatura: '',
-      predkosc_wiatru: '',
-      kierunek_wiatru: '',
-      wilgotnosc_wzgledna: '',
-      suma_opadu: '',
-      cisnienie: '',
+      location: '',
+      date: '',
+      latitude: '',
+      longitude: '',
     });
   };
 
+  handleOnSave = e => {
+    e.preventDefault();
+    const { location } = this.state;
+    fetch(`${DATABASE_URL}/addedlocation/${location}.json`, {
+      method: 'PUT',
+      body: JSON.stringify(this.state),
+    }).then(() => {
+      this.setState({
+        location: '',
+        date: '',
+        latitude: '',
+        longitude: '',
+      });
+    });
+  };
   render() {
     return (
       <AppContent>
         <h3>Add Location</h3>
-        <Form onSubmit={this.handleSubmitNewLocation}>
+        <Form onSubmit={this.handleOnSave}>
           <FormInput
             description={'City'}
             required
-            name="stacja"
+            name="location"
             type="text"
-            placeholder="Enter city name"
+            placeholder="Enter location name"
             onInputChange={this.handleOnChange}
-            value={this.state.stacja}
+            value={this.state.location}
           />
           <FormInput
             description={'Date'}
             required
-            name="data_pomiaru"
+            name="date"
             type="date"
-            placeholder="Enter date"
+            placeholder="Enter today's date"
             onInputChange={this.handleOnChange}
-            value={this.state.data_pomiaru}
+            value={this.state.date}
           />
           <FormInput
-            description={'Time'}
+            description={'Longitude'}
             required
-            name="godzina_pomiaru"
-            type="time"
-            placeholder="Enter time"
+            name="longitude"
+            type="text"
+            placeholder="Enter GPS longitude"
             onInputChange={this.handleOnChange}
-            value={this.state.godzina_pomiaru}
+            value={this.state.longitude}
           />
           <FormInput
-            description={'Temperature'}
+            description={'Latitude'}
             required
-            name="temperatura"
-            type="number"
-            placeholder="Enter temperature in °C"
+            name="latitude"
+            type="text"
+            placeholder="Enter GPS latitude"
             onInputChange={this.handleOnChange}
-            value={this.state.temperatura}
-          />
-
-          <FormInput
-            description={'Wind speed'}
-            required={false}
-            name="predkosc_wiatru"
-            type="number"
-            placeholder="Enter wind speed in m/s"
-            onInputChange={this.handleOnChange}
-            value={this.state.predkosc_wiatru}
-          />
-
-          <FormInput
-            description={'Wind direction'}
-            name="kierunek_wiatru"
-            required={false}
-            type="number"
-            placeholder="Enter wind direction in °"
-            onInputChange={this.handleOnChange}
-            value={this.state.kierunek_wiatru}
-          />
-
-          <FormInput
-            description={'Humidity'}
-            name="wilgotnosc_wzgledna"
-            required={false}
-            type="number"
-            placeholder="Enter humidity"
-            onInputChange={this.handleOnChange}
-            value={this.state.wilgotnosc_wzgledna}
-          />
-
-          <FormInput
-            description={'Pressure'}
-            name="cisnienie"
-            required={false}
-            type="number"
-            placeholder="Enter atmospheric pressure"
-            onInputChange={this.handleOnChange}
-            value={this.state.cisnienie}
+            value={this.state.latitude}
           />
 
           <Button
