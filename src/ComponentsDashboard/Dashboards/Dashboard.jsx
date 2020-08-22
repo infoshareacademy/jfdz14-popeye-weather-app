@@ -45,11 +45,11 @@ export const Dashboard = () => {
           <NotificationsActiveOutlined color="primary" />
           <span className={style.dashboardMessage}>set your own notifications</span>
         </div>
+        <div>
+          <h2 className={style.chartsDescription}>Stats</h2>
+          <Charts />
+        </div>
       </AppContent>
-      <div>
-        <h2 className={style.chartsDescription}>Stats</h2>
-        <Charts />
-      </div>
     </>
   );
 };
