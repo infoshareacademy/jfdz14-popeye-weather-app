@@ -1,37 +1,37 @@
 export function getCities() {
-    return [
-        //Poland
-        {name: 'Gdańsk', long: 0, lat: 0, image: '/cities/gdansk.jpeg'},
-        {name: 'Gdynia', long: 0, lat: 0, image: ''},
-        {name: 'Ustka', long: 0, lat: 0, image: ''},
-        {name: 'Kołobrzeg', long: 0, lat: 0, image: ''},
-        {name: 'Świnoujście', long: 0, lat: 0, image: ''},
-        {name: 'Międzyzdroje', long: 0, lat: 0, image: ''},
-        //Obwód Kaliningradzki
-        {name: 'Baltiysk', long: 0, lat: 0, image: ''},
-        {name: 'Donskoye', long: 0, lat: 0, image: ''},
-        {name: 'Priboy', long: 0, lat: 0, image: ''},
-        //Litwa
-        {name: 'Kłajpeda', long: 0, lat: 0, image: ''},
-        //Łotwa
-        {name: 'Liepaja', long: 0, lat: 0, image: ''},
-        {name: 'Ventspils', long: 0, lat: 0, image: ''},
-        {name: 'Riga', long: 0, lat: 0, image: ''},
-        //Estonia
-        {name: 'Parnu', long: 0, lat: 0, image: ''},
-        {name: 'Tallinn', long: 0, lat: 0, image: ''},
-        {name: 'Saaremaa', long: 0, lat: 0, image: ''},
-        //Finland
-        {name: 'Helsinki', long: 0, lat: 0, image: ''},
-        {name: 'Turku', long: 0, lat: 0, image: ''},
-        {name: 'Oulu', long: 0, lat: 0, image: ''},
-        //sweden
-        {name: 'Stockholm', long: 0, lat: 0, image: ''},
-        {name: 'Malmo', long: 0, lat: 0, image: ''},
-        {name: 'Kalmar', long: 0, lat: 0, image: ''},
-        {name: 'Gotland', long: 0, lat: 0, image: ''},
-        {name: 'Oland', long: 0, lat: 0, image: ''},
-        {name: 'Sundsvall', long: 0, lat: 0, image: ''},
-    
-    ];
+    return cities;
 }
+const cities = [
+    //Poland
+    {name: 'Gdańsk', country: 'Poland', long: 54.3610063, lat: 18.5499479, image: '/cities/gdansk.jpeg'},
+    {name: 'Gdynia', country: 'Poland', long: 0, lat: 0, image: ''},
+    {name: 'Ustka', country: 'Poland', long: 0, lat: 0, image: ''},
+    {name: 'Kołobrzeg', country: 'Poland', long: 0, lat: 0, image: ''},
+    {name: 'Świnoujście', country: 'Poland', long: 0, lat: 0, image: ''},
+    {name: 'Międzyzdroje', country: 'Poland', long: 0, lat: 0, image: ''},
+    //Obwód Kaliningradzki
+    {name: 'Baltiysk', country: 'Obwód Kaliningradzki', long: 0, lat: 0, image: ''},
+    {name: 'Donskoye', country: 'Obwód Kaliningradzki', long: 0, lat: 0, image: ''},
+    {name: 'Priboy', country: 'Obwód Kaliningradzki', long: 0, lat: 0, image: ''},
+    //Litwa
+    {name: 'Kłajpeda', country: 'Litwa', long: 0, lat: 0, image: ''},
+    //Łotwa
+    {name: 'Liepaja', country: 'Łotwa', long: 0, lat: 0, image: ''},
+    {name: 'Ventspils', country: 'Łotwa', long: 0, lat: 0, image: ''},
+    {name: 'Riga', country: 'Łotwa', long: 0, lat: 0, image: ''},
+    //Estonia
+    {name: 'Parnu', country: 'Estonia', long: 0, lat: 0, image: ''},
+    {name: 'Tallinn', country: 'Estonia', long: 0, lat: 0, image: ''},
+    {name: 'Saaremaa', country: 'Estonia', long: 0, lat: 0, image: ''},
+    //Finland
+    {name: 'Helsinki', country: 'Finlandia', long: 0, lat: 0, image: ''},
+    {name: 'Turku', country: 'Finlandia', long: 0, lat: 0, image: ''},
+    {name: 'Oulu', country: 'Finlandia', long: 0, lat: 0, image: ''},
+    //sweden
+    {name: 'Stockholm', country: 'Szwecja', long: 0, lat: 0, image: ''},
+    {name: 'Malmo', country: 'Szwecja', long: 0, lat: 0, image: ''},
+    {name: 'Kalmar', country: 'Szwecja', long: 0, lat: 0, image: ''},
+    {name: 'Gotland', country: 'Szwecja', long: 0, lat: 0, image: ''},
+    {name: 'Oland', country: 'Szwecja', long: 0, lat: 0, image: ''},
+    {name: 'Sundsvall', country: 'Szwecja', long: 0, lat: 0, image: ''},
+];

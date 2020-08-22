@@ -10,7 +10,6 @@ import {
 } from '@material-ui/icons';
 import { Link } from 'react-router-dom';
 import { AppHeader } from './AppHeader';
-import MenuIcon from '@material-ui/icons/Menu';
 
 export function AppContent({ children }) {
   return (
