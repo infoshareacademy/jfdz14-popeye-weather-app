@@ -1,6 +1,10 @@
 export function getCities() {
   return cities;
 }
+
+import gdanskImg from '../images/searchCities/miasta/gdansk.jpg';
+import gdyniaImg from '../images/searchCities/miasta/gdynia.jpg';
+
 export const cities = [
   //Poland
   {
@@ -8,9 +12,15 @@ export const cities = [
     country: 'Poland',
     long: 18.4105394,
     lat: 54.3611647,
-    image: '/cities/gdansk.jpeg',
+    image: gdanskImg,
   },
-  { name: 'Gdynia', country: 'Poland', long: 18.3237408, lat: 54.5039437, image: '' },
+  {
+    name: 'Gdynia',
+    country: 'Poland',
+    long: 18.3237408,
+    lat: 54.5039437,
+    image: gdyniaImg,
+  },
   { name: 'Ustka', country: 'Poland', long: 16.7896089, lat: 54.5732244, image: '' },
   { name: 'Kołobrzeg', country: 'Poland', long: 15.4600829, lat: 54.175212, image: '' },
   { name: 'Świnoujście', country: 'Poland', long: 14.1731392, lat: 53.8477415, image: '' },
@@ -30,7 +40,13 @@ export const cities = [
     lat: 54.9382409,
     image: '',
   },
-  { name: 'Priboy', country: 'Obwód Kaliningradzki', long: 20.3912795, lat: 54.9396809, image: '' },
+  {
+    name: 'Priboy',
+    country: 'Obwód Kaliningradzki',
+    long: 20.3912795,
+    lat: 54.9396809,
+    image: '',
+  },
   //Litwa
   { name: 'Kłajpeda', country: 'Litwa', long: 20.5972608, lat: 55.7040636, image: '' },
   //Łotwa
