@@ -18,7 +18,7 @@ import { cities } from './datasources/cities';
 //   measurementId: "G-CHWD30XWMZ"
 // };
 
-cities.map(city => {
+const fetchedData = cities.map(city => {
   return fetch(
     `https://api.openweathermap.org/data/2.5/onecall?lat=${city.lat}&lon=${city.long}&exclude=hourly,minutely&appid=61a970cfc56f94d7136cb0eec9205048`,
   )
@@ -29,18 +29,11 @@ cities.map(city => {
     });
 });
 
-const allDataFromFetch = Promise.all([cities]).then();
+const allDataFromFetch = Promise.all(fetchedData).then(data => {
+  return data;
+});
 
-export const getWeatherForLocation = (lon, lat) => {
-  return fetch(
-    'https://api.openweathermap.org/data/2.5/onecall?lat=33.441792&lon=-94.037689&exclude=hourly&appid=61a970cfc56f94d7136cb0eec9205048',
-  )
-    .then(r => r.json())
-    .then(data => {
-      console.log(data);
-      return data;
-    });
-};
+console.log(allDataFromFetch);
 
 export const DATABASE_URL = 'https://popyeweather-352f0.firebaseio.com';
 

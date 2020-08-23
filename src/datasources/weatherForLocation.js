@@ -1,15 +1,3 @@
-export const getWeatherForLocation = (lon, lat) => {
-  return fetch(
-    'https://api.openweathermap.org/data/2.5/onecall?lat=33.441792&lon=-94.037689&exclude=hourly&appid=61a970cfc56f94d7136cb0eec9205048',
-  )
-    .then(r => r.json())
-    .then(data => {
-      console.log(data);
-
-      return data;
-    });
-};
-
 // export function getWeatherForLocation(long, lat) {
 //   return fetch('https://api.windy.com/api/point-forecast/v2', {
 //     method: 'POST',
