@@ -2,8 +2,8 @@ export function getCities() {
   return cities;
 }
 
-import gdanskImg from '../images/searchCities/miasta/gdansk.jpg';
-import gdyniaImg from '../images/searchCities/miasta/gdynia.jpg';
+// import gdanskImg from '../images/searchCities/miasta/gdansk.jpg';
+// import gdyniaImg from '../images/searchCities/miasta/gdynia.jpg';
 
 export const cities = [
   //Poland
@@ -12,14 +12,14 @@ export const cities = [
     country: 'Poland',
     long: 18.4105394,
     lat: 54.3611647,
-    image: gdanskImg,
+    image: '',
   },
   {
     name: 'Gdynia',
     country: 'Poland',
     long: 18.3237408,
     lat: 54.5039437,
-    image: gdyniaImg,
+    image: '',
   },
   { name: 'Ustka', country: 'Poland', long: 16.7896089, lat: 54.5732244, image: '' },
   { name: 'Kołobrzeg', country: 'Poland', long: 15.4600829, lat: 54.175212, image: '' },
