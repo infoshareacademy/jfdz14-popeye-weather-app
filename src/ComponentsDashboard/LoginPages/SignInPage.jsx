@@ -13,7 +13,7 @@ const SignInPage = () => {
     <div className={style.loginPage}>
       <PopeyeImg />
       <NameOfApp paragraph={'Sign in to use application'} />
-      <Input type={'text'} placeholder={'Enter your login'} />
+      <Input type={'text'} placeholder={'Enter your email address'} />
       <Divider />
       <Input type={'password'} placeholder={'Enter your password'} />
       <LoginButton toLogIn text={'Sign In'} urlName={'home'} />
