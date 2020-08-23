@@ -1,11 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider, connect } from 'react-redux';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import './fonts/Baloo2-Regular.ttf';
 import firebase from 'firebase';
 import { cities } from './datasources/cities';
+import store from './datasources/store/store';
+import { setWeatherData } from './datasources/reducers/weatherData.reducer';
 
 // const firebaseConfig = {
 //   apiKey: "AIzaSyBIe1o8mvKeSjXHT0PSwko0Y27o7flM3Bg",
@@ -24,16 +27,29 @@ const fetchedData = cities.map(city => {
   )
     .then(r => r.json())
     .then(data => {
-      console.log(data);
+      // console.log(data);
       return data;
     });
 });
 
-const allDataFromFetch = Promise.all(fetchedData).then(data => {
-  return data;
-});
+const allDataFromFetch = Promise.all(fetchedData)
+  .then(data => {
+    return data.map((el, index) => {
+      return {
+        ...el,
+        name: cities[index].name,
+        country: cities[index].country,
+      };
+    });
+  })
+  .then(data => {
+    store.dispatch(setWeatherData(data));
+    console.log(data);
+  });
 
-console.log(allDataFromFetch);
+// });
+
+// console.log(allDataFromFetch);
 
 export const DATABASE_URL = 'https://popyeweather-352f0.firebaseio.com';
 
@@ -41,7 +57,9 @@ export const DATABASE_URL = 'https://popyeweather-352f0.firebaseio.com';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root'),
 );
