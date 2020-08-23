@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
+import { Provider, connect } from 'react-redux';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
@@ -38,6 +38,7 @@ const allDataFromFetch = Promise.all(fetchedData)
       return {
         ...el,
         name: cities[index].name,
+        country: cities[index].country,
       };
     });
   })
