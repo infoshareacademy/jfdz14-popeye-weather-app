@@ -15,17 +15,17 @@ class SearchResultItem extends React.Component {
     actualFavourites: [],
   };
 
-  componentDidMount() {
-    Promise.all([
-      getWeatherForLocation(this.long, this.lat),
-      isFavourite(this.long, this.lat),
-    ]).then(([weatherData, isFavourite]) => {
-      this.setState({
-        weatherData,
-        isFavourite,
-      });
-    });
-  }
+  // componentDidMount() {
+  //   Promise.all([
+  //     getWeatherForLocation(this.long, this.lat),
+  //     isFavourite(this.long, this.lat),
+  //   ]).then(([weatherData, isFavourite]) => {
+  //     this.setState({
+  //       weatherData,
+  //       isFavourite,
+  //     });
+  //   });
+  // }
 
   addStorage = () => {
     const toState = !this.state.isFavourite;
