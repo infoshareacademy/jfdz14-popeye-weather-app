@@ -1,7 +1,7 @@
 export function getCities() {
   return cities;
 }
-const cities = [
+export const cities = [
   //Poland
   {
     name: 'Gdańsk',

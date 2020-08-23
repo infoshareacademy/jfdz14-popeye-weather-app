@@ -24,16 +24,27 @@ const fetchedData = cities.map(city => {
   )
     .then(r => r.json())
     .then(data => {
-      console.log(data);
+      // console.log(data);
       return data;
     });
 });
 
-const allDataFromFetch = Promise.all(fetchedData).then(data => {
-  return data;
-});
+const allDataFromFetch = Promise.all(fetchedData)
+  .then(data => {
+    return data.map((el, index) => {
+      return {
+        ...el,
+        name: cities[index].name,
+      };
+    });
+  })
+  .then(data => {
+    console.log(data);
+  });
 
-console.log(allDataFromFetch);
+// });
+
+// console.log(allDataFromFetch);
 
 export const DATABASE_URL = 'https://popyeweather-352f0.firebaseio.com';
 
