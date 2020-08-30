@@ -13,7 +13,7 @@ class LocationPage extends React.Component {
     pressure: null,
     windSpeed: null,
     humidity: null,
-    precipitation: null,
+    // precipitation: null,
     isLoading: true,
     responseData: false,
   };
@@ -27,29 +27,14 @@ class LocationPage extends React.Component {
           },
           () =>
             getWeatherForLocation(this.state.long, this.state.lat)
-              // .then(response => {
-              //   if (!response.ok) {
-              //     this.setState({
-              //       responseData: true,
-              //     });
-              //   }
-              //   response.json();
-              // })
-
+              // .then(r => r.json())
               .then(data =>
                 this.setState({
-                  // temperature: `${(data.temperature - 273.15).toFixed(0)} ℃`,
-                  // pressure: `${(data.pressure / 100).toFixed(0)} hPa`,
-                  // humidity: `${data.humidity.toFixed(1)} %`,
-                  // windSpeed: `${data.windSpeed.toFixed(2)} m/s`,
-                  // precipitation: `${data.precipitation} mm`,
-                  // isLoading: false,
-
-                  temperature: data.temperature,
-                  pressure: data.pressure,
-                  humidity: data.humidity,
-                  windSpeed: data.windSpeed,
-                  precipitation: data.precipitation,
+                  temperature: data.current.temp,
+                  pressure: data.current.pressure,
+                  humidity: data.current.humidity,
+                  windSpeed: data.current.wind_speed,
+                  // precipitation: data.precipitation,
                   isLoading: false,
                 }),
               ),
