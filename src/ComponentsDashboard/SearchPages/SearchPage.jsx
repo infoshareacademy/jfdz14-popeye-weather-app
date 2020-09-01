@@ -99,7 +99,7 @@ class SearchPage extends React.Component {
                     <tr>
                       <td>
                         <Link key={index} to={`search/${city.long}/${city.lat}`}>
-                          {city.name}
+                          {city.name} {city.daily[0].temp.day}
                         </Link>
                       </td>
                     </tr>
