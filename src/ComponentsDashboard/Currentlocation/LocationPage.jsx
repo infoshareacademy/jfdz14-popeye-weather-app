@@ -16,53 +16,60 @@ class LocationPage extends React.Component {
     humidity: null,
     // precipitation: null,
     isLoading: true,
-    responseData: false,
+    errorDownloadingData: false,
+    blockedGeolocation: false,
   };
   componentDidMount() {
     navigator.geolocation.getCurrentPosition(
       position => {
         console.log(position);
-        if (position) {
-          this.setState(
-            {
-              long: position.coords.longitude,
-              lat: position.coords.latitude,
-            },
-            () =>
-              getWeatherForLocation(this.state.long, this.state.lat).then(
-                // if(!data){
-                //   this.setState({
-                //     responseData: true,
-                //   })
-                // }
-
-                data => {
-                  if (data === 'error2') {
-                    this.setState({
-                      responseData: true,
-                    });
-                  } else {
-                    this.setState({
-                      temperature: data.current.temp,
-                      pressure: data.current.pressure,
-                      humidity: data.current.humidity,
-                      windSpeed: data.current.wind_speed,
-                      // precipitation: data.precipitation,
-                      isLoading: false,
-                    });
-                  }
-                },
-              ),
-          );
-        } else {
-          return <h2>We cannot find your position 😢 </h2>;
-        }
+        // if (position) {
+        this.setState(
+          {
+            long: position.coords.longitude,
+            lat: position.coords.latitude,
+          },
+          () =>
+            getWeatherForLocation(this.state.long, this.state.lat).then(data => {
+              if (data === 'error') {
+                this.setState({
+                  errorDownloadingData: true,
+                });
+              } else {
+                this.setState({
+                  temperature: data.current.temp,
+                  pressure: data.current.pressure,
+                  humidity: data.current.humidity,
+                  windSpeed: data.current.wind_speed,
+                  // precipitation: data.precipitation,
+                  isLoading: false,
+                });
+              }
+            }),
+        );
       },
-      error => console.log(error),
+      // else {
+      //   this.setState({
+      //     isLoading: false,
+      //     blockedGeolocation: true,
+      //   });
+
+      //   return <h2>We cannot find your position 😢 </h2>;
+      // }
+      // },
+      error =>
+        this.setState(
+          {
+            isLoading: false,
+            blockedGeolocation: true,
+            error: error,
+          },
+          () => console.log(error),
+        ),
     );
   }
   render() {
-    if (this.state.responseData) {
+    if (this.state.errorDownloadingData) {
       return (
         <AppContent>
           <Alert
@@ -71,6 +78,18 @@ class LocationPage extends React.Component {
             className={style.currentPositionHeader}
           >
             Not possible to download data
+          </Alert>
+        </AppContent>
+      );
+    }
+
+    if (this.state.blockedGeolocation) {
+      return (
+        <AppContent>
+          <Alert variant="info" className={style.currentPositionHeader}>
+            We cannot find your position 😢
+            <br />
+            {this.state.error.message && this.state.error.message}
           </Alert>
         </AppContent>
       );
