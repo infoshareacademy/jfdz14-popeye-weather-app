@@ -22,7 +22,7 @@ class LocationPage extends React.Component {
   componentDidMount() {
     navigator.geolocation.getCurrentPosition(
       position => {
-        console.log(position);
+        // console.log(position);
         // if (position) {
         this.setState(
           {
