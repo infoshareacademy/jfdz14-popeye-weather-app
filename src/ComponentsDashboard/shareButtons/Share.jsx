@@ -22,7 +22,7 @@ const ShareButtons = ({ isHovered }) => (
       quote={'Hey! Checkout the best weather app in the World ! '}
       hashtag="#PopeyeWeatherApp"
     >
-      <FacebookIcon logoFillColor="transparent" size={32} round={true} />
+      <FacebookIcon size={32} round={true} />
     </FacebookShareButton>
     <TwitterShareButton
       url={pageUrl}

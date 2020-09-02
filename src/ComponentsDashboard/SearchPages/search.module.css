@@ -28,3 +28,27 @@
     font-size: 20px;
     margin-bottom: 0;
 }
+
+.searchResults {
+    background-color: white;
+}
+
+.temperature {
+    display: inline-block;
+    margin-left: 20px;
+    font-size: 14px;
+    background-color: #b8e1f4;
+    color: #05577c;
+    padding: 1px 5px;
+    border-radius: 3px;
+}
+
+.pressure {
+    display: inline-block;
+    margin-left: 20px;
+    font-size: 14px;
+    background-color: #eb0101;
+    color: white;
+    padding: 1px 5px;
+    border-radius: 3px;
+}
