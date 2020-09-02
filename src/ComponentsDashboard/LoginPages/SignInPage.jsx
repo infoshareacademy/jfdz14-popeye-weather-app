@@ -65,7 +65,6 @@ class SignInPage extends React.Component {
       firebase.auth()
         .signInWithEmailAndPassword(this.state.email, this.state.password)
         .then((userData) => {
-          // console.log(userData)
           this.setState({
             redirect: true
           })
@@ -82,39 +81,13 @@ class SignInPage extends React.Component {
       return <Redirect to='/home' />
     }
 
-    // return (
-    //   <div className={style.loginPage} onSubmit={this.handleOnSubmit}>
-    //     <PopeyeImg />
-    //     <NameOfApp paragraph={'Sign in to use application'} />
-    //     <Input
-    //       type={'text'}
-    //       placeholder={'Enter your email address'}
-    //       onChange={this.handleOnChange}
-    //       value={this.state.email}
-    //     />
-    //     <Divider />
-    //     <Input
-    //       type={'password'}
-    //       placeholder={'Enter your password'}
-    //       onChange={this.handleOnChange}
-    //       value={this.state.password}
-    //     />
-    //     <LoginButton
-    //       toLogIn text={'Sign In'}
-    //       urlName={'home'}
-    //     />
-    //     <BackButton />
-    //     <LoginPageFooter />
-    //   </div>
-    // );
-
-
-
     return (
       <div className={style.loginPage}>
         <PopeyeImg />
+
         <PageWrapper title={this.props.isSignUp ? 'Register to use application' : 'Sign in to use application'}>
           <Form className='m-4 text-left' onSubmit={this.handleOnSubmit}>
+
             <Form.Group controlId="formGroupEmail">
               <Form.Label>Email</Form.Label>
               <Form.Control
@@ -124,6 +97,7 @@ class SignInPage extends React.Component {
                 value={this.state.email}
                 onChange={this.handleOnChange} />
             </Form.Group>
+
             <Form.Group controlId="formGroupPassword">
               <Form.Label>Password</Form.Label>
               <Form.Control
@@ -133,15 +107,16 @@ class SignInPage extends React.Component {
                 value={this.state.password}
                 onChange={this.handleOnChange} />
             </Form.Group>
-            <Button variant='primary' type='submit'>
+
+            <Button style={{backgroundColor: 'navy'}} type='submit'>
               {this.props.isSignUp ? 'Register to use application' : 'Sign In'}
             </Button>
-            <BackButton />
             {
               this.props.isSignUp
                 ? <Link to='/sign-in'><Button variant='link' type='submit' className='ml-3'>Already have an account? Sign In</Button></Link>
-                : <Link to='/sign-up'><Button variant='link' type='submit' className='ml-3'>Don't have an account? Sign Up</Button></Link>
+                : <Link to='/'><Button variant='link' type='submit' className='ml-3'>Don't have an account? Sign Up</Button></Link>
             }
+            
           </Form>
         </PageWrapper>
       </div>
