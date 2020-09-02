@@ -113,10 +113,10 @@ class SignInPage extends React.Component {
             </Button>
             {
               this.props.isSignUp
-                ? <Link to='/sign-in'><Button variant='link' type='submit' className='ml-3'>Already have an account? Sign In</Button></Link>
+                ? <Link to='/signin'><Button variant='link' type='submit' className='ml-3'>Already have an account? Sign In</Button></Link>
                 : <Link to='/'><Button variant='link' type='submit' className='ml-3'>Don't have an account? Sign Up</Button></Link>
             }
-            
+
           </Form>
         </PageWrapper>
       </div>

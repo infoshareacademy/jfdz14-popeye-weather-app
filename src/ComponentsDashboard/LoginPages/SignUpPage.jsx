@@ -90,16 +90,16 @@ class SignUpPage extends React.Component {
       <div className={style.loginPage}>
         <PopeyeImg />
 
-        <PageWrapper title={'Register to use application'}>
+        <PageWrapper title={this.props.isSignUp ? 'Sign In' : 'Register to use application'}>
           <Form className='m-4 text-left' onSubmit={this.handleOnSubmit}>
 
-            <Form.Group controlId="formGroupEmail">
-              <Form.Label>Enter your login</Form.Label>
+            <Form.Group controlId='formGroupLogin'>
+              <Form.Label>Login</Form.Label>
               <Form.Control
-                type="email"
+                type='text'
                 placeholder="Enter your login"
-                name='email'
-                value={this.state.email}
+                name='login'
+                value={this.state.login}
                 onChange={this.handleOnChange} />
             </Form.Group>
 
@@ -123,24 +123,15 @@ class SignUpPage extends React.Component {
                 onChange={this.handleOnChange} />
             </Form.Group>
 
-            <Form.Group controlId="formGroupPassword">
-              <Form.Label>Repeat your password</Form.Label>
-              <Form.Control
-                type="password"
-                placeholder="Repeat your password"
-                name='password'
-                value={this.state.password}
-                onChange={this.handleOnChange} />
-            </Form.Group>
-
             <Button style={{ backgroundColor: 'navy' }} type='submit'>
+
               {this.props.isSignUp ? 'Register to use application' : 'Sign Up'}
+
             </Button>
-            {
-              <Link to='/'><Button variant='link' type='submit' className='ml-3'>Already have an account? Sign In</Button></Link>
-
+            {this.props.isSignUp
+              ? <Link to='/'>Already have an account? Sign In</Link>
+              : <Link to='/signup'>Don't have an account? Sign Up</Link>
             }
-
           </Form>
         </PageWrapper>
       </div>
