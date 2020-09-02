@@ -8,16 +8,17 @@ import {
     StarBorderOutlined,
     AddLocationOutlined,
 } from '@material-ui/icons';
-import {Link} from 'react-router-dom';
-import {AppHeader} from './AppHeader';
+import { Link } from 'react-router-dom';
+import { AppHeader } from './AppHeader';
 import ShareButtons from '../shareButtons/Share';
 
-export function AppContent({children}) {
+
+export function AppContent({ children }) {
     return (
         <div className={style.wrapper}>
-            <AppHeader text={''}/>
+            <AppHeader text={''} />
             <div className={style.content}>
-                <Sidebar/>
+                <Sidebar />
                 <div className={style.contentMain}>{children}</div>
             </div>
         </div>
@@ -43,34 +44,34 @@ class Sidebar extends React.Component {
                 onMouseLeave={this.handleMouseHover}
             >
                 <nav className={style.sidebarNav}>
-                    <SidebarLink>Welcome, (Your Name)</SidebarLink>
-                    <SidebarLink to="/home" icon={<HomeOutlined color="primary"/>}>
+                    <SidebarLink> Welcome, (Your Name)</SidebarLink>
+                    <SidebarLink to="/home" icon={<HomeOutlined color="primary" />}>
                         Home
                     </SidebarLink>
-                    <SidebarLink to="/location" icon={<LocationOnOutlined color="primary"/>}>
+                    <SidebarLink to="/location" icon={<LocationOnOutlined color="primary" />}>
                         Current location
                     </SidebarLink>
-                    <SidebarLink to="/search" icon={<SearchOutlined color="primary"/>}>
+                    <SidebarLink to="/search" icon={<SearchOutlined color="primary" />}>
                         Search
                     </SidebarLink>
-                    <SidebarLink to="/favorites" icon={<StarBorderOutlined color="primary"/>}>
+                    <SidebarLink to="/favorites" icon={<StarBorderOutlined color="primary" />}>
                         Favourites
                     </SidebarLink>
 
-                    <SidebarLink to="/newlocation" icon={<AddLocationOutlined color="primary"/>}>
+                    <SidebarLink to="/newlocation" icon={<AddLocationOutlined color="primary" />}>
                         Add location
                     </SidebarLink>
-                    <SidebarLink to="/notifications" icon={<NotificationsActiveOutlined color="primary"/>}>
+                    <SidebarLink to="/notifications" icon={<NotificationsActiveOutlined color="primary" />}>
                         Notifications
                     </SidebarLink>
-                    <ShareButtons isHovered={this.state.isSidebarHovered}/>
+                    <ShareButtons isHovered={this.state.isSidebarHovered} />
                 </nav>
             </aside>
         );
     }
 }
 
-function SidebarLink({to, icon, children}) {
+function SidebarLink({ to, icon, children }) {
     const Component = to ? Link : 'span';
     const props = {
         className: style.sidebarLink,
