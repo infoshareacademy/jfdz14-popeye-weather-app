@@ -90,7 +90,7 @@ class SignUpPage extends React.Component {
       <div className={style.loginPage}>
         <PopeyeImg />
 
-        <PageWrapper title={this.props.isSignUp ? 'Sign In' : 'Register to use application'}>
+        <PageWrapper title={this.props.isSignUp ? 'Register to use application' : 'Sign In'}>
           <Form className='m-4 text-left' onSubmit={this.handleOnSubmit}>
 
             <Form.Group controlId='formGroupLogin'>
@@ -129,8 +129,9 @@ class SignUpPage extends React.Component {
 
             </Button>
             {this.props.isSignUp
-              ? <Link to='/signup'>Don't have an account? Sign Up</Link>
-              : <Link to='/signin'>Already have an account? Sign In</Link>
+              ? <Link to='/signin'>Already have an account? Sign In</Link>
+              : <Link to='/signup'>Don't have an account? Sign Up</Link>
+              
             }
           </Form>
         </PageWrapper>
