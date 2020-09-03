@@ -21,7 +21,7 @@ export function renderCityDetails(weather) {
         <MetadataEntry name="Temperature">
           {(weather.temperature - 273.15).toFixed(0)} ℃
         </MetadataEntry>
-        <MetadataEntry name="Pressure">{(weather.pressure / 100).toFixed(0)} hPa</MetadataEntry>
+        <MetadataEntry name="Pressure">{weather.pressure.toFixed(0)} hPa</MetadataEntry>
         <MetadataEntry name="Humidity">{weather.humidity.toFixed(1)}%</MetadataEntry>
         <MetadataEntry name="Wind speed">{weather.windSpeed.toFixed(2)} m/s</MetadataEntry>
         <MetadataEntry name="Precipitation">
