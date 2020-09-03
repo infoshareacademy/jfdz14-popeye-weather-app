@@ -45,6 +45,7 @@ class SignUpPage extends React.Component {
     redirect: false,
   }
 
+
   handleOnChange = (event) => {
     this.setState({
       [event.target.name]: event.target.value

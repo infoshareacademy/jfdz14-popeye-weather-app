@@ -5,13 +5,14 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import LoginPage from './ComponentsDashboard/LoginPages/LoginPage';
 import SignUpPage from './ComponentsDashboard/LoginPages/SignUpPage';
 import SignInPage from './ComponentsDashboard/LoginPages/SignInPage';
-import { Dashboard } from './ComponentsDashboard/Dashboards/Dashboard';
+
 import { NotificationsPage } from './ComponentsDashboard/NotificationsPage/NotificationsPage';
 import FavouritesPage from './ComponentsDashboard/Favourites/FavouritesPage';
 import SearchPage from './ComponentsDashboard/SearchPages/SearchPage';
 import LocationPage from './ComponentsDashboard/Currentlocation/LocationPage';
 import SearchResultItem from './ComponentsDashboard/SearchPages/SearchResulItem';
 import AddLocation from './ComponentsDashboard/AddLocation/AddLocation';
+import Dashboard from './ComponentsDashboard/Dashboards/Dashboard';
 
 // import SignInPage from "./ComponentsDashboard/SignInPage";
 
