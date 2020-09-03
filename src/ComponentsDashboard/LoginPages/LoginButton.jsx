@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import style from './LoginPage.module.css';
 
-const LoginButton = ({ text, urlName, toLogIn }) => {
+const LoginButton = ({ text, urlName, toLogIn, onSubmit }) => {
   return (
     <Link
       className={
