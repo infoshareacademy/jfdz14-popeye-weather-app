@@ -52,7 +52,7 @@ class App extends React.Component {
             <Route path="/location" component={LocationPage}></Route>
             <Route exact path="/" component={LoginPage}></Route>
             <Route path="/signin" component={SignInPage}></Route>
-            <Route path="/signup" component={SignUpPage}></Route>
+            <Route path="/signup" component={() => <SignUpPage isSignUp /> }></Route>
             <Route path="/home" component={Dashboard}></Route>
           </Switch>
         </div>
