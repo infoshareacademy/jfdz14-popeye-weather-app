@@ -1,6 +1,7 @@
 import React from 'react';
 import { BarChart, XAxis, Bar, Tooltip, Cell } from 'recharts';
 import style from './Chart.module.css';
+import { connect } from 'react-redux';
 
 const COLORS = ['#A45A52', '#00C49F', '#FFBB28', '#FF8042'];
 
@@ -19,11 +20,16 @@ const data = [
   },
 ];
 
-const ChartTwo = () => {
+const ChartTwo = ({ weather }) => {
+  // const data = [
+  //   { temp: this.props.weather[0].country, cityName: this.props.weather[1].name },
+  //   { temp: this.props.weather[0].country, cityName: this.props.weather[1].name },
+  // ];
+
   return (
     <>
       <div className={style.wrapper}>
-        <h5 className={style.chartDescription}>devices usage of our App</h5>
+        <h5 className={style.chartDescription}>{weather[0].cod}devices usage of our App</h5>
         <BarChart
           className={style.chartOne}
           width={250}
@@ -44,4 +50,8 @@ const ChartTwo = () => {
   );
 };
 
-export default ChartTwo;
+const mapStateToProps = state => ({
+  weather: state,
+});
+
+export default connect(mapStateToProps)(ChartTwo);

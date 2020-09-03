@@ -46,19 +46,19 @@ class FavouritesPage extends React.Component {
     return (
       <AppContent>
         <h3>Favourites</h3>
-        {/* {this.state.cities.map(city => {
+        {this.state.cities.map(city => {
           // {
           //   console.log(city);
           // }
           return <p>{city.name}</p>;
-        })} */}
-        {this.state.cities.map(city => {
+        })}
+        {/* {this.state.cities.map(city => {
           if (this.state.favCities.includes(city.lat)) {
             console.log(city.name);
             console.log(city);
             return <p>{this.props.weather[0].country}</p>;
           }
-        })}
+        })} */}
 
         {/* <h3>Favourites</h3>
        {this.state.cities.map(city => { */}
@@ -68,7 +68,8 @@ class FavouritesPage extends React.Component {
     //     return <p>{city.name}</p>;
     //   })} */}
 
-        <Table className={style.searchResults} striped bordered hover>
+        {
+          /* <Table className={style.searchResults} striped bordered hover>
           <tbody>
             {this.state.cities.map(city => {
               this.props.weather.filter(
@@ -100,15 +101,16 @@ class FavouritesPage extends React.Component {
                       </tr>
                     );
                   })} */
-                // </React.Fragment>
-              );
-            })}
-          </tbody>
-        </Table>
+          // </React.Fragment>
+          //       );
+          //     })}
+          //   </tbody>
+          // </Table> */}
+          // </AppContent>
+          // );
+        }
       </AppContent>
     );
-    // </AppContent>
-    // );
   }
 }
 // export default FavouritesPage;
