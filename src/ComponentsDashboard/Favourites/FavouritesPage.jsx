@@ -85,41 +85,48 @@ class FavouritesPage extends React.Component {
       return (
         <AppContent>
           <h3>Favourites</h3>
-          {this.state.cities.map(city => {
+          {/* {this.state.cities.map(city => {
             return <p>{city.name}</p>;
           })}
-          {
-            <Table className={style.searchResults} striped bordered hover>
-              <tbody>
-                {this.state.cities.map((city, index) => {
-                  getWeatherForLocation(city.lat, city.long).then(data => {
-                    if (data === 'error') {
-                      console.log('error');
-                    } else {
-                      {
-                        console.log('działa');
-                        console.log(data);
-                        console.log(data.current.temp);
-                      }
-                      <tr key={index}>
-                        <td>
-                          <Alert variant="info" className={style.currentPositionHeader}>
-                            {data.current.temp}
-                            <br />
-                          </Alert>
-                          <Link key={index} to={`search/${city.lon}/${city.lat}`}>
-                            {data.current.clouds}
-                            <span className={style.temperature}>{data.current.temp}</span>
-                            <span className={style.pressure}>{data.current.pressure}</span>
-                          </Link>
-                        </td>
-                      </tr>;
-                    }
-                  });
-                })}
-              </tbody>
-            </Table>
-          }
+          { */}
+          {/* <Table className={style.searchResults} striped bordered hover> */}
+          {/* <tbody> */}
+          {this.state.cities.map((city, index) => {
+            getWeatherForLocation(city.long, city.lat).then(data => {
+              if (data === 'error') {
+                console.log('error');
+              }
+              {
+                <p>{data.current.temp}stopni celciusza</p>;
+                console.log('działa');
+                console.log(data);
+                console.log(data.current.temp);
+                return (
+                  <Alert variant="info" className={style.currentPositionHeader}>
+                    {data.current.temp}
+                  </Alert>
+                );
+              }
+              //     <tr key={index}>
+              //       <td>
+              //         <Alert variant="info" className={style.currentPositionHeader}>
+              //           {data.current.temp}
+              //           <br />
+              //         </Alert>
+              //         <Link key={index} to={`search/${city.lon}/${city.lat}`}>
+              //           {data.current.clouds}
+              //           <span className={style.temperature}>{data.current.temp}</span>
+              //           <span className={style.pressure}>{data.current.pressure}</span>
+              //         </Link>
+              //       </td>
+              //     </tr>;
+              //   }
+              // });
+            });
+          })}
+
+          {/* // </tbody> */}
+          {/* </Table> */}
         </AppContent>
       );
     }
