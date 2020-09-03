@@ -21,9 +21,11 @@ import { setWeatherData } from './datasources/reducers/weatherData.reducer';
 //   measurementId: "G-CHWD30XWMZ"
 // };
 
+export const APIidNumber = '79046bd50d9c29a85ccfe64d72c81584';
+
 const fetchedData = cities.map(city => {
   return fetch(
-    `https://api.openweathermap.org/data/2.5/onecall?lat=${city.lat}&lon=${city.long}&exclude=hourly,minutely&appid=61a970cfc56f94d7136cb0eec9205048`,
+    `https://api.openweathermap.org/data/2.5/onecall?lat=${city.lat}&lon=${city.long}&exclude=hourly,minutely&appid=${APIidNumber}`,
   )
     .then(r => r.json())
     .then(data => {

@@ -1,6 +1,8 @@
+import { APIidNumber, APIiDNumber } from '../index';
+
 export function getWeatherForLocation(long, lat) {
   return fetch(
-    `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&exclude=hourly,minutely&appid=61a970cfc56f94d7136cb0eec9205048`,
+    `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&exclude=hourly,minutely&appid=${APIidNumber}`,
   )
     .then(r => {
       if (!r.ok) {

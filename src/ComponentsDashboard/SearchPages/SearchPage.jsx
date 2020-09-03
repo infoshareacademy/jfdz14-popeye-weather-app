@@ -88,29 +88,33 @@ class SearchPage extends React.Component {
         </Form.Group>
         <Table className={style.searchResults} striped bordered hover>
           <tbody>
-          {Object.keys(cities).map((country, index) => {
-            const list = cities[country];
-            return (
-              <React.Fragment key={index}>
-                <tr>
-                  <th>{country}</th>
-                </tr>
-                {list.map((city, index) => {
-                  return (
-                    <tr key={index}>
-                      <td>
-                        <Link key={index} to={`search/${city.lon}/${city.lat}`}>
-                          {city.name}
-                          <span className={style.temperature}>{displayCelcius(city.daily[0].temp.day)}</span>
-                          <span className={style.pressure}>{displayPressure(city.daily[0].pressure)}</span>
-                        </Link>
-                      </td>
-                    </tr>
-                  );
-                })}
-              </React.Fragment>
-            );
-          })}
+            {Object.keys(cities).map((country, index) => {
+              const list = cities[country];
+              return (
+                <React.Fragment key={index}>
+                  <tr>
+                    <th>{country}</th>
+                  </tr>
+                  {list.map((city, index) => {
+                    return (
+                      <tr key={index}>
+                        <td>
+                          <Link key={index} to={`search/${city.lon}/${city.lat}`}>
+                            {city.name}
+                            <span className={style.temperature}>
+                              {displayCelcius(city.daily[0].temp.day)}
+                            </span>
+                            <span className={style.pressure}>
+                              {displayPressure(city.daily[0].pressure)}
+                            </span>
+                          </Link>
+                        </td>
+                      </tr>
+                    );
+                  })}
+                </React.Fragment>
+              );
+            })}
           </tbody>
         </Table>
       </AppContent>
@@ -118,16 +122,16 @@ class SearchPage extends React.Component {
   }
 }
 
-const tempFormat = new Intl.NumberFormat('pl-PL', {style: 'unit', unit: 'celsius'});
-function displayCelcius(temp) {
+const tempFormat = new Intl.NumberFormat('pl-PL', { style: 'unit', unit: 'celsius' });
+export function displayCelcius(temp) {
   const finalTemp = temp - 272.15;
 
   return tempFormat.format(finalTemp);
 }
 
-const pressureFormat = new Intl.NumberFormat('pl-PL')
-function displayPressure(press) {
-  return pressureFormat.format(press) + ' hPa'
+const pressureFormat = new Intl.NumberFormat('pl-PL');
+export function displayPressure(press) {
+  return pressureFormat.format(press) + ' hPa';
 }
 
 const mapStateToProps = state => ({

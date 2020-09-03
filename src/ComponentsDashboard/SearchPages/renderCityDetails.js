@@ -19,13 +19,23 @@ export function renderCityDetails(weather) {
       </Card> */}
       <div className={style.metadata}>
         <MetadataEntry name="Temperature">
-          {(weather.temperature - 273.15).toFixed(0)} ℃
+          {(weather.daily[0].temp.day - 273.15).toFixed(0)} ℃
         </MetadataEntry>
-        <MetadataEntry name="Pressure">{(weather.pressure / 100).toFixed(0)} hPa</MetadataEntry>
-        <MetadataEntry name="Humidity">{weather.humidity.toFixed(1)}%</MetadataEntry>
-        <MetadataEntry name="Wind speed">{weather.windSpeed.toFixed(2)} m/s</MetadataEntry>
+        <MetadataEntry name="Feels like">
+          {console.log(weather.daily)}
+          {(weather.daily[0].feels_like.day - 273.15).toFixed(0)} ℃
+        </MetadataEntry>
+        <MetadataEntry name="Dew Point">
+          {(weather.daily[0].dew_point - 273.15).toFixed(0)} ℃
+        </MetadataEntry>
+        <MetadataEntry name="Pressure">{weather.daily[0].pressure.toFixed(0)} hPa</MetadataEntry>
+        <MetadataEntry name="Humidity">{weather.daily[0].humidity.toFixed(1)}%</MetadataEntry>
+        <MetadataEntry name="Wind speed">
+          {weather.daily[0].wind_speed.toFixed(2)} m/s
+        </MetadataEntry>
+        <MetadataEntry name="Wind direction">{weather.daily[0].wind_deg} ° </MetadataEntry>
         <MetadataEntry name="Precipitation">
-          {precipitationDescription(weather.precipitation)}
+          {precipitationDescription(weather.daily[0].weather[0])}
         </MetadataEntry>
       </div>
     </>
