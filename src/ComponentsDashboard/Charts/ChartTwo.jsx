@@ -29,7 +29,7 @@ const ChartTwo = ({ weather }) => {
   return (
     <>
       <div className={style.wrapper}>
-        <h5 className={style.chartDescription}>{weather[0].cod}devices usage of our App</h5>
+        <h5 className={style.chartDescription}>devices usage of our App</h5>
         <BarChart
           className={style.chartOne}
           width={250}
