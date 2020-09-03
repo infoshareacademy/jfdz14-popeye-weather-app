@@ -9,7 +9,7 @@ import {
     AddLocationOutlined,
 } from '@material-ui/icons';
 import { Link } from 'react-router-dom';
-import { AppHeader } from './AppHeader';
+import AppHeader from './AppHeader';
 import ShareButtons from '../shareButtons/Share';
 
 
