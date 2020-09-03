@@ -129,8 +129,8 @@ class SignUpPage extends React.Component {
 
             </Button>
             {this.props.isSignUp
-              ? <Link to='/'>Already have an account? Sign In</Link>
-              : <Link to='/signup'>Don't have an account? Sign Up</Link>
+              ? <Link to='/signup'>Don't have an account? Sign Up</Link>
+              : <Link to='/signin'>Already have an account? Sign In</Link>
             }
           </Form>
         </PageWrapper>
