@@ -63,7 +63,7 @@ class AppHeader extends React.Component {
         <div style={{ display: 'flex', justifyContent: 'flex-end', width: '100%' }}>
           {
             this.state.user
-              ? <Button style={{ backgroundColor: 'navy', color: 'white' }} type='submit' onClick={this.handleOnSignOutClick}>Sign Out</Button>
+              ? <Button style={{ backgroundColor: 'navy', color: 'white' }} type='submit' onClick={this.handleOnSignOutClick} component={NavLink} to={'/signin'}  >Sign Out</Button>
               : <Button style={{ backgroundColor: 'navy', color: 'white' }} type='submit' component={NavLink} to='/signin' >Sign In</Button>
           }
 
