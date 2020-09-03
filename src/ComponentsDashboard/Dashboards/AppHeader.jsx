@@ -3,7 +3,7 @@ import style from './AppContent.module.css';
 import { SmallImg } from './SmallImg';
 import Button from "@material-ui/core/Button";
 import { ExposureNeg1TwoTone } from '@material-ui/icons';
-import Toolbar from "@material-ui/core/Toolbar";
+
 import firebase from "firebase";
 import { NavLink } from "react-router-dom";
 
