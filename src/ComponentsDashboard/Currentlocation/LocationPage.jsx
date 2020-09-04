@@ -1,10 +1,11 @@
 import React from 'react';
 import { AppContent } from '../Dashboards/AppContent';
 import style from './currentLocation.module.css';
-import { renderCityDetails } from '../SearchPages/renderCityDetails';
+import { precipitationDescription } from '../SearchPages/SearchResulItem';
 import { getWeatherForLocation } from '../../datasources/weatherForLocation';
 import LinearProgress from '@material-ui/core/LinearProgress';
 import { Alert } from 'react-bootstrap';
+import { MetadataEntry } from '../SearchPages/SearchResulItem';
 
 class LocationPage extends React.Component {
   state = {
@@ -40,8 +41,11 @@ class LocationPage extends React.Component {
                   temperature: data.current.temp,
                   pressure: data.current.pressure,
                   humidity: data.current.humidity,
-                  windSpeed: data.current.wind_speed,
-                  // precipitation: data.precipitation,
+                  wind_speed: data.current.wind_speed,
+                  wind_deg: data.current.wind_deg,
+                  feels_like: data.current.feels_like,
+                  dew_point: data.current.dew_point,
+                  precipitation: data.current.weather[0],
                   isLoading: false,
                 });
               }
@@ -104,7 +108,25 @@ class LocationPage extends React.Component {
               <div className={style.currentPositionHeader}>
                 <h2>Weather in your current position: </h2>
               </div>
-              <div>{renderCityDetails(this.state)}</div>
+              <div className={style.metadata}>
+                <MetadataEntry name="Temperature">
+                  {(this.state.temperature - 273.15).toFixed(0)} ℃
+                </MetadataEntry>
+                <MetadataEntry name="Feels like">
+                  {console.log(this.state)}
+                  {(this.state.feels_like - 273.15).toFixed(0)} ℃
+                </MetadataEntry>
+                <MetadataEntry name="Dew Point">
+                  {(this.state.dew_point - 273.15).toFixed(0)} ℃
+                </MetadataEntry>
+                <MetadataEntry name="Pressure">{this.state.pressure} hPa</MetadataEntry>
+                <MetadataEntry name="Humidity">{this.state.humidity}%</MetadataEntry>
+                <MetadataEntry name="Wind speed">{this.state.wind_speed} m/s</MetadataEntry>
+                <MetadataEntry name="Wind direction">{this.state.wind_deg} ° </MetadataEntry>
+                <MetadataEntry name="Precipitation">
+                  {precipitationDescription(this.state.precipitation)}
+                </MetadataEntry>
+              </div>
             </>
           )}
         </div>
