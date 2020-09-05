@@ -58,9 +58,9 @@ class Sidebar extends React.Component {
                         Favourites
                     </SidebarLink>
 
-                    <SidebarLink to="/newlocation" icon={<AddLocationOutlined color="primary" />}>
+                    {/* <SidebarLink to="/newlocation" icon={<AddLocationOutlined color="primary" />}>
                         Add location
-                    </SidebarLink>
+                    </SidebarLink> */}
                     <SidebarLink to="/notifications" icon={<NotificationsActiveOutlined color="primary" />}>
                         Notifications
                     </SidebarLink>
