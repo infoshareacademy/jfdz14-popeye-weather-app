@@ -10,23 +10,19 @@ import {
 import { InvitationMessage } from './InvitationMessage';
 import { AppContent } from './AppContent';
 import Charts from '../Charts/Charts';
-import firebase from "firebase";
+import firebase from 'firebase';
 
 class Dashboard extends React.Component {
-
   state = {
     user: null,
-  }
-
-
+  };
 
   componentDidMount = () => {
     firebase.auth().onAuthStateChanged(user => {
-      console.log(user)
-      this.setState({ user })
-    })
+      console.log(user);
+      this.setState({ user });
+    });
   };
-
 
   render() {
     return (
@@ -70,7 +66,6 @@ class Dashboard extends React.Component {
       </>
     );
   }
-
-};
+}
 
 export default Dashboard;

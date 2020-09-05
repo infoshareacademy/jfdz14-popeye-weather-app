@@ -85,12 +85,19 @@ class FavouritesPage extends React.Component {
       return (
         <AppContent>
           <h3>Favourites</h3>
-          {/* {this.state.cities.map(city => {
-            return <p>{city.name}</p>;
-          })}
-          { */}
+          <Table className={style.searchResults} striped bordered hover>
+            <tbody>
+              {this.state.cities.map(city => (
+                <tr key={city.name}>
+                  <td>
+                    <Link to={`search/${city.long}/${city.lat}`}>{city.name}</Link>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </Table>
           {/* <Table className={style.searchResults} striped bordered hover> */}
-          {/* <tbody> */}
+          {/* <tbody>
           {this.state.cities.map((city, index) => {
             getWeatherForLocation(city.long, city.lat).then(data => {
               if (data === 'error') {

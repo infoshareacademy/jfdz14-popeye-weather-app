@@ -1,4 +1,4 @@
-import { APIidNumber, APIiDNumber } from '../index';
+import { APIidNumber } from '../index';
 
 export function getWeatherForLocation(long, lat) {
   return fetch(
