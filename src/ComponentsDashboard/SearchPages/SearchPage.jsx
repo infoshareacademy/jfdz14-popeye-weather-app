@@ -107,6 +107,9 @@ class SearchPage extends React.Component {
                             <span className={style.pressure}>
                               {displayPressure(city.daily[0].pressure)}
                             </span>
+                            <span className={style.humidity}>
+                              {displayHumidity(city.daily[0].humidity)}
+                            </span>
                           </Link>
                         </td>
                       </tr>
@@ -122,16 +125,22 @@ class SearchPage extends React.Component {
   }
 }
 
-const tempFormat = new Intl.NumberFormat('pl-PL', { style: 'unit', unit: 'celsius' });
+const tempFormat = new Intl.NumberFormat('pl-PL');
 export function displayCelcius(temp) {
   const finalTemp = temp - 272.15;
 
-  return tempFormat.format(finalTemp);
+  return 'T: ' + tempFormat.format(finalTemp) + ' °C'
 }
 
 const pressureFormat = new Intl.NumberFormat('pl-PL');
 export function displayPressure(press) {
-  return pressureFormat.format(press) + ' hPa';
+  return 'P: ' + pressureFormat.format(press) + ' hPa';
+}
+
+
+const humidityFormat = new Intl.NumberFormat('pl-PL');
+export function displayHumidity(press) {
+  return 'H: ' +humidityFormat.format(press) + '  %';
 }
 
 const mapStateToProps = state => ({

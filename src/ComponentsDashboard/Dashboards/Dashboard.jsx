@@ -43,7 +43,7 @@ export const Dashboard = () => {
         </div>
         <div className={style.listElement}>
           <NotificationsActiveOutlined color="primary" />
-          <span className={style.dashboardMessage}>set your own notifications</span>
+          <span className={style.dashboardMessage}>set your own notifications (available in premium version)</span>
         </div>
         <div>
           <h2 className={style.chartsDescription}>Stats</h2>
