@@ -21,9 +21,12 @@ class Dashboard extends React.Component {
 
 
   componentDidMount = () => {
-    firebase.auth().onAuthStateChanged(user => { this.setState({ user }) 
-  })
-  }
+    firebase.auth().onAuthStateChanged(user => {
+      console.log(user)
+      this.setState({ user })
+    })
+  };
+
 
   render() {
     return (
@@ -32,19 +35,13 @@ class Dashboard extends React.Component {
           <InvitationMessage
             message={
               <div className={style.dashboardInvitation}>
-                Dear 
-                {
-
-                this.state.user
-
-                } 
-                User,
+                {`Dear ${this.state.user && this.state.user.email}`}
                 <br />
                 in our application you can:
               </div>
             }
           />
-  
+
           <div className={style.listElement}>
             <LocationOnOutlined color="primary" />
             <span className={style.dashboardMessage}>
@@ -73,7 +70,7 @@ class Dashboard extends React.Component {
       </>
     );
   }
-  
+
 };
 
 export default Dashboard;
