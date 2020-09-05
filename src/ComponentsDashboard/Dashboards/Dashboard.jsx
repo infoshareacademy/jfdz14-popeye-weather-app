@@ -10,6 +10,7 @@ import {
 import { InvitationMessage } from './InvitationMessage';
 import { AppContent } from './AppContent';
 import Charts from '../Charts/Charts';
+import firebase from "firebase";
 
 class Dashboard extends React.Component {
 
