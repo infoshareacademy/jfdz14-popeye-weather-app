@@ -36,7 +36,7 @@ const fetchedData = cities.map(city => {
     });
 });
 
-const fetchAddedData = fetch(`${DATABASE_URL}/addedlocation.json`)
+const fetchUserAddedData = fetch(`${DATABASE_URL}/addedlocation.json`)
   .then(res => res.json())
   .then(data => {
     // console.log(data);
@@ -51,9 +51,21 @@ const fetchAddedData = fetch(`${DATABASE_URL}/addedlocation.json`)
   .then(data => {
     console.log(data);
     return data;
+  })
+  .then(data => {
+    data.map(city =>
+      fetch(
+        `https://api.openweathermap.org/data/2.5/onecall?lat=${city.latitude}&lon=${city.longitude}&exclude=hourly,minutely&appid=${APIidNumber}`,
+      )
+        .then(r => r.json())
+        .then(data => {
+          console.log(data);
+          return data;
+        }),
+    );
   });
 
-const allDataFromFetch = Promise.all(fetchedData, fetchAddedData)
+const allDataFromFetch = Promise.all(fetchedData)
   .then(data => {
     console.log(data);
     return data.map((el, index) => {

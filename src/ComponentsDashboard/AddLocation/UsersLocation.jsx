@@ -2,7 +2,7 @@ import React from 'react';
 import { DATABASE_URL } from '../../index';
 import { AppContent } from '../Dashboards/AppContent';
 import LinearProgress from '@material-ui/core/LinearProgress';
-import { Alert } from 'react-bootstrap';
+import { Alert, Button } from 'react-bootstrap';
 import style from './addLocation.module.css';
 import Table from 'react-bootstrap/Table';
 import { Link } from 'react-router-dom';
@@ -24,7 +24,7 @@ class UsersLocation extends React.Component {
     errorDownloadingData: false,
   };
 
-  componentDidMount() {
+  fetchData = () => {
     fetch(`${DATABASE_URL}/addedlocation.json`)
       .then(res => res.json())
       .then(data => {
@@ -47,9 +47,20 @@ class UsersLocation extends React.Component {
           errorDownloadingData: true,
         });
       });
+  };
+
+  componentDidMount() {
+    this.fetchData();
     // .then(console.log(arrayCities));
   }
 
+  handleRemoveLocation = id => {
+    fetch(`${DATABASE_URL}/addedlocation/${id}.json`, {
+      method: 'DELETE',
+    }).then(() => {
+      this.fetchData();
+    });
+  };
   //           getWeatherForLocation(this.state.long, this.state.lat).then(data => {
   //             if (data === 'error') {
   //               this.setState({
@@ -118,6 +129,7 @@ class UsersLocation extends React.Component {
                 <tbody>
                   <td>Location</td>
                   <td>Add Date</td>
+                  <td>Remove</td>
 
                   {this.state.cities.map(city => (
                     <tr key={city.id}>
@@ -127,6 +139,11 @@ class UsersLocation extends React.Component {
                         </Link>
                       </td>
                       <td>{city.date}</td>
+                      <td>
+                        <Button variant="info" onClick={() => this.handleRemoveLocation(city.id)}>
+                          Remove
+                        </Button>
+                      </td>
                     </tr>
                   ))}
                 </tbody>
