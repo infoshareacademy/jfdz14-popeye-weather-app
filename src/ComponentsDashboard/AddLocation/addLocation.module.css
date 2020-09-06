@@ -1,0 +1,10 @@
+.currentPositionHeader {
+  color: navy;
+  font-family: Baloo2, sans-serif;
+  text-align: center;
+  font-size: 1.4rem;
+}
+
+.searchResults {
+  background-color: white;
+}

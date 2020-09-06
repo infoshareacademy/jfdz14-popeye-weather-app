@@ -13,6 +13,7 @@ import LocationPage from './ComponentsDashboard/Currentlocation/LocationPage';
 import SearchResultItem from './ComponentsDashboard/SearchPages/SearchResulItem';
 import AddLocation from './ComponentsDashboard/AddLocation/AddLocation';
 import Dashboard from './ComponentsDashboard/Dashboards/Dashboard';
+import UsersLocation from './ComponentsDashboard/AddLocation/UsersLocation';
 
 // import SignInPage from "./ComponentsDashboard/SignInPage";
 
@@ -51,9 +52,10 @@ class App extends React.Component {
             <Route exact path="/search" component={SearchPage}></Route>
             <Route path="/search/:long/:lat" component={SearchResultItem} />
             <Route path="/location" component={LocationPage}></Route>
+            <Route path="/added-location" component={UsersLocation}></Route>
             <Route exact path="/" component={LoginPage}></Route>
             <Route path="/signin" component={SignInPage}></Route>
-            <Route path="/signup" component={() => <SignUpPage isSignUp /> }></Route>
+            <Route path="/signup" component={() => <SignUpPage isSignUp />}></Route>
             <Route path="/home" component={Dashboard}></Route>
           </Switch>
         </div>
