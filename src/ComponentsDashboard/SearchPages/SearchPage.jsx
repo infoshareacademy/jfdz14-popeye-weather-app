@@ -98,7 +98,7 @@ class SearchPage extends React.Component {
                   {list.map((city, index) => {
                     return (
                       <tr key={index}>
-                        <td>
+                        <td className={style.list}>
                           <Link key={index} to={`search/${city.lon}/${city.lat}`}>
                             {city.name}
                             <span className={style.temperature}>
