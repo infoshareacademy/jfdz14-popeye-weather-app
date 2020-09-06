@@ -157,3 +157,8 @@
 
 
 
+@media (max-width:860px) {
+  .stats {
+    display: none;
+  }
+}

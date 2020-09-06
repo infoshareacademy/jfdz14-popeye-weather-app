@@ -58,7 +58,7 @@ class Dashboard extends React.Component {
             <NotificationsActiveOutlined color="primary" />
             <span className={style.dashboardMessage}>set your own notifications</span>
           </div>
-          <div>
+          <div className={style.stats}>
             <h2 className={style.chartsDescription}>Stats</h2>
             <Charts />
           </div>
