@@ -51,7 +51,6 @@ class UsersLocation extends React.Component {
 
   componentDidMount() {
     this.fetchData();
-    // .then(console.log(arrayCities));
   }
 
   handleRemoveLocation = id => {
@@ -61,56 +60,12 @@ class UsersLocation extends React.Component {
       this.fetchData();
     });
   };
-  //           getWeatherForLocation(this.state.long, this.state.lat).then(data => {
-  //             if (data === 'error') {
-  //               this.setState({
-  //                 errorDownloadingData: true,
-  //               });
-  //             } else {
-  //               this.setState({
-  //                 temperature: data.current.temp,
-  //                 pressure: data.current.pressure,
-  //                 humidity: data.current.humidity,
-  //                 wind_speed: data.current.wind_speed,
-  //                 wind_deg: data.current.wind_deg,
-  //                 feels_like: data.current.feels_like,
-  //                 dew_point: data.current.dew_point,
-  //                 precipitation: data.current.weather[0],
-  //                 isLoading: false,
-  //               });
-  //             }
-  //           }),
-  //       );
-  //     },
-  //     // else {
-  //     //   this.setState({
-  //     //     isLoading: false,
-  //     //     blockedGeolocation: true,
-  //     //   });
 
-  //     //   return <h2>We cannot find your position 😢 </h2>;
-  //     // }
-  //     // },
-  //     error =>
-  //       this.setState(
-  //         {
-  //           isLoading: false,
-  //           blockedGeolocation: true,
-  //           error: error,
-  //         },
-  //         () => console.log(error),
-  //       ),
-  //   );
-  // }
   render() {
     if (this.state.errorDownloadingData) {
       return (
         <AppContent>
-          <Alert
-            variant="info"
-            // className="text-center"
-            className={style.currentPositionHeader}
-          >
+          <Alert variant="info" className={style.currentPositionHeader}>
             Not possible to download data
           </Alert>
         </AppContent>

@@ -11,6 +11,7 @@ import { getWeatherForLocation } from '../../datasources/weatherForLocation';
 import { displayCelcius } from '../SearchPages/SearchPage';
 import { displayPressure } from '../SearchPages/SearchPage';
 import { Alert } from 'react-bootstrap';
+import LinearProgress from '@material-ui/core/LinearProgress';
 
 // import Table from 'react-bootstrap/Table';
 // import { FavoriteSharp } from '@material-ui/icons';
@@ -78,7 +79,11 @@ class FavouritesPage extends React.Component {
     console.log(this.state.cities);
     console.log(this.props.weather);
     if (!this.state.loaded) {
-      return <AppContent></AppContent>;
+      return (
+        <AppContent>
+          <LinearProgress />
+        </AppContent>
+      );
     }
 
     if (this.state.loaded) {
@@ -104,7 +109,7 @@ class FavouritesPage extends React.Component {
                 console.log('error');
               }
               {
-                <p>{data.current.temp}stopni celciusza</p>;
+                return <p>{data.current.temp}stopni celciusza</p>;
                 console.log('działa');
                 console.log(data);
                 console.log(data.current.temp);

@@ -53,19 +53,34 @@ const fetchUserAddedData = fetch(`${DATABASE_URL}/addedlocation.json`)
     return data;
   })
   .then(data => {
-    data.map(city =>
-      fetch(
-        `https://api.openweathermap.org/data/2.5/onecall?lat=${city.latitude}&lon=${city.longitude}&exclude=hourly,minutely&appid=${APIidNumber}`,
-      )
-        .then(r => r.json())
-        .then(data => {
-          console.log(data);
-          return data;
-        }),
+    const newCitiesArray = data.map(
+      city =>
+        fetch(
+          `https://api.openweathermap.org/data/2.5/onecall?lat=${city.latitude}&lon=${city.longitude}&exclude=hourly,minutely&appid=${APIidNumber}`,
+        )
+          .then(r => r.json())
+          .then(data => {
+            console.log(data);
+            return data;
+          }),
+      // .then((data)=>{
+      //   return data
+      // }),
     );
+
+    //tu jest za szybko return i zwraca zamin zostaną dostarczone
+    console.log(newCitiesArray);
+    return newCitiesArray;
+  })
+  .then(data => {
+    console.log(data);
+    return data;
+  })
+  .catch(error => {
+    throw new Error(error);
   });
 
-const allDataFromFetch = Promise.all(fetchedData)
+const allDataFromFetch = Promise.all(fetchedData, fetchUserAddedData)
   .then(data => {
     console.log(data);
     return data.map((el, index) => {
