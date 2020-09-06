@@ -1,0 +1,86 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.input {
+  width: 60vw;
+  max-width: 300px;
+  margin: 0.7rem;
+  border: 1px solid navy;
+  border-radius: 8px;
+  background-color: white;
+  text-align: center;
+  font-family: Baloo2;
+  font-size: 1.0rem;
+  padding: 5px 5px; 
+  border-style: double;
+
+}
+
+.loginInput,
+.loginButton {
+  width: 60vw;
+  max-width: 300px;
+  margin: 1rem;
+  border: 1px solid navy;
+  border-radius: 8px;
+  background-color: navy;
+  color: white;
+  text-align: center;
+  font-family: Baloo2;
+  font-size: 1.6rem;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.loginButton:active {
+  background-color: navy;
+  color: white;
+  text-decoration: none;
+}
+
+.loginButton:hover {
+  text-decoration: none;
+}
+
+.loginButtonSignUpIn {
+  background-color: navy;
+  color: white;
+}
+
+
+.loginPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.loginPageText {
+  color: white;
+  text-align: center;
+  font-family: Baloo2;
+  font-size: 1.5rem;
+}
+
+.footer {
+  position: fixed;
+  bottom: 2%;
+  font-size: 1.3rem;
+}
+
+.orLine {
+  display: flex;
+  align-items: center;
+}
+
+.loginAmpersand {
+  color: white;
+  font-family: Baloo2;
+  font-size: 1.5rem;
+  text-align: center;
+  padding: 1rem;
+}
