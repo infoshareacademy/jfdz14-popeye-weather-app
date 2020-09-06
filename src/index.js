@@ -21,6 +21,8 @@ import { setWeatherData } from './datasources/reducers/weatherData.reducer';
 //   measurementId: "G-CHWD30XWMZ"
 // };
 
+export const DATABASE_URL = 'https://popyeweather-352f0.firebaseio.com';
+
 export const APIidNumber = '79046bd50d9c29a85ccfe64d72c81584';
 
 const fetchedData = cities.map(city => {
@@ -34,8 +36,26 @@ const fetchedData = cities.map(city => {
     });
 });
 
-const allDataFromFetch = Promise.all(fetchedData)
+const fetchAddedData = fetch(`${DATABASE_URL}/addedlocation.json`)
+  .then(res => res.json())
   .then(data => {
+    // console.log(data);
+    const arrayCities = Object.keys(data).map(key => {
+      return {
+        id: key,
+        ...data[key],
+      };
+    });
+    return arrayCities;
+  })
+  .then(data => {
+    console.log(data);
+    return data;
+  });
+
+const allDataFromFetch = Promise.all(fetchedData, fetchAddedData)
+  .then(data => {
+    console.log(data);
     return data.map((el, index) => {
       return {
         ...el,
@@ -52,8 +72,6 @@ const allDataFromFetch = Promise.all(fetchedData)
 // });
 
 // console.log(allDataFromFetch);
-
-export const DATABASE_URL = 'https://popyeweather-352f0.firebaseio.com';
 
 // firebase.initializeApp(firebaseConfig);
 
