@@ -27,6 +27,7 @@ code {
 /* dodane any podpis w wykresie był biały */
 .recharts-cartesian-axis tspan {
   fill: white !important;
+font-size: 30px !important;
 }
 
 .recharts-surface {
