@@ -79,6 +79,13 @@ td {
     justify-content: center;
 }
 
+h3 {
+    color: navy;
+    font-family: Baloo2, sans-serif;
+    text-align: center;
+    font-size: 32px;
+}
+
 @media (max-width:535px) {
     .metadataEntry {
         width: 100%;
@@ -91,6 +98,7 @@ td {
         align-items: center;
         display: flex;
         flex-wrap: wrap;
+        flex-direction: column;
 
     }
 
