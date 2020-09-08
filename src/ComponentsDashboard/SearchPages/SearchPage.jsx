@@ -129,7 +129,7 @@ const tempFormat = new Intl.NumberFormat('pl-PL');
 export function displayCelcius(temp) {
   const finalTemp = temp - 272.15;
 
-  return 'T: ' + tempFormat.format(finalTemp) + ' °C'
+  return 'T: ' + tempFormat.format(finalTemp) + ' °C';
 }
 
 const pressureFormat = new Intl.NumberFormat('pl-PL');
@@ -137,10 +137,9 @@ export function displayPressure(press) {
   return 'P: ' + pressureFormat.format(press) + ' hPa';
 }
 
-
 const humidityFormat = new Intl.NumberFormat('pl-PL');
 export function displayHumidity(press) {
-  return 'H: ' +humidityFormat.format(press) + '  %';
+  return 'H: ' + humidityFormat.format(press) + '  %';
 }
 
 const mapStateToProps = state => ({

@@ -1,0 +1,22 @@
+.currentPositionHeader {
+  color: navy;
+  font-family: Baloo2, sans-serif;
+  text-align: center;
+  font-size: 1.4rem;
+  margin-top: 16px;
+}
+
+.searchResults {
+  background-color: white;
+}
+
+.metadata {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-items: center;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 20px;
+  text-align: center;
+}

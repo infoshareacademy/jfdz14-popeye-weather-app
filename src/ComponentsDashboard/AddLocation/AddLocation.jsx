@@ -1,7 +1,8 @@
 import React from 'react';
-import { Form, Button, Col } from 'react-bootstrap';
+import { Form, Button, Col, Alert } from 'react-bootstrap';
 import { AppContent } from '../Dashboards/AppContent';
 import FormInput from './FormInput';
+import style from './addLocation.module.css';
 import { DATABASE_URL } from '../../index';
 
 class AddLocation extends React.Component {
@@ -10,6 +11,7 @@ class AddLocation extends React.Component {
     date: '',
     latitude: '',
     longitude: '',
+    successfullyAdded: false,
   };
 
   handleOnChange = (name, text) => {
@@ -18,18 +20,18 @@ class AddLocation extends React.Component {
     });
   };
 
-  handleSubmitNewLocation = e => {
-    const { location } = this.state;
+  // handleSubmitNewLocation = e => {
+  //   const { location } = this.state;
 
-    e.preventDefault();
-    localStorage.setItem(location, JSON.stringify(this.state));
-    this.setState({
-      location: '',
-      date: '',
-      latitude: '',
-      longitude: '',
-    });
-  };
+  //   e.preventDefault();
+  //   localStorage.setItem(location, JSON.stringify(this.state));
+  //   this.setState({
+  //     location: '',
+  //     date: '',
+  //     latitude: '',
+  //     longitude: '',
+  //   });
+  // };
 
   handleOnSave = e => {
     e.preventDefault();
@@ -38,14 +40,25 @@ class AddLocation extends React.Component {
       method: 'PUT',
       body: JSON.stringify(this.state),
     }).then(() => {
+      this.OnSuccessfullyAdded();
       this.setState({
         location: '',
         date: '',
         latitude: '',
         longitude: '',
+        successfullyAdded: true,
       });
     });
   };
+
+  OnSuccessfullyAdded = () => {
+    setTimeout(() => {
+      this.setState({
+        successfullyAdded: false,
+      });
+    }, 1500);
+  };
+
   render() {
     return (
       <AppContent>
@@ -96,6 +109,11 @@ class AddLocation extends React.Component {
             Submit
           </Button>
         </Form>
+        {this.state.successfullyAdded && (
+          <Alert variant="info" className={style.currentPositionHeader}>
+            Location successfully added 👌
+          </Alert>
+        )}
       </AppContent>
     );
   }
