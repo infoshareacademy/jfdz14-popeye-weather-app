@@ -1,26 +1,43 @@
 import React from 'react';
 import style from './Chart.module.css';
 // import { PieChart } from 'react-easy-chart';
-import { PieChart, Pie, Cell, LabelList, Tooltip, Label } from 'recharts';
+// import { PieChart, Pie, Cell, LabelList, Tooltip, Label } from 'recharts';
+// import { LineChart, Line, CartesianGrid, XAxis, YAxis } from 'recharts';
+import { connect} from 'react-redux';
+import {
+  AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip,
+} from 'recharts';
 
 const COLORS = ['#ffe4c4', '#f0ffff', '#00FFFF', 'cadetblue'];
 
 const data = [
   {
-    name: 'great',
-    usage: 50,
+    date: '6.09.2020',
+    C: 20,
   },
   {
-    name: 'good',
-    usage: 20,
+    date: '7.09.2020',
+    C: 18,
   },
   {
-    name: 'so-so',
-    usage: 20,
+    date: '8.09.2020',
+    C: 18,
   },
   {
-    name: 'bad',
-    usage: 10,
+    date: '9.09.2020',
+    C: 21,
+  },
+  {
+    date: '10.09.2020',
+    C: 17,
+  },
+  {
+    date: '11.09.2020',
+    C: 18,
+  },
+  {
+    date: '12.09.2020',
+    C: 22,
   },
 ];
 
@@ -28,23 +45,39 @@ let renderLabel = data => {
   return data.name;
 };
 
-const ChartOne = () => {
-  return (
-    <>
-      <div className={style.wrapper}>
-        <h5 className={style.chartDescription}>% of good weather in Europe</h5>
-        <PieChart width={240} height={190}>
-          <Tooltip className={style.chartOne} />
+class ChartOne extends React.Component {
+  state = {
+    cities: this.props.weather,
+  }
 
-          <Pie data={data} dataKey={'usage'} label={renderLabel} paddingAngle={1}>
-            {data.map((entry, index) => (
-              <Cell fill={COLORS[index % COLORS.length]} key={index} />
-            ))}
-          </Pie>
-        </PieChart>
-      </div>
-    </>
-  );
+  
+  render(){
+    return (
+      <>
+        <div className={style.wrapper}>
+          <h5 className={style.chartDescription}>Forecast temperature in Gdansk next 6 days</h5>
+          <AreaChart
+        width={1600}
+        height={600}
+        data={data}
+        
+      >
+        <CartesianGrid strokeDasharray="3 3" />
+        <XAxis dataKey="date" />
+        <YAxis />
+        <Tooltip />
+        <Area type="monotone" dataKey="C" stroke="#8884d8" fill="#8884d8" />
+      </AreaChart>
+        </div>
+      </>
+    );
+  }
 };
 
-export default ChartOne;
+
+
+const mapStateToProps = state => ({
+  weather: state,
+});
+export default connect(mapStateToProps)(ChartOne);
+

@@ -6,7 +6,7 @@ import ChartTwo from './ChartTwo';
 const Charts = () => (
   <div className={style.charts}>
     <ChartOne />
-    <ChartTwo />
+    {/* <ChartTwo /> */}
   </div>
 );
 

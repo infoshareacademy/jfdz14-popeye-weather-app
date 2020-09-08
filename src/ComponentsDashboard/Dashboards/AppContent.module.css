@@ -105,10 +105,10 @@
 
 
 .dashboardInvitation {
-  font-size: 1.5rem;
   color: navy;
-  font-weight: 700;
+  font-family: Baloo2, sans-serif;
   text-align: center;
+  font-size: 32px;
 }
 
 .dashboardMessage {
@@ -157,3 +157,8 @@
 
 
 
+@media (max-width:860px) {
+  .stats {
+    display: none;
+  }
+}
