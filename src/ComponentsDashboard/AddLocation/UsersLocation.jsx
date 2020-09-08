@@ -6,6 +6,7 @@ import { Alert, Button } from 'react-bootstrap';
 import style from './addLocation.module.css';
 import Table from 'react-bootstrap/Table';
 import { Link } from 'react-router-dom';
+import AddedlocationDetails from './AddedLocationDetails';
 
 // import style from './currentLocation.module.css';
 // import { precipitationDescription } from '../SearchPages/SearchResulItem';
@@ -35,7 +36,7 @@ class UsersLocation extends React.Component {
             empty: true,
           });
         }
-        console.log(data);
+        // console.log(data);
         const arrayCities = Object.keys(data).map(key => {
           return {
             id: key,
@@ -107,7 +108,15 @@ class UsersLocation extends React.Component {
                   {this.state.cities.map(city => (
                     <tr key={city.id}>
                       <td>
-                        <Link to={`search/${city.longitude}/${city.latitude}`}>
+                        {city.location}
+                        {/* <AddedlocationDetails long={city.longitude} lat={city.latitude} /> */}
+
+                        <Link
+                          id={city.id}
+                          long={city.longitude}
+                          lat={city.latitude}
+                          to={`own-location/${city.id}/${city.longitude}/${city.latitude}`}
+                        >
                           {city.location}
                         </Link>
                       </td>
