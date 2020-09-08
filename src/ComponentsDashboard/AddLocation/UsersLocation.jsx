@@ -108,13 +108,10 @@ class UsersLocation extends React.Component {
                   {this.state.cities.map(city => (
                     <tr key={city.id}>
                       <td>
-                        {city.location}
-                        {/* <AddedlocationDetails long={city.longitude} lat={city.latitude} /> */}
-
                         <Link
-                          id={city.id}
-                          long={city.longitude}
-                          lat={city.latitude}
+                          // id={city.id}
+                          // long={city.longitude}
+                          // lat={city.latitude}
                           to={`own-location/${city.id}/${city.longitude}/${city.latitude}`}
                         >
                           {city.location}
