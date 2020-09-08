@@ -18,9 +18,10 @@ class UsersLocation extends React.Component {
   state = {
     long: null,
     lat: null,
-    cities: ['hhh'],
+    cities: [],
     isLoading: true,
     error: '',
+    empty: false,
     errorDownloadingData: false,
   };
 
@@ -28,7 +29,13 @@ class UsersLocation extends React.Component {
     fetch(`${DATABASE_URL}/addedlocation.json`)
       .then(res => res.json())
       .then(data => {
-        // console.log(data);
+        if (data === null) {
+          console.log('pusty', data);
+          return this.setState({
+            empty: true,
+          });
+        }
+        console.log(data);
         const arrayCities = Object.keys(data).map(key => {
           return {
             id: key,
@@ -62,11 +69,22 @@ class UsersLocation extends React.Component {
   };
 
   render() {
+    if (this.state.empty) {
+      return (
+        <AppContent>
+          <Alert variant="info" className={style.currentPositionHeader}>
+            You did not add any location 😱
+          </Alert>
+        </AppContent>
+      );
+    }
+
     if (this.state.errorDownloadingData) {
       return (
         <AppContent>
           <Alert variant="info" className={style.currentPositionHeader}>
             Not possible to download data
+            {this.state.error.message}
           </Alert>
         </AppContent>
       );
@@ -106,36 +124,6 @@ class UsersLocation extends React.Component {
             </>
           )}
         </div>
-        {/* <div>
-          {this.state.isLoading ? (
-            <LinearProgress />
-          ) : (
-            <>
-              <div className={style.currentPositionHeader}>
-                <h2>Weather in your current position: </h2>
-              </div>
-              <div className={style.metadata}>
-                <MetadataEntry name="Temperature">
-                  {(this.state.temperature - 273.15).toFixed(0)} ℃
-                </MetadataEntry>
-                <MetadataEntry name="Feels like">
-                  {console.log(this.state)}
-                  {(this.state.feels_like - 273.15).toFixed(0)} ℃
-                </MetadataEntry>
-                <MetadataEntry name="Dew Point">
-                  {(this.state.dew_point - 273.15).toFixed(0)} ℃
-                </MetadataEntry>
-                <MetadataEntry name="Pressure">{this.state.pressure} hPa</MetadataEntry>
-                <MetadataEntry name="Humidity">{this.state.humidity}%</MetadataEntry>
-                <MetadataEntry name="Wind speed">{this.state.wind_speed} m/s</MetadataEntry>
-                <MetadataEntry name="Wind direction">{this.state.wind_deg} ° </MetadataEntry>
-                <MetadataEntry name="Precipitation">
-                  {precipitationDescription(this.state.precipitation)}
-                </MetadataEntry>
-              </div>
-            </>
-          )}
-        </div> */}
       </AppContent>
     );
   }

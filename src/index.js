@@ -10,17 +10,6 @@ import { cities } from './datasources/cities';
 import store from './datasources/store/store';
 import { setWeatherData } from './datasources/reducers/weatherData.reducer';
 
-// const firebaseConfig = {
-//   apiKey: "AIzaSyBIe1o8mvKeSjXHT0PSwko0Y27o7flM3Bg",
-//   authDomain: "popyeweather-352f0.firebaseapp.com",
-//   databaseURL: "https://popyeweather-352f0.firebaseio.com",
-//   projectId: "popyeweather-352f0",
-//   storageBucket: "popyeweather-352f0.appspot.com",
-//   messagingSenderId: "824948431301",
-//   appId: "1:824948431301:web:8fa0e89a8bb5a1c03793ac",
-//   measurementId: "G-CHWD30XWMZ"
-// };
-
 export const DATABASE_URL = 'https://popyeweather-352f0.firebaseio.com';
 
 export const APIidNumber = '79046bd50d9c29a85ccfe64d72c81584';
@@ -36,53 +25,54 @@ const fetchedData = cities.map(city => {
     });
 });
 
-const fetchUserAddedData = fetch(`${DATABASE_URL}/addedlocation.json`)
-  .then(res => res.json())
-  .then(data => {
-    // console.log(data);
-    const arrayCities = Object.keys(data).map(key => {
-      return {
-        id: key,
-        ...data[key],
-      };
-    });
-    return arrayCities;
-  })
-  .then(data => {
-    console.log(data);
-    return data;
-  })
-  .then(data => {
-    const newCitiesArray = data.map(
-      city =>
-        fetch(
-          `https://api.openweathermap.org/data/2.5/onecall?lat=${city.latitude}&lon=${city.longitude}&exclude=hourly,minutely&appid=${APIidNumber}`,
-        )
-          .then(r => r.json())
-          .then(data => {
-            console.log(data);
-            return data;
-          }),
-      // .then((data)=>{
-      //   return data
-      // }),
-    );
+// const fetchUserAddedData = fetch(`${DATABASE_URL}/addedlocation.json`)
+//   .then(res => res.json())
+//   .then(data => {
+//     // console.log(data);
+//     const arrayCities = Object.keys(data).map(key => {
+//       return {
+//         id: key,
+//         ...data[key],
+//       };
+//     });
+//     return arrayCities;
+//   })
+//   .then(data => {
+//     console.log(data);
+//     return data;
+//   })
+//   .then(async data => {
+//     console.log(data, 'tutaj');
 
-    //tu jest za szybko return i zwraca zamin zostaną dostarczone
-    console.log(newCitiesArray);
-    return newCitiesArray;
-  })
-  .then(data => {
-    console.log(data);
-    return data;
-  })
-  .catch(error => {
-    throw new Error(error);
-  });
+//     return Promise.all(
+//       data.map(
+//         city =>
+//           fetch(
+//             `https://api.openweathermap.org/data/2.5/onecall?lat=${city.latitude}&lon=${city.longitude}&exclude=hourly,minutely&appid=${APIidNumber}`,
+//           )
+//             .then(r => r.json())
+//             .then(data => {
+//               console.log(data);
+//               return data;
+//             }),
 
-const allDataFromFetch = Promise.all(fetchedData, fetchUserAddedData)
+//         // .then((data)=>{
+//         //   return data
+//         // }),
+//       ),
+//     )
+//       .then(data => {
+//         console.log(data, 'tablica');
+
+//         return data;
+//       })
+//       .then(data => {
+//         return;
+//       });
+
+const allDataFromFetch = Promise.all(fetchedData)
   .then(data => {
-    console.log(data);
+    console.log(data, 'przed redux');
     return data.map((el, index) => {
       return {
         ...el,
@@ -93,8 +83,20 @@ const allDataFromFetch = Promise.all(fetchedData, fetchUserAddedData)
   })
   .then(data => {
     store.dispatch(setWeatherData(data));
-    console.log(data);
+    console.log(data, 'w redux');
   });
+
+//tu jest za szybko return i zwraca zanim zostaną dostarczone dane z promisów
+// console.log(newCitiesArray);
+// return newCitiesArray;
+
+// .then(data => {
+//   console.log(data, 'maped');
+//   return data;
+// })
+// .catch(error => {
+//   throw new Error(error);
+// });
 
 // });
 
