@@ -45,9 +45,9 @@ class AppHeader extends React.Component {
     });
   }
 
-  componentWillUnmount() {
-    this.state.user.unsubscribe();
-  }
+  // componentWillUnmount() {
+  //   this.state.unsubscribe();
+  // }
 
   render() {
     return (
