@@ -1,83 +1,78 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import style from './Chart.module.css';
 // import { PieChart } from 'react-easy-chart';
 // import { PieChart, Pie, Cell, LabelList, Tooltip, Label } from 'recharts';
 // import { LineChart, Line, CartesianGrid, XAxis, YAxis } from 'recharts';
-import { connect} from 'react-redux';
-import {
-  AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip,
-} from 'recharts';
+import { connect } from 'react-redux';
+import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts';
 
 const COLORS = ['#ffe4c4', '#f0ffff', '#00FFFF', 'cadetblue'];
 
-const data = [
-  {
-    date: '6.09.2020',
-    C: 20,
-  },
-  {
-    date: '7.09.2020',
-    C: 18,
-  },
-  {
-    date: '8.09.2020',
-    C: 18,
-  },
-  {
-    date: '9.09.2020',
-    C: 21,
-  },
-  {
-    date: '10.09.2020',
-    C: 17,
-  },
-  {
-    date: '11.09.2020',
-    C: 18,
-  },
-  {
-    date: '12.09.2020',
-    C: 22,
-  },
-];
+const ChartOne = props => {
+  console.log('weather', props.weather);
 
-let renderLabel = data => {
-  return data.name;
-};
+  const [city, selectCity] = useState('Gdańsk');
+  const [tempData, setTempData] = useState([20, 24, 23, 20, 19, 25, 17]);
 
-class ChartOne extends React.Component {
-  state = {
-    cities: this.props.weather,
-  }
+  const handleSelectChange = e => {
+    e.preventDefault();
+    selectCity(e.target.value);
+  };
 
-  
-  render(){
-    return (
-      <>
-        <div className={style.wrapper}>
-          <h5 className={style.chartDescription}>Forecast temperature in Gdansk next 6 days</h5>
-          <AreaChart
-        width={1600}
-        height={600}
-        data={data}
-        
-      >
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="date" />
-        <YAxis />
-        <Tooltip />
-        <Area type="monotone" dataKey="C" stroke="#8884d8" fill="#8884d8" />
-      </AreaChart>
-        </div>
-      </>
+  const findSelectedCityWeather = () => {
+    const newCityWeather = props.weather.find(element => {
+      return element.name === city;
+    });
+    return newCityWeather;
+  };
+
+  useEffect(() => {
+    const newTempData = findSelectedCityWeather();
+    console.log('ddd', newTempData);
+    const d = new Date();
+    setTempData(
+      newTempData.daily.map((day, index) => {
+        return {
+          temp: parseInt((day.temp.day - 272.15).toFixed(0)),
+          date: `${d.getDate() + index}: ${d.getMonth()}: ${d.getFullYear()}`,
+        };
+      }),
     );
-  }
+  }, [city]);
+
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column' }}>
+      <div style={{ marginLeft: '400px' }}>
+        <label htmlFor="cityList">Select City:</label>
+        <select id="cityList" onChange={handleSelectChange}>
+          {props.weather.map(city => {
+            return (
+              <option key={city.name} value={city.name}>
+                {city.name}
+              </option>
+            );
+          })}
+          ;
+        </select>
+        {console.log('wybrane miasto: ', city)}
+        {console.log('wybrane pogoda: ', tempData)}
+      </div>
+      <br />
+      <div className={style.wrapper}>
+        <h5 className={style.chartDescription}>Forecast temperature in Gdansk next 6 days</h5>
+        <AreaChart width={1700} height={600} data={tempData}>
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="date" />
+          <YAxis />
+          <Tooltip />
+          <Area type="monotone" dataKey="temp" stroke="#23395d" fill="#0066cc" />
+        </AreaChart>
+      </div>
+    </div>
+  );
 };
-
-
 
 const mapStateToProps = state => ({
   weather: state,
 });
 export default connect(mapStateToProps)(ChartOne);
-

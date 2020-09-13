@@ -45,7 +45,7 @@ class Sidebar extends React.Component {
         onMouseLeave={this.handleMouseHover}
       >
         <nav className={style.sidebarNav}>
-          <SidebarLink> Welcome, (Your Name)</SidebarLink>
+          <SidebarLink> Welcome</SidebarLink>
           <SidebarLink to="/home" icon={<HomeOutlined color="primary" />}>
             Home
           </SidebarLink>
