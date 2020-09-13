@@ -9,7 +9,7 @@ import {
 
 import { InvitationMessage } from './InvitationMessage';
 import { AppContent } from './AppContent';
-import Charts from '../Charts/Charts';
+import ChartOne from '../Charts/ChartOne';
 import firebase from 'firebase';
 
 class Dashboard extends React.Component {
@@ -60,7 +60,7 @@ class Dashboard extends React.Component {
           </div>
           <div className={style.stats}>
             <h2 className={style.chartsDescription}>Stats</h2>
-            <Charts />
+            <ChartOne />
           </div>
         </AppContent>
       </>

@@ -1,12 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import style from './Chart.module.css';
-// import { PieChart } from 'react-easy-chart';
-// import { PieChart, Pie, Cell, LabelList, Tooltip, Label } from 'recharts';
-// import { LineChart, Line, CartesianGrid, XAxis, YAxis } from 'recharts';
+
 import { connect } from 'react-redux';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts';
-
-const COLORS = ['#ffe4c4', '#f0ffff', '#00FFFF', 'cadetblue'];
 
 const ChartOne = props => {
   console.log('weather', props.weather);
@@ -59,7 +55,9 @@ const ChartOne = props => {
       </div>
       <br />
       <div className={style.wrapper}>
-        <h5 className={style.chartDescription}>Forecast temperature in Gdansk next 6 days</h5>
+        <h5
+          className={style.chartDescription}
+        >{`Forecast temperature in ${city} in next 7 days`}</h5>
         <AreaChart width={1700} height={600} data={tempData}>
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="date" />
